@@ -44,31 +44,18 @@ class AdminUser(db.Model):
     is_admin = db.Column(db.Integer)
 
 
-class AnswerInfo(db.Model):
-    __tablename__ = 'answer_info'
+class Match(db.Model):
+    __tablename__ = 'match'
 
     id = db.Column(db.Integer, primary_key=True)
-    question_id = db.Column(db.Integer)
-    answer_id = db.Column(db.Integer)
-    user_id = db.Column(db.Integer)
-    content = db.Column(db.Text)
-    identify_num = db.Column(db.Integer)
-    comment_num = db.Column(db.Integer)
-
-
-class QuestionInfo(db.Model):
-    __tablename__ = 'question_info'
-
-    question_id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.Text)
-    answer_num = db.Column(db.Integer)
-    content = db.Column(db.Text)
-
-
-class UserInfo(db.Model):
-    __tablename__ = 'user_info'
-
-    user_id = db.Column(db.Integer, primary_key=True)
-    user_name = db.Column(db.String(64))
-    content = db.Column(db.Text)
-    icon = db.Column(db.String(64))
+    start_time = db.Column(db.DateTime, nullable=True)
+    start_status = db.Column(db.Integer, nullable=True)
+    group_name = db.Column(db.String(60), nullable=True)
+    team1 = db.Column(db.String(60), nullable=True)
+    team_icon1 = db.Column(db.String(60), nullable=True)
+    team2 = db.Column(db.String(60), nullable=True)
+    team_icon2 = db.Column(db.String(60), nullable=True)
+    win = db.Column(db.String(60), nullable=True)
+    deuce = db.Column(db.String(60), nullable=True)
+    lose = db.Column(db.String(60), nullable=True)
+    program_num = db.Column(db.Integer, nullable=True)

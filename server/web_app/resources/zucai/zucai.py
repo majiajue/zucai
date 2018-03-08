@@ -1,20 +1,21 @@
 # _*_ coding:utf-8 _*_
 """
-Created by yueliuxin on 2018/2/7
+Created by yueliuxin on 2018/3/8
 """
 
 from flask import request
 from flask_restful import Resource
-from web_app.models.model import AnswerInfo, QuestionInfo, db, UserInfo
+from web_app.models.model import Match, db
 from . import api_path
+import datetime
 
 
 class LoginManage(Resource):
-    api_url = [api_path + 'zhihu', api_path + 'zhihu/<flag>']
+    api_url = [api_path + 'zucai', api_path + 'zucai/<flag>']
 
     def __init__(self):
         self.datetime_format = '%Y-%m-%d %H:%M:%S'
-        self.date_format = '%Y-%m-%d'
+        self.date_format = '%m-%d'
 
     def get(self):
         """
@@ -22,20 +23,21 @@ class LoginManage(Resource):
         """
         data = []
         ex_data = db.session.query(
-            AnswerInfo
+            Match
         ).limit(5)
         if ex_data:
             for item in ex_data:
                 tmp = item.to_dict()
-                question_info = db.session.query(
-                    QuestionInfo
-                ).filter(QuestionInfo.question_id == tmp['question_id']).first().to_dict()
-                tmp['question_title'] = question_info['title']
-                user_info = db.session.query(
-                    UserInfo
-                ).filter(UserInfo.user_id == tmp['user_id']).first().to_dict()
-                tmp['user_name'] = user_info['user_name']
-                tmp['icon'] = user_info['icon']
+                start_time = datetime.datetime.strptime(tmp['start_time'], self.datetime_format)
+                tmp['display_date'] = datetime.datetime.strftime(start_time, '%m-%d')
+                tmp['display_time'] = datetime.datetime.strftime(start_time, '%H:%M')
+                end_time = start_time + datetime.timedelta(minutes=105)
+                if datetime.datetime.now() < start_time:
+                    tmp['start_status'] = 0
+                elif start_time <= datetime.datetime.now() <= end_time:
+                    tmp['start_status'] = 1
+                elif datetime.datetime.now() > end_time:
+                    tmp['start_status'] = 2
                 data.append(tmp)
         return {"status": 0, "msg": "获取首页成功", "answer_data": data}
 

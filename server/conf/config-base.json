@@ -1,5 +1,5 @@
 {
-    "SQLALCHEMY_DATABASE_URI": "mysql+pymysql://root:aAa4761986@120.77.37.9:3306/test",
+    "SQLALCHEMY_DATABASE_URI": "mysql+pymysql://root:aAa4761986@120.77.37.9:3306/zucai",
     "SQLALCHEMY_BINDS": {
         "log_public": "postgresql://postgres:postgres@10.46.80.107:5432/dq2",
         "datamine": "mysql+pymysql://admin:dc_20160720@10.10.213.154:3306/datamine_oprn"

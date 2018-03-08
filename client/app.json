@@ -13,22 +13,22 @@
   },
   "tabBar": {
     "color": "#626567",
-    "selectedColor": "#2A8CE5",
+    "selectedColor": "#000000",
     "backgroundColor": "#FBFBFB",
     "borderStyle": "white",
     "list": [{
       "pagePath": "pages/match/match",
-      "text": "",
+      "text": "赛事",
       "iconPath": "images/soccer.png",
       "selectedIconPath": "images/soccer_focus.png"
     }, {
       "pagePath": "pages/program/program",
-      "text": "",
+      "text": "方案",
       "iconPath": "images/program.png",
       "selectedIconPath": "images/program_focus.png"
     }, {
       "pagePath": "pages/mine/mine",
-      "text": "",
+      "text": "我的",
       "iconPath": "images/user.png",
       "selectedIconPath": "images/user_focus.png"
     }]

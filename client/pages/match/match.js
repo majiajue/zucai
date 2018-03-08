@@ -54,12 +54,22 @@ Page({
 
   //使用本地 fake 数据实现刷新效果
   refresh: function(){
-    var feed = util.getData2();
-    var feed_data = feed.data;
-    this.setData({
-      feed:feed_data,
-      feed_length: feed_data.length
-    });
+    var that = this
+    var feed_data = []
+    wx.request({
+      url: 'http://120.77.37.9:5000/api/zucai/zucai',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        feed_data = res.data.answer_data
+        console.log(feed_data)
+        that.setData({
+          feed: feed_data,
+          feed_length: feed_data.length
+        })
+      }
+    })
   },
 
   //使用本地 fake 数据实现继续加载效果

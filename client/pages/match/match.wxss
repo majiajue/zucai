@@ -1,6 +1,3 @@
-.container{
-  height: 1500rpx;
-}
 .top-tab{
   width: 750rpx;
   height: 100rpx;
@@ -11,7 +8,6 @@
   margin: 0 0 8rpx 0;
   z-index: 9999;
 }
-
 .toptab.active{
   color: #EE0000;
   border-bottom: solid 4px #EE0000;
@@ -20,11 +16,94 @@
   width: 750rpx;
   height: 375rpx;
 }
-.activity image{
-  width: 750rpx;
-  height: 375rpx;
-}
 .placehold{
   font-size: 28rpx;
   padding: 80rpx 0;
+}
+.container{
+  height: 100%;
+  padding: 0;
+  font-size: 14rpx;
+  color: #000;
+}
+.container .feed-item{
+  width: 690rpx;
+  padding: 30rpx 30rpx 20rpx;
+  margin: 7rpx 0 6rpx 0;
+  background: #ffffff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 5px #eeeeee;
+}
+.container .feed-item .feed-up .grow_back text{
+  text-align: center;
+  display: inline-block;
+  width: 100rpx;
+  height: 40rpx;
+  background: #EAEAEA;
+  vertical-align: middle;
+  margin: -15rpx 15rpx 0 0;
+  color: #000000;
+  font-size: 26rpx;
+}
+.container .feed-item .feed-up text{
+  display: inline-block;
+  height: 40rpx;
+  vertical-align: middle;
+  margin: -15rpx 15rpx 0 0;
+  color: #000000;
+  font-size: 26rpx;
+}
+.container .feed-item .feed-up image{
+  float: right;
+  width: 30rpx;
+  height: 30rpx;
+}
+.container .feed-item .feed-middle{
+  height: 100rpx;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.container .feed-item .feed-middle image{
+  display: inline-block;
+  width: 55rpx;
+  height: 55rpx;
+  border-radius: 45rpx;
+  top: 10rpx;
+  vertical-align: middle;
+}
+.container .feed-item .feed-middle .text1{
+  margin: 0 20rpx 0 0;
+}
+.container .feed-item .feed-middle .text2{
+  margin: 0 30rpx 0 0;
+}
+.container .feed-item .feed-middle .text3{
+  margin: 0 20rpx 0 0;
+}
+.container .feed-item .feed-middle .image1{
+  margin: 0 30rpx 20rpx 0;
+}
+.container .feed-item .feed-middle .image2{
+  margin: 0 0 20rpx 0;
+}
+.container .feed-item .feed-middle text{
+  display: inline-block;
+  height: 40rpx;
+  line-height: 20rpx;
+  vertical-align: middle;
+  font-size: 40rpx;
+}
+.container .feed-item .feed-down .left{
+  padding: 10rpx 0 0 0;
+  font-size: 24rpx;
+  line-height: 28rpx;
+  color: #5b5b5b;
+}
+.container .feed-item .feed-down .right{
+  float:right;
+  font-size: 24rpx;
+  line-height: 28rpx;
+  color: #FFC125;
 }
