@@ -2,7 +2,7 @@
 <view class="container chat">
   <view class="chat-item flex-wrp">
     <view class="avatar flex-item">
-      <image src="../../images/icon8.jpg"></image>
+      <image src="../../images/icon8.jpeg"></image>
     </view>
     <view class="chat-content flex-item">
       <view class="chat-source">
@@ -14,7 +14,7 @@
   </view>
   <view class="chat-item flex-wrp">
     <view class="avatar flex-item">
-      <image src="../../images/icon9.jpeg"></image>
+      <image src="../../images/icon2.jpeg"></image>
     </view>
     <view class="chat-content flex-item">
       <view class="chat-source">

@@ -11,7 +11,7 @@ import datetime
 
 
 class LoginManage(Resource):
-    api_url = [api_path + 'zucai', api_path + 'zucai/<flag>']
+    api_url = api_path + 'zucai'
 
     def __init__(self):
         self.datetime_format = '%Y-%m-%d %H:%M:%S'
@@ -24,13 +24,13 @@ class LoginManage(Resource):
         data = []
         ex_data = db.session.query(
             Match
-        ).limit(5)
+        ).order_by(Match.start_time.desc()).limit(5)
         if ex_data:
+            last_display_date = datetime.datetime.\
+                strftime(datetime.datetime.strptime(ex_data[0].to_dict()['start_time'], self.datetime_format), '%m-%d')
             for item in ex_data:
                 tmp = item.to_dict()
                 start_time = datetime.datetime.strptime(tmp['start_time'], self.datetime_format)
-                tmp['display_date'] = datetime.datetime.strftime(start_time, '%m-%d')
-                tmp['display_time'] = datetime.datetime.strftime(start_time, '%H:%M')
                 end_time = start_time + datetime.timedelta(minutes=105)
                 if datetime.datetime.now() < start_time:
                     tmp['start_status'] = 0
@@ -38,10 +38,17 @@ class LoginManage(Resource):
                     tmp['start_status'] = 1
                 elif datetime.datetime.now() > end_time:
                     tmp['start_status'] = 2
+                display_date = datetime.datetime.strftime(start_time, '%m-%d')
+                if display_date != last_display_date:
+                    tmp['display_date'] = display_date
+                    last_display_date = display_date
+                tmp['display_time'] = datetime.datetime.strftime(start_time, '%H:%M')
                 data.append(tmp)
+            data[0]['display_date'] = datetime.datetime.\
+                strftime(datetime.datetime.strptime(ex_data[0].to_dict()['start_time'], self.datetime_format), '%m-%d')
         return {"status": 0, "msg": "获取首页成功", "answer_data": data}
 
-    def post(self, **kwargs):
+    def post(self):
         """
         post
         :return:
@@ -49,59 +56,46 @@ class LoginManage(Resource):
         fun_dict = {
             'get_table_data': self.get_table_data
         }
-        if 'flag' in kwargs:
-            flag_name = kwargs.get('flag')
-            form_data = request.get_json()
-            fun = fun_dict.get(flag_name)
-            if fun:
-                return fun(form_data)
-        else:
-            return {'status': 1, 'msg': '未知请求'}, 401
+        form_data = request.get_json()
+        flag = form_data['flag']
+        func = fun_dict.get(flag)
+        if func is None:
+            return {'state': 1, "msg": "未知操作"}
+        return func(form_data)
 
     def get_table_data(self, form_data):
         """
         获得表格数据
         :return:
         """
-        """
-        query = LoginInfo.query.filter(
-            LoginInfo.account == account if account else text('')
-        ).filter(
-            LoginInfo.phone == phoneNumber if phoneNumber else text('')
-        )
-        if gameId != 0:
-            query = query.filter(LoginInfo.game_id == gameId)
-        data = query.order_by(
-            LoginInfo.id.desc()
-        ).all()
-        """
-
-        data = [{'account': u'987', 'last_login_time': '2018-08-08 10:10:10',
-                 'ip': u'22.22.22.22', 'phone': u'13311111111', 'game_id': 104, 'id': 3},
-                {'account': u'321', 'last_login_time': '2018-01-01 10:10:10',
-                 'ip': u'11.11.11.11', 'phone': u'13387654321', 'game_id': 104, 'id': 2},
-                {'account': u'123', 'last_login_time': '2018-02-07 15:23:36',
-                 'ip': u'12.12.12.12', 'phone': u'13312345678', 'game_id': 102, 'id': 1}]
-
-        table_data = []
-        for item in data:
-            if item['game_id'] == 102:
-                gameName = '我在大清当皇帝'
-            elif item['game_id'] == 104:
-                gameName = '叫我万岁爷'
-            else:
-                gameName = '未知'
-            account = item['account']
-            isFrozen = True
-            isIpBlocked = True
-            gameId = item['game_id']
-            phoneNumber = item['phone']
-            lastLoginTime = item['last_login_time']
-            lastLoginIp = item['ip']
-            table_data.append({'gameId': gameId, 'gameName': gameName, 'account': account, 'phoneNumber': phoneNumber,
-                               'lastLoginTime': lastLoginTime, 'lastLoginIp': lastLoginIp,
-                               'isFrozen': isFrozen, 'isIpBlocked': isIpBlocked})
-        return {'status': 0, 'msg': '', 'tableData': table_data}
+        page = form_data['page']
+        data = []
+        ex_data = db.session.query(
+            Match
+        ).order_by(Match.start_time.desc()).limit(5).offset(page * 5 - 5)
+        if ex_data.count() > 0:
+            last_display_date = datetime.datetime. \
+                strftime(datetime.datetime.strptime(ex_data[0].to_dict()['start_time'], self.datetime_format), '%m-%d')
+            for item in ex_data:
+                tmp = item.to_dict()
+                start_time = datetime.datetime.strptime(tmp['start_time'], self.datetime_format)
+                end_time = start_time + datetime.timedelta(minutes=105)
+                if datetime.datetime.now() < start_time:
+                    tmp['start_status'] = 0
+                elif start_time <= datetime.datetime.now() <= end_time:
+                    tmp['start_status'] = 1
+                elif datetime.datetime.now() > end_time:
+                    tmp['start_status'] = 2
+                display_date = datetime.datetime.strftime(start_time, '%m-%d')
+                if display_date != last_display_date:
+                    tmp['display_date'] = display_date
+                    last_display_date = display_date
+                tmp['display_time'] = datetime.datetime.strftime(start_time, '%H:%M')
+                data.append(tmp)
+            data[0]['display_date']\
+                = datetime.datetime.strftime(datetime.datetime.strptime(ex_data[0].to_dict()['start_time'],
+                                                                            self.datetime_format), '%m-%d')
+        return {"status": 0, "msg": "获取首页成功", "answer_data": data}
 
 
 

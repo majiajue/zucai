@@ -5,9 +5,10 @@
   </view>
 </view>
 
-<scroll-view scroll-y="true" class="container withtab" bindscrolltoupper="upper" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+<scroll-view scroll-y="true" class="container withtab" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
   <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
     <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item">
+      <view class='grow_date' wx:if="{{item.display_date}}"><text>{{item.display_date}}</text></view>
       <view class="feed-item">
         <view class="feed-up">
           <div class='grow_back'><text>{{item.display_time}}</text></div>
@@ -30,7 +31,7 @@
             <a>平{{item.deuce}} </a>
             <a>负{{item.lose}}</a>
             <view class="right">
-              <a>{{item.program_num}}个方案-></a>
+              <a>{{item.program_num}}个方案></a>
             </view>
           </view>
         </view>
