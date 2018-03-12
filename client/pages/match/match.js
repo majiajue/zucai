@@ -29,6 +29,12 @@ Page({
     var that = this;
     that.nextLoad()
   },
+  //跳转
+  bindItemTap: function (event) {
+    wx.navigateTo({
+      url: '../match/datails/details'
+    })
+  },
   //首次获取数据及刷新
   getData: function(){
     var that = this

@@ -1,0 +1,48 @@
+<view class="up">
+  <view class='left'>
+    <image src="../../../images/icon1.jpeg"></image>
+    <view><text class="text1">阿尔青年</text></view>
+    <view><text class="text2">3.00</text></view>
+    <view class='middle'>
+      <text class="text1">VS</text>
+      <view><text class="text2">3.65</text></view>
+      <view class='right'>
+        <image src="../../../images/icon2.jpeg"></image>
+        <view><text class="text1">埃因青年</text></view>
+        <view><text class="text2">3.92</text></view>
+      </view>
+    </view>
+  </view>
+  <view class="form">
+    <view class="form_item">
+      <view class="item_left">
+        <text>预测</text>
+      </view>
+    </view>
+    <view class="form_item">
+      <view class="item_left">
+        <text>投注比例</text>
+      </view>
+    </view>
+    <view class="form_item">
+      <view class="item_left">
+        <text>近期状态</text>
+      </view>
+    </view>
+    <view class="form_item">
+      <view class="item_left">
+        <text>主客状态</text>
+      </view>
+    </view>
+    <view class="form_item">
+      <view class="item_left">
+        <text>两队交锋</text>
+      </view>
+    </view>
+    <view class="form_item">
+      <view class="item_left">
+        <text>欧赔分析</text>
+      </view>
+    </view>
+  </view>
+</view>

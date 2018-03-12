@@ -1,37 +1,42 @@
 {
-  "pages":[
+  "pages": [
     "pages/match/match",
     "pages/program/program",
     "pages/mine/mine",
-    "pages/answer/answer"
+    "pages/match/datails/details",
+    "pages/match/datails/analyze/basic/basic"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarTitleText": "test",
-    "navigationBarTextStyle":"white",
-    "enablePullDownRefresh":true
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#626567",
     "selectedColor": "#000000",
     "backgroundColor": "#FBFBFB",
     "borderStyle": "white",
-    "list": [{
-      "pagePath": "pages/match/match",
-      "text": "赛事",
-      "iconPath": "images/soccer.png",
-      "selectedIconPath": "images/soccer_focus.png"
-    }, {
-      "pagePath": "pages/program/program",
-      "text": "方案",
-      "iconPath": "images/program.png",
-      "selectedIconPath": "images/program_focus.png"
-    }, {
-      "pagePath": "pages/mine/mine",
-      "text": "我的",
-      "iconPath": "images/user.png",
-      "selectedIconPath": "images/user_focus.png"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/match/match",
+        "text": "赛事",
+        "iconPath": "images/soccer.png",
+        "selectedIconPath": "images/soccer_focus.png"
+      },
+      {
+        "pagePath": "pages/program/program",
+        "text": "方案",
+        "iconPath": "images/program.png",
+        "selectedIconPath": "images/program_focus.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_focus.png"
+      }
+    ]
   },
   "networkTimeout": {
     "request": 10000,

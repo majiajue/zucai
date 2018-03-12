@@ -9,7 +9,7 @@
   <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
     <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item">
       <view class='grow_date' wx:if="{{item.display_date}}"><text>{{item.display_date}}</text></view>
-      <view class="feed-item">
+      <view class="feed-item" bindtap="bindItemTap">
         <view class="feed-up">
           <div class='grow_back'><text>{{item.display_time}}</text></div>
           <text wx:if="{{item.start_status==2}}" style='color:#EAEAEA'>已结束</text>

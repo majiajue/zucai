@@ -1,0 +1,89 @@
+.up{
+  width: 750rpx;
+  height: 300rpx;
+  background: #EAEAEA;
+}
+.up image{
+  width: 100rpx;
+  height: 60rpx;
+  margin: 80rpx 0 0 0;
+}
+.up .left{
+  width: 300rpx;
+  height: 300rpx;
+  text-align: center;
+}
+.up .left text{
+  display: inline-block;
+  height: 40rpx;
+  line-height: 20rpx;
+  vertical-align: middle;
+}
+.up .left .text1{
+  margin: 50rpx 0 0 0;
+  font-size: 40rpx;
+}
+.up .left .text2{
+  color: #5b5b5b;
+  margin: 20rpx 0 0 0;
+  font-size: 30rpx;
+}
+.up .middle{
+  width: 150rpx;
+  height: 300rpx;
+  margin: -290rpx 0 0 300rpx;
+  text-align: center;
+}
+.up .middle text{
+  margin: 0 0 0 0;
+  display: inline-block;
+  height: 50rpx;
+  vertical-align: middle;
+  font-size: 30rpx;
+}
+.up .middle .text1{
+  font-size: 50rpx;
+  margin: 121rpx 0 0 0;
+}
+.up .middle .text2{
+  color: #5b5b5b;
+  margin: 85rpx 0 0 0;
+  font-size: 30rpx;
+}
+.up .right{
+  width: 300rpx;
+  height: 300rpx;
+  margin: -302rpx 0 0 150rpx;
+  text-align: center;
+}
+.up .right .text1{
+  margin: 50rpx 0 0 0;
+  font-size: 40rpx;
+}
+.up .right .text2{
+  color: #5b5b5b;
+  margin: 10rpx 0 0 0;
+  font-size: 30rpx;
+}
+
+.form{
+  margin: 0 0 0 25rpx;
+  width: 700rpx;
+}
+.form .form_item{
+  background: #ffffff;
+  border-bottom: solid 1px #ebebeb;
+  padding: 30rpx;
+}
+.form .form_item .item_left{
+  width: 140rpx;
+  text-align: right;
+  font-size: 34rpx;
+  color: #969696;
+}
+.form .form_item .item_right{
+  width: 560rpx;
+  text-align: left;
+  font-size: 34rpx;
+  color: #000000;
+}
