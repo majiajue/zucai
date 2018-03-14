@@ -10,7 +10,7 @@
 }
 .toptab.active{
   color: #EE0000;
-  border-bottom: solid 4px #EE0000;
+  border-bottom: solid 4px #c6322c;
 }
 .activity{
   width: 750rpx;

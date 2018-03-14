@@ -71,19 +71,102 @@
   width: 700rpx;
 }
 .form .form_item{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
   background: #ffffff;
-  border-bottom: solid 1px #ebebeb;
-  padding: 30rpx;
+  border-bottom: solid 1rpx #ebebeb;
+  padding: 25rpx 0 25rpx 0;
 }
 .form .form_item .item_left{
-  width: 140rpx;
+  display: inline-block;
+  width: 120rpx;
   text-align: right;
-  font-size: 34rpx;
+  font-size: 28rpx;
   color: #969696;
+  
 }
 .form .form_item .item_right{
-  width: 560rpx;
+  display: inline-block;
+  margin: 0 0 0 40rpx;
+  width: 500rpx;
   text-align: left;
-  font-size: 34rpx;
+  font-size: 28rpx;
   color: #000000;
+}
+.form .form_item .item_right .inside_form{
+  font-size: 28rpx;
+}
+.form .form_item .item_right .inside_form .option{
+  width: 10%; 
+  height: 30px; 
+  text-align: center; 
+  line-height: 30px;
+  background-color: #e8e8e8; 
+  border: 1rpx solid #dbdbdb; 
+  margin: 0 0 -1rpx -1rpx;
+  display: inline-block;
+}
+.form .form_item .item_right .inside_form .items{
+  width: 29%; 
+  height: 30px; 
+  text-align: center; 
+  line-height: 30px;
+  background-color: #fbf9fb; 
+  border: 1rpx solid #dbdbdb; 
+  color: #7a797a;
+  margin: 0 0 -1rpx -1rpx;
+  display: inline-block;
+}
+.form .last_item{
+  height: 400rpx;
+  padding: 0 0 0 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.form .last_item .item_left{
+  display: inline-block;
+  margin-top: 20rpx;
+  width: 120rpx;
+  text-align: right;
+  font-size: 28rpx;
+  color: #969696;
+}
+.form .last_item .item_right{
+  display: inline-block;
+  margin: 0 0 0 40rpx;
+  width: 500rpx;
+}
+.form .last_item .item_right text{
+  margin: 0 65rpx 0 10rpx;
+  font-size: 26rpx;
+  color: #969696;
+}
+.form .last_item .item_right .circle{
+  display: inline-block; 
+  margin-top: 20rpx; 
+  text-align: center;
+  width: 500rpx;
+  height: 120rpx;
+}
+.down{
+  width: 750rpx;
+  height: 70rpx;
+  background: #c6322c;
+  display: inline-block; 
+  text-align: center;
+  line-height: 70rpx;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}
+.down text{
+  color: #ffffff;
+  font-size: 30rpx;
+}
+.down image{
+  margin: 0 0 0 0;
+  width: 30rpx;
+  height: 25rpx;
 }

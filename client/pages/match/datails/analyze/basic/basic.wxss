@@ -1,1 +1,115 @@
-/* pages/match/datails/analyze/basic/basic.wxss */
+.up{
+  width: 750rpx;
+  height: 300rpx;
+  background: #EAEAEA;
+}
+.up image{
+  width: 100rpx;
+  height: 60rpx;
+  margin: 80rpx 0 0 0;
+}
+.up .left{
+  width: 300rpx;
+  height: 300rpx;
+  text-align: center;
+}
+.up .left text{
+  display: inline-block;
+  height: 40rpx;
+  line-height: 20rpx;
+  vertical-align: middle;
+}
+.up .left .text1{
+  margin: 50rpx 0 0 0;
+  font-size: 40rpx;
+}
+.up .left .text2{
+  color: #5b5b5b;
+  margin: 20rpx 0 0 0;
+  font-size: 30rpx;
+}
+.up .middle{
+  width: 150rpx;
+  height: 300rpx;
+  margin: -290rpx 0 0 300rpx;
+  text-align: center;
+}
+.up .middle text{
+  margin: 0 0 0 0;
+  display: inline-block;
+  height: 50rpx;
+  vertical-align: middle;
+  font-size: 30rpx;
+}
+.up .middle .text1{
+  font-size: 50rpx;
+  margin: 121rpx 0 0 0;
+}
+.up .middle .text2{
+  color: #5b5b5b;
+  margin: 85rpx 0 0 0;
+  font-size: 30rpx;
+}
+.up .right{
+  width: 300rpx;
+  height: 300rpx;
+  margin: -302rpx 0 0 150rpx;
+  text-align: center;
+}
+.up .right .text1{
+  margin: 50rpx 0 0 0;
+  font-size: 40rpx;
+}
+.up .right .text2{
+  color: #5b5b5b;
+  margin: 10rpx 0 0 0;
+  font-size: 30rpx;
+}
+.top-tab{
+  width: 748rpx;
+  height: 60rpx;
+  background: #ffffff;
+  color: #000000;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  margin: 0 0 8rpx 0;
+  display: flex;
+  position: absolute;
+  top: 300rpx;
+  border-style: solid solid solid solid;
+  border-width: 1rpx
+}
+.toptab.active{
+  color: #ffffff;
+  background: #000000;
+}
+.placehold{
+  font-size: 28rpx;
+  padding: 180rpx 0;
+}
+.container{
+  height: 1000rpx;
+  padding: 0;
+  background: #ffffff;
+}
+.container .title{
+  padding: 100rpx 0 10rpx 0;
+  color: #f2bb47;
+  font-size: 35rpx;
+  font-weight: 500;
+  text-align: center;
+}
+.container .form{
+  background: #F8F8F8;
+  height: 380rpx;
+  width: 320rpx;
+  display: inline-block;
+  text-align: center;
+}
+.container .form text{
+  text-align: center;
+  display: inline-block;
+  width: 105rpx;
+  height: 40rpx;
+  font-size: 24rpx;
+ }

@@ -1,66 +1,35 @@
 // pages/match/datails/analyze/basic/basic.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    navTab_top: ["分析", "预测", "赔率", "赛况", "评论"],
+    navTab_next: ["基本面", "盘面", "阵容", "积分", "交战信息"],
+    currentNavtab_top: "0",
+    currentNavtab_next: "0"
+  },
+  switchTab_top: function (e) {
+    this.setData({
+      currentNavtab_top: e.currentTarget.dataset.idx
+    });
+  },
+  switchTab_next: function (e) {
+    this.setData({
+      currentNavtab_next: e.currentTarget.dataset.idx
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-  
+    // 页面初始化 options为页面跳转所带来的参数 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
-  
+    // 页面渲染完成 
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-  
+    // 页面显示 
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
   onHide: function () {
-  
+    // 页面隐藏 
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
   onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+    // 页面关闭 
   }
 })

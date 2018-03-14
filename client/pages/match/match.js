@@ -1,4 +1,3 @@
-var util = require('../../utils/util.js')
 Page({
   data: {
     navTab: ["即时", "赛果", "赛程", "胜负彩"],
@@ -26,11 +25,11 @@ Page({
     setTimeout(function(){wx.hideNavigationBarLoading();wx.stopPullDownRefresh();}, 2000);
   },
   lower: function (e) {
-    var that = this;
+    var that = this
     that.nextLoad()
   },
   //跳转
-  bindItemTap: function (event) {
+  openDetail: function (event) {
     wx.navigateTo({
       url: '../match/datails/details'
     })

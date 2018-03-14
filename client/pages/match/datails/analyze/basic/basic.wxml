@@ -1,2 +1,86 @@
-<!--pages/match/datails/analyze/basic/basic.wxml-->
-<text>pages/match/datails/analyze/basic/basic.wxml</text>
+<view class="up">
+  <view class='left'>
+    <image src="../../../../../../images/icon1.jpeg"></image>
+    <view><text class="text1">阿尔青年</text></view>
+    <view><text class="text2">3.00</text></view>
+    <view class='middle'>
+      <text class="text1">VS</text>
+      <view><text class="text2">3.65</text></view>
+      <view class='right'>
+        <image src="../../../../../../images/icon2.jpeg"></image>
+        <view><text class="text1">艾因青年</text></view>
+        <view><text class="text2">3.92</text></view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="top-tab" >
+  <view class="toptab flex-item {{currentNavtab_top==idx ? 'active' : ''}}" wx:for="{{navTab_top}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab_top">
+    {{itemName}}
+  </view>
+</view>
+
+<view class="container">
+  <view class="ctnt0" wx:if="{{currentNavtab_top==0}}">
+    <view class="top-tab" style="top: 360rpx;left:20rpx;width: 500rpx;">
+      <view class="toptab flex-item {{currentNavtab_next==idx ? 'active' : ''}}" wx:for="{{navTab_next}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab_next">
+        {{itemName}}
+      </view>
+    </view>
+    <view class="placehold" wx:if="{{currentNavtab_next==0}}">
+      <text>基本面</text>
+    </view>
+    <view class="placehold" wx:if="{{currentNavtab_next==1}}">
+      <text>盘面</text>
+    </view>
+    <view class="placehold" wx:if="{{currentNavtab_next==2}}">
+      <text>阵容</text>
+    </view>
+    <view class="placehold" wx:if="{{currentNavtab_next==3}}">
+      <text>积分</text>
+    </view>
+    <view class="placehold" wx:if="{{currentNavtab_next==4}}">
+      <text>交战信息</text>
+    </view>
+  </view>
+  <view class="placehold" wx:if="{{currentNavtab_top==1}}">
+    <text>预测</text>
+  </view>
+  <view class="placehold" wx:if="{{currentNavtab_top==2}}">
+    <text>赔率</text>
+  </view>
+  <view wx:if="{{currentNavtab_top==3}}">
+    <view class="title"><text>实时技术统计</text></view>
+    <view>
+      <view class="form" style="border-width:1rpx;border-right-style:solid;border-right-color:#E3E3E3">
+        <view>
+          <text style='font-size: 30rpx;color:#71b227'>主队</text>
+          <text style='font-size: 30rpx;color:#71b227'>项目</text>
+          <text style='font-size: 30rpx;color:#71b227'>客队</text>
+        </view>
+        <view><text>0</text><text>进攻</text><text>0</text></view>
+        <view><text>0</text><text>射门</text><text>0</text></view>
+        <view><text>0</text><text>角球</text><text>0</text></view>
+        <view><text>0</text><text>黄牌</text><text>0</text></view>
+        <view><text>0</text><text>犯规</text><text>0</text></view>
+        <view><text>0</text><text>补救</text><text>0</text></view>
+      </view>
+      <view class="form">
+        <view>
+          <text style='font-size: 30rpx;color:#71b227'>主队</text>
+          <text style='font-size: 30rpx;color:#71b227'>项目</text>
+          <text style='font-size: 30rpx;color:#71b227'>客队</text>
+        </view>
+        <view><text>0</text><text>威胁进攻</text><text>0</text></view>
+        <view><text>0</text><text>射正</text><text>0</text></view>
+        <view><text>0</text><text>任意球</text><text>0</text></view>
+        <view><text>0</text><text>红牌</text><text>0</text></view>
+        <view><text>0</text><text>越位</text><text>0</text></view>
+        <view><text>0%</text><text>控球率</text><text>0%</text></view>
+      </view>
+    </view>
+  </view>
+  <view class="placehold" wx:if="{{currentNavtab_top==4}}">
+    <view><text>评论</text></view>
+  </view>
+</view>
