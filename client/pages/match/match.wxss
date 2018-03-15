@@ -21,7 +21,7 @@
   padding: 80rpx 0;
 }
 .container{
-  height: 1000rpx;
+  height: 1400rpx;
   padding: 0;
   font-size: 14rpx;
   color: #000000;

@@ -72,7 +72,7 @@ class LoginManage(Resource):
         data = []
         ex_data = db.session.query(
             Match
-        ).order_by(Match.start_time.desc()).limit(5).offset(page * 5 - 5)
+        ).order_by(Match.start_time.desc()).limit(8).offset(page * 8 - 8)
         if ex_data.count() > 0:
             last_display_date = datetime.datetime. \
                 strftime(datetime.datetime.strptime(ex_data[0].to_dict()['start_time'], self.datetime_format), '%m-%d')

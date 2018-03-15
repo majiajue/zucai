@@ -43,16 +43,72 @@
       <text>交战信息</text>
     </view>
   </view>
-  <view class="placehold" wx:if="{{currentNavtab_top==1}}">
-    <text>预测</text>
+  <view wx:if="{{currentNavtab_top==1}}">
+    <view class="forecast top" style='padding-top:65rpx;'>
+      <view class='left'>
+        <canvas canvas-id="ringCanvas" class="canvas"></canvas>
+      </view>
+      <view class='right' style='text-align: left'>
+      </view>
+    </view>
   </view>
-  <view class="placehold" wx:if="{{currentNavtab_top==2}}">
-    <text>赔率</text>
+  <view wx:if="{{currentNavtab_top==2}}">
+    <view class="rate form" style='padding: 60rpx 0 10rpx 0;'>
+      <view>
+        <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>博彩公司</text>
+        <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>项目</text>
+        <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>主胜</text>
+        <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>平</text>
+        <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>客胜</text>
+      </view>
+      <view class='item'>
+        <text style='border-top-style:none;border-color:#fbf9fb;color:#fbf9fb'>0</text>
+        <text style='border-top-style:none'>下降家数</text>
+        <text style='border-top-style:none'>5</text>
+        <text style='border-top-style:none'>1</text>
+        <text style='border-right-style:none;border-top-style:none'>5</text>
+      </view>
+      <view class='item'>
+        <text style='color:#98c850;border-color:#fbf9fb'>总体统计</text>
+        <text>平均变化</text>
+        <text>4</text>
+        <text>5</text>
+        <text style='border-right-style:none'>4</text>
+      </view>
+      <view class='item'>
+        <text style='border-left-color:#fbf9fb;border-right-color:#fbf9fb;border-top-color:#fbf9fb;color:#fbf9fb'>0</text>
+        <text>上升家数</text>
+        <text style='color:#98c850'>↓0.0%</text>
+        <text style='color:#e82716'>↑1.5%</text>
+        <text style='color:#98c850;border-right-style:none'>↓0.4%</text>
+      </view>
+      <view class='item'>
+        <text style='border-left-color:#fbf9fb;color:#fbf9fb'>0</text>
+        <text>初盘</text>
+        <text>2.93</text>
+        <text>3.45</text>
+        <text style='border-right-style:none'>2.15</text>
+      </view>
+      <view class='item'>
+        <text style='color:#98c850;border-color:#fbf9fb'>12bet.com</text>
+        <text>02-26 14:24</text>
+        <text>2.89</text>
+        <text>3.45</text>
+        <text style='border-right-style:none'>2.16</text>
+      </view>
+      <view class='item'>
+        <text style='border-left-color:#fbf9fb;border-right-color:#fbf9fb;border-top-color:#fbf9fb;color:#fbf9fb'>0</text>
+        <text>变化  </text>
+        <text style='color:#98c850'>↓1.3%</text>
+        <text>0%</text>
+        <text style='color:#e82716;border-right-style:none'>↑0.5%</text>
+      </view>
+    </view>
   </view>
   <view wx:if="{{currentNavtab_top==3}}">
-    <view class="title"><text>实时技术统计</text></view>
+    <view class="actually title"><text>实时技术统计</text></view>
     <view>
-      <view class="form" style="border-width:1rpx;border-right-style:solid;border-right-color:#E3E3E3">
+      <view class="actually form" style="border-width:1rpx;border-right-style:solid;border-right-color:#E3E3E3">
         <view>
           <text style='font-size: 30rpx;color:#71b227'>主队</text>
           <text style='font-size: 30rpx;color:#71b227'>项目</text>
@@ -65,7 +121,7 @@
         <view><text>0</text><text>犯规</text><text>0</text></view>
         <view><text>0</text><text>补救</text><text>0</text></view>
       </view>
-      <view class="form">
+      <view class="actually form">
         <view>
           <text style='font-size: 30rpx;color:#71b227'>主队</text>
           <text style='font-size: 30rpx;color:#71b227'>项目</text>
