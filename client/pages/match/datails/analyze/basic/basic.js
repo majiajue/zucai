@@ -26,6 +26,15 @@ Page({
   },
   onReady: function () {
     // 页面渲染完成 
+    var windowWidth = 160;
+    try {
+      var res = wx.getSystemInfoSync();
+      windowWidth = res.windowWidth;
+      windowWidth = parseInt(windowWidth*0.388)
+    } catch (e) {
+      console.error('getSystemInfoSync failed!');
+    }
+    console.log(windowWidth)
     ringChart = new wxCharts({
       animation: true,
       canvasId: 'ringCanvas',
@@ -63,7 +72,7 @@ Page({
         stroke: false
       }],
       disablePieStroke: true,//不显示间隔
-      width: 160,
+      width: windowWidth,
       height: 160,
       dataLabel: false,
       legend: true,

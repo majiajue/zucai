@@ -1,4 +1,4 @@
-/*ding bu*/
+/*顶部*/
 .up{
   width: 750rpx;
   height: 300rpx;
@@ -66,7 +66,7 @@
   margin: 10rpx 0 0 0;
   font-size: 30rpx;
 }
-/*dao hang*/
+/*导航*/
 .top-tab{
   width: 748rpx;
   height: 60rpx;
@@ -94,38 +94,102 @@
   padding: 0;
   background: #ffffff;
 }
-/*yu ce*/
- .container .forecast.top{
+/*积分*/
+.container .score.form{
+  width: 730rpx;
+  display: inline-block;
+  text-align: center;
+}
+.container .score.form .circle_text{
+  text-align: center;
+  line-height: 50rpx;
+  width: 50rpx;
+  height: 50rpx;
+  background-color: #abc8eb;
+  color: white;
+  border-radius: 50%;
+}
+.container .score.form image{
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 35rpx;
+}
+.container .score.form .image_box{
+  text-align: center;
+  display: inline-block;
+  width: 60rpx;
+  line-height: 62rpx;
+  border-top-style: solid;
+  border-top-width: 3rpx;
+  border-color: #E4E4E4;
+}
+.container .score.form text{
+  text-align: center;
+  display: inline-block;
+  line-height: 70rpx;
+  width: 120rpx;
+  font-size: 30rpx;
+  border-top-style: solid;
+  border-top-width: 3rpx;
+  border-color: #E4E4E4;
+}
+/*预测*/
+.container .forecast.top{
+  display: flex;
+  flex-direction: row;
   background: #F8F8F8;
   width: 750rpx;
-  display: inline-block;
  }
- .container .forecast.top .left{
+.container .forecast.top .left{
   display: inline-block; 
   text-align: center;
   width: 300rpx;
   height: 350rpx;
 }
- .container .forecast.top .right{
-  display: inline-block; 
+.container .forecast.top .left canvas{
+  width: 300rpx;
+  height: 350rpx;
+}
+.container .forecast.top .right{
+  display: flex; 
+  flex-direction: column;
   text-align: center;
   width: 440rpx;
   height: 350rpx;
 }
 .container .forecast.top .right text{
+  padding-top:15rpx;
   color: #b9b9b9;
+  font-size: 30rpx;
+  text-align: center;
+}
+.container .forecast.title{
+  color: #f5c668;
+  background: #ffffff;
   font-size: 35rpx;
   font-weight: 500;
   text-align: center;
+  line-height: 40px;
 }
-/*pei lv*/
- .container .rate.form{
+.container .forecast.content{
+  background: #f8f8f8;
+  font-size: 30rpx;
+  text-align: left;
+}
+.container .forecast.content text{
+  margin-left: 20rpx;
+  color: #8b8a8b;
+  line-height: 35px;
+}
+/*赔率*/
+.container .rate.form{
   background: #F8F8F8;
   width: 750rpx;
   display: inline-block;
   text-align: center;
  }
- .container .rate.form text{
+.container .rate.form text{
   width: 149rpx;
   text-align: center; 
   line-height: 30px;
@@ -136,7 +200,7 @@
   margin: 0 0 -2rpx -1rpx;
   display: inline-block;
  }
-/*sai kuang*/
+/*赛况*/
 .container .actually.title{
   padding: 100rpx 0 10rpx 0;
   color: #f2bb47;

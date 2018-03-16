@@ -36,8 +36,42 @@
     <view class="placehold" wx:if="{{currentNavtab_next==2}}">
       <text>阵容</text>
     </view>
-    <view class="placehold" wx:if="{{currentNavtab_next==3}}">
-      <text>积分</text>
+    <view class='score form' style='margin-top:140rpx' wx:if="{{currentNavtab_next==3}}">
+      <view>
+        <text style='color:#ffffff'>0</text>
+        <text style='color:#ffffff'>0</text>
+        <text style='width:100rpx;color:#a0a0a0'>赛</text>
+        <text style='color:#a0a0a0'>胜/平/负</text>
+        <text style='color:#a0a0a0'>进/失</text>
+        <text style='color:#a0a0a0'>积分</text>
+      </view>
+      <view>
+        <text style='width:80rpx'><text class='circle_text' style='background:#7cc888'>1</text></text>
+        <view class='image_box'><image src="../../../../../../images/icon1.jpeg"></image></view>
+        <text style='text-align:left'>阿贾青年</text>
+        <text style='width:100rpx'>25</text>
+        <text>16/4/5</text>
+        <text>62/35</text>
+        <text>52</text>
+      </view>
+      <view>
+        <text style='width:80rpx'><text class='circle_text'>2</text></text>
+        <view class='image_box'><image src="../../../../../../images/icon2.jpeg"></image></view>
+        <text style='text-align:left'>奈梅亨</text>
+        <text style='width:100rpx'>26</text>
+        <text>15/5/6</text>
+        <text>59/35</text>
+        <text>50</text>
+      </view>
+      <view>
+        <text style='width:80rpx'><text class='circle_text'>3</text></text>
+        <view class='image_box'><image src="../../../../../../images/icon3.jpeg"></image></view>
+        <text style='text-align:left'>福图纳</text>
+        <text style='width:100rpx'>26</text>
+        <text>14/4/8</text>
+        <text>56/34</text>
+        <text>46</text>
+      </view>
     </view>
     <view class="placehold" wx:if="{{currentNavtab_next==4}}">
       <text>交战信息</text>
@@ -46,11 +80,37 @@
   <view wx:if="{{currentNavtab_top==1}}">
     <view class="forecast top" style='padding-top:65rpx;'>
       <view class='left'>
-        <canvas canvas-id="ringCanvas" class="canvas"></canvas>
+        <canvas canvas-id="ringCanvas"></canvas>
       </view>
-      <view class='right' style='text-align: left'>
+      <view class='right'>
+        <text style='text-align: left'>全场预测</text>
+        <text style='color:#52a83e'>负\t1.98</text>
+        <text style='text-align: left'>半全场预测</text>
+        <text style='color:#52a83e'>负负\t2.90、平胜\t7.50</text>
+        <text style='text-align: left'>比分预测</text>
+        <text style='color:#52a83e'>1:2(7.50)、1:1(7.50)</text>
       </view>
     </view>
+    <view class='forecast title'>
+      <text>重要提示</text>
+    </view>
+    <view class='forecast content'>
+      <text style='color:#93c54b'>欧赔</text>
+      <text style='margin-left:80rpx;color:#93c54b'>2.98↓</text><text style='margin-left:none'>|</text>
+      <text style='margin-left:none'>3.45</text><text style='margin-left:none'>|</text>
+      <text style='margin-left:none;color:#db3b5e'>2.16↑</text>
+    </view>
+    <view class='forecast content'>
+      <text style='text-align:center;width=200rpx;color:#93c54b'>关注度</text>
+      <text style='margin-left:50rpx'>33%</text>
+    </view>
+    <view class='forecast title'><text>胜\t可能性32%</text></view>
+    <view class='forecast content'><text>1.从赔率数据看，客队较被看好</text></view>
+    <view class='forecast content'><text>2.主队近6场荷乙主场赢了2场</text></view>
+    <view class='forecast content'><text>3.客队近6场荷乙客场输了2场</text></view>
+    <view class='forecast title'><text>平\t可能性22%</text></view>
+    <view class='forecast content'><text>1.主队近6场荷乙主场打平了1场</text></view>
+    <view class='forecast content'><text>2.客队近6场荷乙客场打平了1场</text></view>
   </view>
   <view wx:if="{{currentNavtab_top==2}}">
     <view class="rate form" style='padding: 60rpx 0 10rpx 0;'>
