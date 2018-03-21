@@ -73,8 +73,42 @@
         <text>46</text>
       </view>
     </view>
-    <view class="placehold" wx:if="{{currentNavtab_next==4}}">
-      <text>交战信息</text>
+    <view class='race form' style='margin-top:140rpx' wx:if="{{currentNavtab_next==4}}">
+      <view class='title'><text style='margin-left:10rpx'>交战分析</text></view>
+      <view>
+        <canvas class='circle' canvas-id="canvasArc"></canvas>
+      </view>
+      <view class='content'>
+        <view><text style='color:#b35c69'>●\t</text><text>主客队近6场交锋3胜0平3负</text></view>
+        <view><text style='color:#b35c69'>●\t</text><text>阿克马青年近10场主场作战4胜1平5负</text></view>
+        <view><text style='color:#b35c69'>●\t</text><text>主客队历史交锋3胜0平3负</text></view>
+      </view>
+      <view>
+        <div class='line_form'>
+          <canvas class='line_area' canvas-id="canvasLine1"></canvas>
+          <view class='center'><text>进16失20</text></view>
+          <view class='bottom'>
+            <view class='text_area'><text style='color:#000000'>4</text><text>胜</text></view>
+            <view class='text_area'><text style='color:#000000'>1</text><text>平</text></view>
+            <view class='text_area' style='border-right-style:none'><text style='color:#000000'>5</text><text>负</text></view>
+          </view>
+        </div>
+        <div class='line_form'>
+          <canvas class='line_area' canvas-id="canvasLine2"></canvas>
+          <view class='center'><text>进16失20</text></view>
+          <view class='bottom'>
+            <view class='text_area'><text style='color:#000000'>4</text><text>胜</text></view>
+            <view class='text_area'><text style='color:#000000'>2</text><text>平</text></view>
+            <view class='text_area' style='border-right-style:none'><text style='color:#000000'>4</text><text>负</text></view>
+          </view>
+        </div>
+      </view>
+      <view class='title' style='border-style:none;margin-top:-40rpx'><text style='margin-left:20rpx'>对阵战绩</text></view>
+      <view>
+        <div class='line_form'></div>
+        <div class='line_form' style='background: #000000'></div>
+      </view>
+      <view class='title'><text style='margin-left:10rpx'>实力提点</text></view>
     </view>
   </view>
   <view wx:if="{{currentNavtab_top==1}}">

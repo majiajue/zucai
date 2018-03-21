@@ -19,6 +19,19 @@ Page({
       currentNavtab_next: e.currentTarget.dataset.idx
     });
   },
+  draw_circle: function (x, num, r, rate, cicle_color, cxt_arc) {
+    cxt_arc.setFontSize(14)//圆心文字
+    cxt_arc.fillText(num+'%', x - 13, 40)
+    cxt_arc.setStrokeStyle('#d2d2d2');//下层圆
+    cxt_arc.beginPath();
+    cxt_arc.arc(x, 35, r, 0, 2 * Math.PI, false);
+    cxt_arc.stroke();
+    cxt_arc.setStrokeStyle(cicle_color);//上层圆
+    cxt_arc.beginPath();
+    cxt_arc.arc(x, 35, r, -Math.PI / 2, Math.PI * 2 * rate - Math.PI / 2, false);
+    cxt_arc.stroke();
+    return cxt_arc
+  },
 
 
   onLoad: function (options) {
@@ -26,6 +39,7 @@ Page({
   },
   onReady: function () {
     // 页面渲染完成 
+    //预测的饼图
     var windowWidth = 160;
     try {
       var res = wx.getSystemInfoSync();
@@ -34,7 +48,6 @@ Page({
     } catch (e) {
       console.error('getSystemInfoSync failed!');
     }
-    console.log(windowWidth)
     ringChart = new wxCharts({
       animation: true,
       canvasId: 'ringCanvas',
@@ -79,6 +92,46 @@ Page({
       background: '#F8F8F8',
       padding: 0
     });
+    //交战信息的圆圈
+    var that = this;
+    var cxt_arc = wx.createCanvasContext('canvasArc');
+    var width = wx.getSystemInfoSync().windowWidth
+    console.log(width)
+    cxt_arc.setLineWidth(4);
+    cxt_arc.setLineCap('round')
+    var r = parseInt(width * 0.061)
+    cxt_arc = that.draw_circle(100, 55, r, 0.5, '#b35c69', cxt_arc)
+    cxt_arc = that.draw_circle(260, 45, r, 0.5, '#668fa3', cxt_arc)
+    cxt_arc.draw(); 
+    var ctx = wx.createCanvasContext('canvasLine1')
+    ctx.setLineCap('round')
+    ctx.setLineWidth(6)
+    ctx.setStrokeStyle('#d2d2d2');
+    ctx.beginPath()
+    ctx.moveTo(20, 20)
+    ctx.lineTo(140, 20)
+    ctx.stroke()
+    ctx.setStrokeStyle('#b35c69');
+    ctx.beginPath();
+    ctx.moveTo(20, 20)
+    ctx.lineTo(80, 20)
+    ctx.stroke()
+    ctx.draw()
+
+    ctx = wx.createCanvasContext('canvasLine2')
+    ctx.setLineCap('round')
+    ctx.setLineWidth(6)
+    ctx.setStrokeStyle('#d2d2d2');
+    ctx.beginPath()
+    ctx.moveTo(20, 20)
+    ctx.lineTo(140, 20)
+    ctx.stroke()
+    ctx.setStrokeStyle('#668fa3');
+    ctx.beginPath();
+    ctx.moveTo(20, 20)
+    ctx.lineTo(80, 20)
+    ctx.stroke()
+    ctx.draw()
   },
   onShow: function () {
     // 页面显示 
