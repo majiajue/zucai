@@ -75,9 +75,7 @@
     </view>
     <view class='race form' style='margin-top:140rpx' wx:if="{{currentNavtab_next==4}}">
       <view class='title'><text style='margin-left:10rpx'>交战分析</text></view>
-      <view>
-        <canvas class='circle' canvas-id="canvasArc"></canvas>
-      </view>
+      <view><canvas class='circle' canvas-id="two_circle1"></canvas></view>
       <view class='content'>
         <view><text style='color:#b35c69'>●\t</text><text>主客队近6场交锋3胜0平3负</text></view>
         <view><text style='color:#b35c69'>●\t</text><text>阿克马青年近10场主场作战4胜1平5负</text></view>
@@ -93,7 +91,7 @@
             <view class='text_area' style='border-right-style:none'><text style='color:#000000'>5</text><text>负</text></view>
           </view>
         </div>
-        <div class='line_form'>
+        <div class='line_form' style='border-right-style:none'>
           <canvas class='line_area' canvas-id="canvasLine2"></canvas>
           <view class='center'><text>进16失20</text></view>
           <view class='bottom'>
@@ -105,10 +103,45 @@
       </view>
       <view class='title' style='border-style:none;margin-top:-40rpx'><text style='margin-left:20rpx'>对阵战绩</text></view>
       <view>
-        <div class='line_form'></div>
-        <div class='line_form' style='background: #000000'></div>
+        <div class='line_form'>
+          <canvas class='line_area' canvas-id="canvasLine3"></canvas>
+          <view class='center'><text>胜率50</text></view>
+          <view class='bottom'>
+            <view class='text_area'><text style='color:#000000'>3</text><text>胜</text></view>
+            <view class='text_area'><text style='color:#000000'>0</text><text>平</text></view>
+            <view class='text_area' style='border-right-style:none'><text style='color:#000000'>3</text><text>负</text></view>
+          </view>
+        </div>
+        <div class='line_form' style='border-right-style:none;padding-bottom:20rpx'>
+          <canvas class='line_area' canvas-id="canvasLine4"></canvas>
+          <view class='center'><text>胜率50</text></view>
+          <view class='bottom'>
+            <view class='text_area'><text style='color:#000000'>3</text><text>胜</text></view>
+            <view class='text_area'><text style='color:#000000'>0</text><text>平</text></view>
+            <view class='text_area' style='border-right-style:none'><text style='color:#000000'>3</text><text>负</text></view>
+          </view>
+        </div>
       </view>
       <view class='title'><text style='margin-left:10rpx'>实力提点</text></view>
+      <view><canvas class='circle' canvas-id="two_circle2"></canvas></view>
+      <view>
+        <div class='line_form'>
+          <view class='content'>
+            <view><text style='color:#b35c69'>●\t</text><text>阿克马青年本赛季总失球49</text></view>
+            <view><text style='color:#b35c69'>●\t</text><text>阿克马青年本赛季场均进球1.5</text></view>
+            <view><text style='color:#b35c69'>●\t</text><text>阿克马青年本赛季位于积分榜17位，处于下游</text></view>
+         </view>
+        </div>
+        <div class='line_form' style='border-right-style:none;padding-bottom:20rpx'>
+          <view class='content'>
+            <view><text style='color:#b35c69'>●\t</text><text>埃因青年本赛季总进球46</text></view>
+            <view><text style='color:#b35c69'>●\t</text><text>埃因青年本赛季总失球39</text></view>
+            <view><text style='color:#b35c69'>●\t</text><text>埃因青年本赛季位于积分榜6位，处于上游</text></view>
+         </view>
+        </div>
+      </view>
+      <view class='title'><text style='margin-left:10rpx'>状态伤停</text></view>
+      <view><canvas class='circle' canvas-id="two_circle3"></canvas></view>
     </view>
   </view>
   <view wx:if="{{currentNavtab_top==1}}">

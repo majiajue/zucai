@@ -32,6 +32,33 @@ Page({
     cxt_arc.stroke();
     return cxt_arc
   },
+  draw_two_circle: function (x1, x2, rate1, rate2, color1, color2, r, circle_id) {
+    var that = this;
+    var cxt_arc = wx.createCanvasContext(circle_id);
+    cxt_arc.setLineWidth(4);
+    cxt_arc.setLineCap('round')
+    var num1 = parseInt(rate1 * 100)
+    var num2 = parseInt(rate2 * 100)
+    cxt_arc = that.draw_circle(x1, num1, r, rate1, color1, cxt_arc)
+    cxt_arc = that.draw_circle(x2, num2, r, rate2, color2, cxt_arc)
+    cxt_arc.draw(); 
+  },
+  draw_line: function (line_id, line_color) {
+    var ctx = wx.createCanvasContext(line_id)
+    ctx.setLineCap('round')
+    ctx.setLineWidth(6)
+    ctx.setStrokeStyle('#d2d2d2');
+    ctx.beginPath()
+    ctx.moveTo(20, 20)
+    ctx.lineTo(140, 20)
+    ctx.stroke()
+    ctx.setStrokeStyle(line_color);
+    ctx.beginPath();
+    ctx.moveTo(20, 20)
+    ctx.lineTo(80, 20)
+    ctx.stroke()
+    ctx.draw()
+  },
 
 
   onLoad: function (options) {
@@ -94,44 +121,17 @@ Page({
     });
     //交战信息的圆圈
     var that = this;
-    var cxt_arc = wx.createCanvasContext('canvasArc');
     var width = wx.getSystemInfoSync().windowWidth
-    console.log(width)
-    cxt_arc.setLineWidth(4);
-    cxt_arc.setLineCap('round')
     var r = parseInt(width * 0.061)
-    cxt_arc = that.draw_circle(100, 55, r, 0.5, '#b35c69', cxt_arc)
-    cxt_arc = that.draw_circle(260, 45, r, 0.5, '#668fa3', cxt_arc)
-    cxt_arc.draw(); 
-    var ctx = wx.createCanvasContext('canvasLine1')
-    ctx.setLineCap('round')
-    ctx.setLineWidth(6)
-    ctx.setStrokeStyle('#d2d2d2');
-    ctx.beginPath()
-    ctx.moveTo(20, 20)
-    ctx.lineTo(140, 20)
-    ctx.stroke()
-    ctx.setStrokeStyle('#b35c69');
-    ctx.beginPath();
-    ctx.moveTo(20, 20)
-    ctx.lineTo(80, 20)
-    ctx.stroke()
-    ctx.draw()
-
-    ctx = wx.createCanvasContext('canvasLine2')
-    ctx.setLineCap('round')
-    ctx.setLineWidth(6)
-    ctx.setStrokeStyle('#d2d2d2');
-    ctx.beginPath()
-    ctx.moveTo(20, 20)
-    ctx.lineTo(140, 20)
-    ctx.stroke()
-    ctx.setStrokeStyle('#668fa3');
-    ctx.beginPath();
-    ctx.moveTo(20, 20)
-    ctx.lineTo(80, 20)
-    ctx.stroke()
-    ctx.draw()
+    //画两个圆(x1, x2，胜率1，胜率2，颜色1，颜色2，半径，canvans_id)(胜率用小数表示，如0.5)
+    that.draw_two_circle(100, 260, 0.55, 0.45, '#b35c69', '#668fa3', r, 'two_circle1')
+    that.draw_two_circle(100, 260, 0.41, 0.59, '#b35c69', '#668fa3', r, 'two_circle2')
+    that.draw_two_circle(100, 260, 0.55, 0.45, '#b35c69', '#668fa3', r, 'two_circle3')
+    //交战信息的进度条
+    that.draw_line('canvasLine1', '#b35c69')
+    that.draw_line('canvasLine2', '#668fa3')
+    that.draw_line('canvasLine3', '#b35c69')
+    that.draw_line('canvasLine4', '#668fa3')
   },
   onShow: function () {
     // 页面显示 
