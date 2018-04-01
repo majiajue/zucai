@@ -27,14 +27,292 @@
         {{itemName}}
       </view>
     </view>
-    <view class="placehold" wx:if="{{currentNavtab_next==0}}">
-      <text>基本面</text>
+    <view style='margin-top:140rpx' wx:if="{{currentNavtab_next==0}}">
+      <view class='basic form'>
+        <view class='title'>
+          <text>历史交战\t1\t胜\t1\t平\t1\t负</text>
+        </view>
+        <view class='item'>
+          <text>时间</text>
+          <text style='width:140rpx'>联赛</text>
+          <text style='width:370rpx'>比分</text>
+        </view>
+        <view class='item'>
+          <text>17-10-07</text>
+          <text style='width:140rpx;color:#76c109'>荷乙</text>
+          <text style='width:150rpx;text-align:right;color:#000000'>埃因青年</text>
+          <text style='width:30rpx'>1</text>
+          <text style='width:10rpx'>:</text>
+          <text style='width:30rpx'>2</text>
+          <text style='width:150rpx;text-align:left;color:#d55152'>阿克马青年</text>
+        </view>
+        <view class='item'>
+          <text>17-10-06</text>
+          <text style='width:140rpx;color:#76c109'>友谊赛</text>
+          <text style='width:150rpx;text-align:right;color:#d55152'>阿克马青年</text>
+          <text style='width:30rpx'>3</text>
+          <text style='width:10rpx'>:</text>
+          <text style='width:30rpx'>2</text>
+          <text style='width:150rpx;text-align:left;color:#000000'>埃因青年</text>
+        </view>
+        <view class='item'>
+          <text>17-10-05</text>
+          <text style='width:140rpx;color:#76c109'>荷乙</text>
+          <text style='width:150rpx;text-align:right;color:#20ab27'>阿克马青年</text>
+          <text style='width:30rpx'>1</text>
+          <text style='width:10rpx'>:</text>
+          <text style='width:30rpx'>1</text>
+          <text style='width:150rpx;text-align:left;color:#20ab27'>埃因青年</text>
+        </view>
+      </view>
+      <view class='basic form'>
+        <view class='title'>
+          <text>主队最近战绩\t1\t胜\t1\t平\t1\t负</text>
+        </view>
+        <view class='item'>
+          <text>时间</text>
+          <text style='width:140rpx'>联赛</text>
+          <text style='width:370rpx'>比分</text>
+        </view>
+        <view class='item'>
+          <text>17-10-07</text>
+          <text style='width:140rpx;color:#76c109'>荷乙</text>
+          <text style='width:150rpx;text-align:right;color:#000000'>埃因青年</text>
+          <text style='width:30rpx'>1</text>
+          <text style='width:10rpx'>:</text>
+          <text style='width:30rpx'>2</text>
+          <text style='width:150rpx;text-align:left;color:#d55152'>阿克马青年</text>
+        </view>
+        <view class='item'>
+          <text>17-10-06</text>
+          <text style='width:140rpx;color:#76c109'>友谊赛</text>
+          <text style='width:150rpx;text-align:right;color:#d55152'>阿克马青年</text>
+          <text style='width:30rpx'>3</text>
+          <text style='width:10rpx'>:</text>
+          <text style='width:30rpx'>2</text>
+          <text style='width:150rpx;text-align:left;color:#000000'>埃因青年</text>
+        </view>
+        <view class='item'>
+          <text>17-10-05</text>
+          <text style='width:140rpx;color:#76c109'>荷乙</text>
+          <text style='width:150rpx;text-align:right;color:#20ab27'>阿克马青年</text>
+          <text style='width:30rpx'>1</text>
+          <text style='width:10rpx'>:</text>
+          <text style='width:30rpx'>1</text>
+          <text style='width:150rpx;text-align:left;color:#20ab27'>埃因青年</text>
+        </view>
+      </view>
+      <view class='basic form'>
+        <view class='title'>
+          <text>主队最近主场战绩\t1\t胜\t1\t平\t1\t负</text>
+        </view>
+        <view class='item'>
+          <text>时间</text>
+          <text style='width:140rpx'>联赛</text>
+          <text style='width:370rpx'>比分</text>
+        </view>
+      </view>
+      <view class='basic form'>
+        <view class='title'>
+          <text>客队最近战绩\t1\t胜\t1\t平\t1\t负</text>
+        </view>
+        <view class='item'>
+          <text>时间</text>
+          <text style='width:140rpx'>联赛</text>
+          <text style='width:370rpx'>比分</text>
+        </view>
+      </view>
+      <view class='basic form'>
+        <view class='title'>
+          <text>客队最近客场战绩\t1\t胜\t1\t平\t1\t负</text>
+        </view>
+        <view class='item'>
+          <text>时间</text>
+          <text style='width:140rpx'>联赛</text>
+          <text style='width:370rpx'>比分</text>
+        </view>
+      </view>
     </view>
-    <view class="placehold" wx:if="{{currentNavtab_next==1}}">
-      <text>盘面</text>
+    <view class='general_info' style='margin-top:140rpx' wx:if="{{currentNavtab_next==1}}">
+      <view class='title'>
+        <div class='left'><text style='margin-left:10rpx'>欧赔盘路</text></div>
+        <div class='right'><text style='margin-right:10rpx;color:#696969'>3.06 3.65 1.89</text></div>
+      </view>
+      <view class='form'>
+        <div class='left'>
+          <view style='padding-top:30rpx'><text>主队历史二赔胜率</text></view>
+          <view style='font-size:30rpx;color:#cd3c34;padding-top:30rpx'><text>0%</text></view>
+          <view><text>0胜0平0负</text></view>
+          <view style='font-size:30rpx;color:#cd3c34;padding-top:30rpx'><text>0%</text></view>
+          <view><text>0胜0平0负</text></view>
+        </div>
+        <div class='center'>
+          <view style='color:#ffffff'><text>-</text></view>
+          <view style='color:#ffffff'><text>-</text></view>
+          <view style='padding-top:30rpx;font-size:30rpx'><text>— 本赛季 —</text></view>
+          <view style='padding-top:60rpx;font-size:30rpx'><text>— 上赛季 —</text></view>
+          <view style='color:#ffffff'><text>-</text></view>
+        </div>
+        <div class='right'>
+          <view style='padding-top:30rpx'><text>主队历史二赔胜率</text></view>
+          <view style='font-size:30rpx;color:#43ac57;padding-top:30rpx'><text>0%</text></view>
+          <view><text>0胜0平0负</text></view>
+          <view style='font-size:30rpx;color:#43ac57;padding-top:30rpx'><text>55%</text></view>
+          <view><text>18胜8平7负</text></view>
+        </div>
+      </view>
+      <view class='title'>
+        <div class='left'><text style='margin-left:10rpx'>亚盘盘路</text></div>
+        <div class='right'><text style='margin-right:10rpx;color:#696969'>1.95 0.25 1.90</text></div>
+      </view>
+      <view class='form'>
+        <div class='left'>
+          <view style='padding-top:30rpx'><text>主同盘赢盘率</text></view>
+          <view style='font-size:30rpx;color:#cd3c34;padding-top:30rpx'><text>0%</text></view>
+          <view><text>0赢0走0输</text></view>
+          <view style='font-size:30rpx;color:#cd3c34;padding-top:30rpx'><text>0%</text></view>
+          <view><text>0赢0走0输</text></view>
+        </div>
+        <div class='center'>
+          <view style='color:#ffffff'><text>-</text></view>
+          <view style='color:#ffffff'><text>-</text></view>
+          <view style='padding-top:30rpx;font-size:30rpx'><text>— 本赛季 —</text></view>
+          <view style='padding-top:60rpx;font-size:30rpx'><text>— 上赛季 —</text></view>
+          <view style='color:#ffffff'><text>-</text></view>
+        </div>
+        <div class='right'>
+          <view style='padding-top:30rpx'><text>客同盘赢盘率</text></view>
+          <view style='font-size:30rpx;color:#43ac57;padding-top:30rpx'><text>0%</text></view>
+          <view><text>0赢0走0输</text></view>
+          <view style='font-size:30rpx;color:#43ac57;padding-top:30rpx'><text>47%</text></view>
+          <view><text>17赢0走19输</text></view>
+        </div>
+      </view>
+      <view class='title'>
+        <div class='left'><text style='margin-left:10rpx'>大小盘路</text></div>
+        <div class='right'><text style='margin-right:10rpx;color:#696969'>3.00球</text></div>
+      </view>
+      <view class='form'>
+        <div class='left'>
+          <view style='padding-top:30rpx'><text>主同盘大球率</text></view>
+          <view style='font-size:30rpx;color:#cd3c34;padding-top:30rpx'><text>0%</text></view>
+          <view><text>0大0走0小</text></view>
+          <view style='font-size:30rpx;color:#cd3c34;padding-top:30rpx'><text>0%</text></view>
+          <view><text>0大0走0小</text></view>
+        </div>
+        <div class='center'>
+          <view style='color:#ffffff'><text>-</text></view>
+          <view style='color:#ffffff'><text>-</text></view>
+          <view style='padding-top:30rpx;font-size:30rpx'><text>— 本赛季 —</text></view>
+          <view style='padding-top:60rpx;font-size:30rpx'><text>— 上赛季 —</text></view>
+          <view style='color:#ffffff'><text>-</text></view>
+        </div>
+        <div class='right'>
+          <view style='padding-top:30rpx'><text>客同盘大球率</text></view>
+          <view style='font-size:30rpx;color:#43ac57;padding-top:30rpx'><text>0%</text></view>
+          <view><text>0大0走0小</text></view>
+          <view style='font-size:30rpx;color:#43ac57;padding-top:30rpx'><text>40%</text></view>
+          <view><text>14大0走21小</text></view>
+        </div>
+      </view>
+      <view class='title'>
+        <div class='left'><text style='margin-left:10rpx'>让球盘路</text></div>
+        <div class='right'><text style='margin-right:10rpx;color:#696969'>1球</text></div>
+      </view>
+      <view class='form'>
+        <div class='left'>
+          <view style='padding-top:30rpx'><text>主同盘赢盘率</text></view>
+          <view style='font-size:30rpx;color:#cd3c34;padding-top:30rpx'><text>0%</text></view>
+          <view><text>0赢0走0输</text></view>
+          <view style='font-size:30rpx;color:#cd3c34;padding-top:30rpx'><text>0%</text></view>
+          <view><text>0赢0走0输</text></view>
+        </div>
+        <div class='center'>
+          <view style='color:#ffffff'><text>-</text></view>
+          <view style='color:#ffffff'><text>-</text></view>
+          <view style='padding-top:30rpx;font-size:30rpx'><text>— 本赛季 —</text></view>
+          <view style='padding-top:60rpx;font-size:30rpx'><text>— 上赛季 —</text></view>
+          <view style='color:#ffffff'><text>-</text></view>
+        </div>
+        <div class='right'>
+          <view style='padding-top:30rpx'><text>客同盘赢盘率</text></view>
+          <view style='font-size:30rpx;color:#43ac57;padding-top:30rpx'><text>0%</text></view>
+          <view><text>0赢0走0输</text></view>
+          <view style='font-size:30rpx;color:#43ac57;padding-top:30rpx'><text>44%</text></view>
+          <view><text>16赢3走17输</text></view>
+        </div>
+      </view>
     </view>
-    <view class="placehold" wx:if="{{currentNavtab_next==2}}">
-      <text>阵容</text>
+    <view class="battle_formation" style='margin-top:140rpx' wx:if="{{currentNavtab_next==2}}">
+      <view class='title'><text>上场比赛阵型</text></view>
+      <image src="../../../../../../images/football_field.jpg"></image>
+      <view class='title'><text>球员</text></view>
+      <view class='title' style='color:#9a9a9a;background:#e9e9e9'><text>阿克马青年</text></view>
+      <view class='form'>
+        <text style='color:#a0a0a0;border-bottom-style:none'>号码</text>
+        <text style='width:240rpx;color:#a0a0a0;border-bottom-style:none'>姓名</text>
+        <text style='color:#a0a0a0;border-bottom-style:none'>首</text>
+        <text style='color:#a0a0a0;border-bottom-style:none'>替</text>
+        <text style='width:120rpx;color:#a0a0a0;border-bottom-style:none'>状态</text>
+        <text style='width:120rpx;color:#a0a0a0;border-bottom-style:none'>红/黄</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>25</text>
+        <text style='width:240rpx;text-align：left'>N-莱奥</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>25</text>
+        <text style='width:240rpx;text-align：left'>N-莱奥</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>25</text>
+        <text style='width:240rpx;text-align：left'>N-莱奥</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='title' style='color:#9a9a9a;background:#e9e9e9'><text>埃因青年</text></view>
+      <view class='form'>
+        <text style='color:#a0a0a0;border-bottom-style:none'>号码</text>
+        <text style='width:240rpx;color:#a0a0a0;border-bottom-style:none'>姓名</text>
+        <text style='color:#a0a0a0;border-bottom-style:none'>首</text>
+        <text style='color:#a0a0a0;border-bottom-style:none'>替</text>
+        <text style='width:120rpx;color:#a0a0a0;border-bottom-style:none'>状态</text>
+        <text style='width:120rpx;color:#a0a0a0;border-bottom-style:none'>红/黄</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>25</text>
+        <text style='width:240rpx;text-align：left'>N-莱奥</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>25</text>
+        <text style='width:240rpx;text-align：left'>N-莱奥</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>25</text>
+        <text style='width:240rpx;text-align：left'>N-莱奥</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
     </view>
     <view class='score form' style='margin-top:140rpx' wx:if="{{currentNavtab_next==3}}">
       <view>
@@ -126,26 +404,106 @@
       <view><canvas class='circle' canvas-id="two_circle2"></canvas></view>
       <view>
         <div class='line_form'>
-          <view class='content'>
-            <view><text style='color:#b35c69'>●\t</text><text>阿克马青年本赛季总失球49</text></view>
-            <view><text style='color:#b35c69'>●\t</text><text>阿克马青年本赛季场均进球1.5</text></view>
-            <view><text style='color:#b35c69'>●\t</text><text>阿克马青年本赛季位于积分榜17位，处于下游</text></view>
-         </view>
+          <view class="form_item">
+            <div class="item_left"><text>●</text></div>
+            <div class="item_right"><text>阿克马青年本赛季总失球49</text></div>
+          </view>
+          <view class="form_item">
+            <div class="item_left"><text>●</text></div>
+            <div class="item_right"><text>阿克马青年本赛季场均进球1.5</text></div>
+          </view>
+          <view class="form_item">
+            <div class="item_left"><text>●</text></div>
+            <div class="item_right"><text>阿克马青年本赛季位于积分榜17位，处于下游</text></div>
+          </view>
         </div>
         <div class='line_form' style='border-right-style:none;padding-bottom:20rpx'>
-          <view class='content'>
-            <view><text style='color:#b35c69'>●\t</text><text>埃因青年本赛季总进球46</text></view>
-            <view><text style='color:#b35c69'>●\t</text><text>埃因青年本赛季总失球39</text></view>
-            <view><text style='color:#b35c69'>●\t</text><text>埃因青年本赛季位于积分榜6位，处于上游</text></view>
-         </view>
+          <view class="form_item">
+            <div class="item_left"><text>●</text></div>
+            <div class="item_right"><text>埃因青年本赛季总进球46</text></div>
+          </view>
+          <view class="form_item">
+            <div class="item_left"><text>●</text></div>
+            <div class="item_right"><text>埃因青年本赛总失球39</text></div>
+          </view>
+          <view class="form_item">
+            <div class="item_left"><text>●</text></div>
+            <div class="item_right"><text>埃因青年本赛季位于积分榜6位，处于上游</text></div>
+          </view>
         </div>
       </view>
       <view class='title'><text style='margin-left:10rpx'>状态伤停</text></view>
       <view><canvas class='circle' canvas-id="two_circle3"></canvas></view>
+      <view>
+        <div class='line_form'>
+          <view class="form_item">
+            <div class="item_left"><text>●</text></div>
+            <div class="item_right"><text>阿克马青年上轮比赛客场作战1:3胜埃因FC</text></div>
+          </view>
+          <view class="form_item">
+            <div class="item_left"><text>●</text></div>
+            <div class="item_right"><text>阿克马青年本赛近10场比赛3胜1平6负，场均进球1.2个，场均失球1.8个</text></div>
+          </view>
+          <view class="form_item">
+            <div class="item_left"><text>●</text></div>
+            <div class="item_right"><text>阿克马青年主场连续两场胜</text></div>
+          </view>
+        </div>
+        <div class='line_form' style='border-right-style:none;padding-bottom:20rpx'>
+          <view class="form_item">
+            <div class="item_left"><text>●</text></div>
+            <div class="item_right"><text>埃因青年上轮比赛主场作战2:1胜登博思</text></div>
+          </view>
+          <view class="form_item">
+            <div class="item_left"><text>●</text></div>
+            <div class="item_right"><text>埃因青年近10场比赛7胜1平2负，场均进球2.3个，场均失球1.4个</text></div>
+          </view>
+        </div>
+      </view>
+      <view class='title'><text style='margin-left:10rpx'>欧赔</text></view>
+      <view><canvas class='circle' canvas-id="three_circle"></canvas></view>
+      <view>
+        <div class='line_form' style='width:600rpx;border-right-style:none'>
+          <view class="form_item">
+            <div class="item_left"><text>●</text></div>
+            <div class="item_right" style='width:570rpx'><text>竞猜官网为本场比赛开除了3.00 3.32 0.92的初始赔率，根据近4场相同初始欧赔赔率的比赛中，主队取得2胜0平2负，主队胜概率为50%</text></div>
+          </view>
+        </div>
+      </view>
+      <view class='title'><text style='margin-left:10rpx'>大小球</text></view>
+      <view><canvas class='circle' canvas-id="two_circle4"></canvas></view>
+      <view>
+        <div class='line_form'>
+          <view class='form_item' style='margin-left:10rpx;margin-top:-30rpx;margin-bottom:20rpx'>
+            <div class="item_right" style='text-align:center'><text>大</text></div>
+          </view>
+          <view class="form_item">
+            <div class="item_left"><text>●</text></div>
+            <div class="item_right"><text>阿克马青年近10场各项赛事，其中5场每场双方总进球数均多于2.5粒</text></div>
+          </view>
+          <view class="form_item">
+            <div class="item_left"><text>●</text></div>
+            <div class="item_right"><text>阿克马青年近10场各项主场，其中6场每场双方总进球数均多于2.5粒</text></div>
+          </view>
+        </div>
+        <div class='line_form' style='border-right-style:none;padding-bottom:20rpx'>
+          <view class='form_item' style='margin-left:5rpx;margin-top:-30rpx;margin-bottom:20rpx'>
+            <div class="item_right" style='text-align:center'><text>小</text></div>
+          </view>
+          <view class="form_item">
+            <div class="item_left"><text>●</text></div>
+            <div class="item_right"><text>埃因青年近10场各项赛事，其中7场每场双方总进球数均多于2.5粒</text></div>
+          </view>
+          <view class="form_item">
+            <div class="item_left"><text>●</text></div>
+            <div class="item_right"><text>埃因青年近10场各项主场，其中5场每场双方总进球数均多于2.5粒</text></div>
+          </view>
+        </div>
+      </view>
     </view>
   </view>
   <view wx:if="{{currentNavtab_top==1}}">
-    <view class="forecast top" style='padding-top:65rpx;'>
+    <view class="forecast top" style='padding-top:65rpx'>
       <view class='left'>
         <canvas canvas-id="ringCanvas"></canvas>
       </view>
@@ -263,7 +621,47 @@
       </view>
     </view>
   </view>
-  <view class="placehold" wx:if="{{currentNavtab_top==4}}">
-    <view><text>评论</text></view>
+  <view class="comment" style='padding-top:65rpx' wx:if="{{currentNavtab_top==4}}">
+    <view class='item'>
+      <view class='left'><image src="../../../../../../images/icon3.jpeg"></image></view>
+      <view class='right' style='border-top:none'>
+        <view>
+          <text style='width:380rpx'>也许吧</text>
+          <text class='action'>回复</text>
+          <text class='action'>举报</text>
+          <image src="../../../../../../images/program.png"></image>
+        </view>
+        <view><text class='content'>是个发送到在写再写擦圣诞节氨基酸卡扎菲黄金卡的少女ADKJA啊</text></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='left'><image src="../../../../../../images/icon6.jpeg"></image></view>
+      <view class='right'>
+        <view>
+          <text style='width:380rpx'>七海萨达</text>
+          <text class='action'>回复</text>
+          <text class='action'>举报</text>
+          <image src="../../../../../../images/program.png"></image>
+        </view>
+        <view><text class='content'>回复\t@赢盘\t:是个发送到在写再写擦圣诞节氨基酸卡扎菲黄金卡的少女ADKJA啊</text></view>
+        <view><text class='reply'>@赢盘:单子已出，欢迎跟单</text></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='left'><image src="../../../../../../images/icon5.jpeg"></image></view>
+      <view class='right'>
+        <view>
+          <text style='width:380rpx'>七海萨达</text>
+          <text class='action'>回复</text>
+          <text class='action'>举报</text>
+          <image src="../../../../../../images/program.png"></image>
+        </view>
+        <view><text class='content'>是个发送到在写再写擦圣诞节氨基酸卡扎菲黄金卡的少女ADKJA啊</text></view>
+      </view>
+    </view>
+    <view class="bottom">
+      <image src="../../../../../../images/edit.png"></image>
+      <text>\t发表评论</text>
+  </view>
   </view>
 </view>

@@ -94,6 +94,114 @@
   padding: 0;
   background: #ffffff;
 }
+/*基本面*/
+.container .basic.form{
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  width: 710rpx;
+  display: inline-block;
+  text-align: center;
+  border-style: solid solid solid solid;
+  border-width: 2rpx;
+}
+.container .basic.form .title text{
+  text-align: center;
+  display: inline-block;
+  line-height: 70rpx;
+  width: 700rpx;
+  font-size: 30rpx;
+  color: #f3be51;
+  border-bottom-style: solid;
+  border-bottom-width: 3rpx;
+  border-color: #E4E4E4;
+}
+.container .basic.form .item text{
+  text-align: center;
+  display: inline-block;
+  color: #a0a0a0;
+  line-height: 60rpx;
+  width: 190rpx;
+  font-size: 24rpx;
+}
+/*盘面*/
+.container .general_info{
+  width: 750rpx;
+  display: inline-block;
+  text-align: center;
+}
+.container .general_info .title{
+  display: inline-block;
+  width: 720rpx;
+  border-style: solid none solid none;
+  border-width: 3rpx;
+  border-color: #E4E4E4;
+}
+.container .general_info .title .left{
+  text-align: left;
+  display: inline-block;
+  line-height: 70rpx;
+  width: 50%;
+  font-size: 30rpx;
+}
+.container .general_info .title .right{
+  text-align: right;
+  display: inline-block;
+  line-height: 70rpx;
+  width: 50%;
+  font-size: 27rpx;
+}
+.container .general_info .form{
+  display: inline-block;
+  width: 720rpx;
+  height: 300rpx;
+  font-size: 27rpx;
+  color: #9d9d9d
+}
+.container .general_info .form .left{
+  display: inline-block;
+  text-align: center;
+  width: 220rpx;
+  height: 300rpx;
+}
+.container .general_info .form .center{
+  display: inline-block;
+  text-align: center;
+  width: 180rpx;
+  height: 300rpx;
+}
+.container .general_info .form .right{
+  display: inline-block;
+  text-align: center;
+  width: 220rpx;
+  height: 300rpx;
+}
+/*阵容*/
+.container .battle_formation{
+  width: 750rpx;
+  display: inline-block;
+  text-align: center;
+}
+.container .battle_formation .title{
+  text-align: center;
+  display: inline-block;
+  line-height: 50rpx;
+  width: 720rpx;
+  font-size: 28rpx;
+}
+.container .battle_formation image{
+  width: 700rpx;
+  height: 370rpx;
+}
+.container .battle_formation .form text{
+  text-align: center;
+  display: inline-block;
+  line-height: 70rpx;
+  width: 80rpx;
+  font-size: 30rpx;
+  border-bottom-style: solid;
+  border-width: 3rpx;
+  border-color: #d3d3d3;
+}
 /*积分*/
 .container .score.form{
   width: 730rpx;
@@ -167,19 +275,32 @@
 .container .race.form .line_form{
   display: inline-block; 
   margin-top: 20rpx; 
-  text-align: center;
+  vertical-align: text-top;
   width: 300rpx;
-  height: 200rpx;
   border-right-style: dashed;
   border-width: 3rpx;
   border-color: #e4e4e4;
 }
-.container .race.form .line_form .content{
-  display: inline-block; 
-  line-height: 40rpx;
-  font-size: 22rpx;
+.container .race.form .line_form .form_item{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 10rpx;
+}
+.container .race.form .line_form .form_item .item_left{
+  display: inline-block;
+  color: #b35c69;
+  width: 30rpx;
+  text-align: right;
+  font-size: 24rpx;
+}
+.container .race.form .line_form .form_item .item_right{
+  display: inline-block;
+  margin: 0 0 0 10rpx;
+  width: 250rpx;
   text-align: left;
-  width: 295rpx;
+  font-size: 24rpx;
+  color: #000000;
 }
 .container .race.form .line_form .line_area{
   display: inline-block; 
@@ -293,3 +414,80 @@
   height: 40rpx;
   font-size: 24rpx;
  }
+ /*评论*/
+.container .comment{
+  width: 750rpx;
+  display: inline-block;
+  text-align: center;
+}
+.container .comment .item{
+  width: 700rpx;
+  display: inline-block;
+}
+.container .comment .item .left{
+  width: 120rpx;
+  display: inline-block;
+}
+.container .comment .item .left image{
+  text-align: right;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.container .comment .item .right{
+  width: 580rpx;
+  display: inline-block;
+  border-top: solid;
+  border-width: 1rpx;
+  border-color: #ebebeb;
+}
+.container .comment .item .right image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+  margin-left: 10rpx;
+}
+.container .comment .item .right .content{
+  color: #000000;
+  padding-left: 0rpx;
+  line-height: 40rpx;
+  padding-bottom: 20rpx;
+}
+.container .comment .item .right text{
+  padding-left: 10rpx;
+  display: inline-block; 
+  width: 580rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  text-align: left;
+  color: #646464;
+}
+.container .comment .item .right .action{
+  width: 60rpx;
+  font-size: 23rpx;
+  text-align: center;
+}
+.container .comment .item .right .reply{
+  background: #f6f6f6;
+  padding-left: 15rpx;
+  margin-bottom: 20rpx;
+}
+.container .comment .bottom{
+  width: 750rpx;
+  height: 70rpx;
+  background: #f8f8f8;
+  display: inline-block; 
+  text-align: center;
+  line-height: 70rpx;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}
+.container .comment .bottom text{
+  color: #d75e5a;
+  font-size: 30rpx;
+}
+.container .comment .bottom image{
+  width: 30rpx;
+  height: 30rpx;
+}
