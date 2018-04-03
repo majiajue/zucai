@@ -4,7 +4,7 @@
   background: #EAEAEA;
 }
 .up image{
-  width: 100rpx;
+  width: 60rpx;
   height: 60rpx;
   margin: 80rpx 0 0 0;
 }

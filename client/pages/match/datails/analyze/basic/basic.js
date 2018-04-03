@@ -7,9 +7,47 @@ Page({
     navTab_top: ["分析", "预测", "赔率", "赛况", "评论"],
     navTab_next: ["基本面", "盘面", "阵容", "积分", "交战信息"],
     currentNavtab_top: "0",
-    currentNavtab_next: "0"
+    currentNavtab_next: "0",
+    match_id: 0,
+    team_a: '',
+    team_a: '',
+    icon_b: '',
+    icon_b: '',
+    win: '',
+    deuce: '',
+    lose: '',
+    fight_history: '',
+    fight_result: ''
   },
   switchTab_top: function (e) {
+    if (e.currentTarget.dataset.idx == 0) {
+      var that = this
+      var fight_history = []
+      var fight_result = []
+      wx.request({
+        url: 'http://120.77.37.9:5000/api/zucai/analyze',
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        data: {
+          'team1': that.data.team_a,
+          'team2': that.data.team_b,
+          'flag': 'get_jibenmian'
+        },
+        method: 'POST',
+        success: function (res) {
+          fight_history = res.data.fight_history
+          fight_result = res.data.fight_result
+          that.setData({
+            fight_history: fight_history,
+            fight_result: fight_result
+          })
+        }
+      })
+      this.setData({
+        currentNavtab_next: 0
+      });
+    }
     if (e.currentTarget.dataset.idx == 1) {
       //预测的饼图
       var windowWidth = 160;
@@ -91,6 +129,9 @@ Page({
       currentNavtab_next: e.currentTarget.dataset.idx
     });
   },
+
+
+
   draw_circle: function (x, num, r, rate, cicle_color, cxt_arc) {
     var num_place = x-13
     if(num<10){
@@ -154,9 +195,51 @@ Page({
 
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数 
+    var match_id = options.match_id
+    var team_a = options.team_a
+    var team_b = options.team_b
+    var icon_a = options.icon_a
+    var icon_b = options.icon_b
+    var win = options.win
+    var deuce = options.deuce
+    var lose = options.lose
+    this.setData({
+      match_id: match_id,
+      team_a: team_a,
+      team_b: team_b,
+      icon_a: icon_a,
+      icon_b: icon_b,
+      win: win,
+      deuce: deuce,
+      lose: lose
+    })
+    
   },
   onReady: function () {
     // 页面渲染完成 
+    var that = this
+    var fight_history = []
+    var fight_result = []
+    wx.request({
+      url: 'http://120.77.37.9:5000/api/zucai/analyze',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      data: {
+        'team1': that.data.team_a,
+        'team2': that.data.team_b,
+        'flag': 'get_jibenmian'
+      },
+      method: 'POST',
+      success: function (res) {
+        fight_history = res.data.fight_history
+        fight_result = res.data.fight_result
+        that.setData({
+          fight_history: fight_history,
+          fight_result: fight_result
+        })
+      }
+    })
   },
   onShow: function () {
     // 页面显示 

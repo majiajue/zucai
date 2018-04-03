@@ -30,8 +30,16 @@ Page({
   },
   //跳转
   openDetail: function (event) {
+    var match_id = event.currentTarget.dataset.match_id;
+    var team_a = event.currentTarget.dataset.team_a;
+    var team_b = event.currentTarget.dataset.team_b;
+    var icon_a = event.currentTarget.dataset.icon_a;
+    var icon_b = event.currentTarget.dataset.icon_b;
+    var win = event.currentTarget.dataset.win;
+    var deuce = event.currentTarget.dataset.deuce;
+    var lose = event.currentTarget.dataset.lose;
     wx.navigateTo({
-      url: '../match/datails/details'
+      url: '../match/datails/details?match_id=' + match_id + '&team_a=' + team_a + '&team_b=' + team_b + '&icon_a=' + icon_a + '&icon_b=' + icon_b + '&win=' + win + '&deuce=' + deuce + '&lose=' + lose
     })
   },
   //首次获取数据及刷新

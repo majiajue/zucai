@@ -9,7 +9,7 @@
   <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
     <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item">
       <view class='grow_date' wx:if="{{item.display_date}}"><text>{{item.display_date}}</text></view>
-      <view class="feed-item" bindtap="openDetail">
+      <view class="feed-item" data-match_id="{{item.id}}" data-team_a="{{item.team1}}" data-team_b="{{item.team2}}" data-icon_a="{{item.team_icon1}}" data-icon_b="{{item.team_icon2}}" data-win="{{item.win}}" data-deuce="{{item.deuce}}" data-lose="{{item.lose}}" bindtap="openDetail">
         <view class="feed-up">
           <div class='grow_back'><text>{{item.display_time}}</text></div>
           <text wx:if="{{item.start_status==2}}" style='color:#EAEAEA'>已结束</text>
@@ -20,10 +20,10 @@
         </view>
         <view class="feed-middle">
           <text class="text1">{{item.team1}}</text>
-          <image class="image1" src="../../images/{{item.team_icon1}}.jpeg"></image>
+          <image class="image1" src="{{item.team_icon1}}"></image>
           <text class="text2">VS</text>
           <text class="text3">{{item.team2}}</text>
-          <image class="image2" src="../../images/{{item.team_icon2}}.jpeg"></image>
+          <image class="image2" src="{{item.team_icon2}}"></image>
         </view>
         <view class="feed-down">
           <view class="left">

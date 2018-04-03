@@ -1,30 +1,54 @@
-
-<view class="container chat">
-  <view class="chat-item flex-wrp">
-    <view class="avatar flex-item">
-      <image src="../../images/icon8.jpeg"></image>
+<view class="item">
+  <view class='top'>
+    <div class="left">
+      <image src='https://img1.dongqiudi.com/fastdfs/M00/AE/4A/ooYBAFia1_aATVKcAAAuzVz-1sU903.png'></image>
+    </div>
+    <div class='right'>
+      <view style='padding-top:20rpx'><text>方案专家</text></view>
+      <view><text style='font-size:28rpx;border-width:2rpx;color:#ee0000;border-style:solid solid solid solid;boder-color:#ee0000'>历史7连红</text></view>      
+    </div>
+  </view>
+  <view class='middle'>
+    <view><text class='text1'>莫尔德VS特罗姆瑟，达人精准推荐</text></view>
+    <view>
+      <text class='text2' style='width:180rpx'>周一040\t挪超</text>
+      <text class='text2' style='text-align:right'>莫尔德</text>
+      <text class='text2' style='width:100rpx'>VS</text>
+      <text class='text2' style='text-align:left'>特罗萨姆</text>
+      <text class='text2'>04-03\t00:00</text>
     </view>
-    <view class="chat-content flex-item">
-      <view class="chat-source">
-        <text class="chatmate">Alex</text>
-        <text class="lasttime">1 个月前</text>
-      </view>
-      <text class="chat-txt">你好~ 你好~ 你好~</text>
+    <view>
+      <text class='text3'>￥\t25</text>
+      <text class='text4'>4分钟前发布</text>
+      <text class='text5'>专家解读中不退款</text>
     </view>
   </view>
-  <view class="chat-item flex-wrp">
-    <view class="avatar flex-item">
-      <image src="../../images/icon2.jpeg"></image>
+</view>
+<view class="item">
+  <view class='top'>
+    <div class="left">
+      <image src='https://img.dongqiudi.com/data/pic/446.png'></image>
+    </div>
+    <div class='right'>
+      <view style='padding-top:20rpx'><text>方案大师</text></view>
+      <view><text style='font-size:28rpx;border-width:2rpx;color:#ee0000;border-style:solid solid solid solid;boder-color:#ee0000'>历史8连红</text></view>      
+    </div>
+  </view>
+  <view class='middle'>
+    <view><text class='text1'>克里斯蒂稳胜？？查看专家分析红单</text></view>
+    <view>
+      <text class='text2' style='width:180rpx'>周一039\t挪超</text>
+      <text class='text2' style='text-align:right'>克里斯蒂</text>
+      <text class='text2' style='width:100rpx'>VS</text>
+      <text class='text2' style='text-align:left'>利勒斯特</text>
+      <text class='text2'>04-03\t00:00</text>
     </view>
-    <view class="chat-content flex-item">
-      <view class="chat-source">
-        <text class="chatmate">George</text>
-        <text class="lasttime">3 个月前</text>
-      </view>
-      <text class="chat-txt">你好~ 你好~ 你好~</text>
+    <view>
+      <text class='text3'>￥\t30</text>
+      <text class='text4'>8分钟前发布</text>
+      <text class='text5'>专家解读中不退款</text>
     </view>
   </view>
-
 </view>
 
 

@@ -1,43 +1,82 @@
-.chat-item{
-  width: 725rpx;
-  background: #ffffff;
-  padding: 25rpx 25rpx 25rpx 0;
-  border-bottom: solid 1px #ebebeb;
+.item{
+  padding-top: 10rpx;
+  margin-bottom: 10rpx;
+  width: 750rpx;
+  height:370rpx;
+  border-bottom: solid;
+  border-width: 5rpx;
+  border-color: #ececec;
 }
-.chat-item  image{
-  width: 80rpx;
-  height: 80rpx;
-  border-radius: 80rpx;
+.item .top{
+  height: 180rpx;
+  display: inline-block;
 }
-.chat-item .avatar{
-  flex: 1;
+.item .top .left{
+  height: 180rpx;
+  width: 180rpx;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
 }
-.chat-item .chat-content{
-  flex: 4;
-  text-align: left;
+.item .top .left image{
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 50%;
 }
-.chat-item .chat-content text{
-  /*display: block;*/
-}
-.chat-item .chat-content .chat-source{
-  color: #818A8F;
-  font-size: 28rpx;
-  padding: 4rpx 0 8rpx 0;
-}
-.chat-item .chat-content .chat-source .chatmate{
+.item .top .right{
+  height: 180rpx;
+  width:570rpx;
+  line-height: 80rpx;
   font-size: 34rpx;
-  color: #000000;
   text-align: left;
+  display: inline-block;
 }
-.chat-item .chat-content .chat-source .lasttime{
-  flex: 1;
-  font-size: 22rpx;
-  float: right;
-  vertical-align: text-bottom;
+.item .middle{
+  width: 750rpx;
+  height: 200rpx;
+  display: inline-block;
+  text-align: center;
 }
-.chat-item .chat-content .chat-txt{
-  display: block;
-  color: #7b7b7b;
-  font-size: 26rpx;
-  line-height: 34rpx;
+.item .middle .text1{
+  width: 700rpx;
+  line-height: 70rpx;
+  font-size: 34rpx;
+  text-align: left;
+  display: inline-block;
+}
+.item .middle .text2{
+  width: 140rpx;
+  color: #898989;
+  background: #efefef;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  text-align: center;
+  display: inline-block;
+}
+.item .middle .text3{
+  width: 120rpx;
+  color: #f28c80;
+  line-height: 30rpx;
+  font-size: 30rpx;
+  text-align: center;
+  border-right-style: solid;
+  border-width: 2rpx;
+  border-color: #000000;
+  display: inline-block;
+}
+.item .middle .text4{
+  width: 180rpx;
+  color: #898989;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  text-align: center;
+  display: inline-block;
+}
+.item .middle .text5{
+  width: 400rpx;
+  color: #23b929;
+  line-height: 40rpx;
+  font-size: 32rpx;
+  text-align: right;
+  display: inline-block;
 }

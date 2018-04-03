@@ -1,15 +1,15 @@
 <view class="up">
   <view class='left'>
-    <image src="../../../../../../images/icon1.jpeg"></image>
-    <view><text class="text1">阿尔青年</text></view>
-    <view><text class="text2">3.00</text></view>
+    <image src="{{icon_a}}"></image>
+    <view><text class="text1">{{team_a}}</text></view>
+    <view><text class="text2">{{win}}</text></view>
     <view class='middle'>
       <text class="text1">VS</text>
-      <view><text class="text2">3.65</text></view>
+      <view><text class="text2">{{deuce}}</text></view>
       <view class='right'>
-        <image src="../../../../../../images/icon2.jpeg"></image>
-        <view><text class="text1">艾因青年</text></view>
-        <view><text class="text2">3.92</text></view>
+        <image src="{{icon_b}}"></image>
+        <view><text class="text1">{{team_b}}</text></view>
+        <view><text class="text2">{{lose}}</text></view>
       </view>
     </view>
   </view>
@@ -19,7 +19,6 @@
     {{itemName}}
   </view>
 </view>
-
 <view class="container">
   <view class="ctnt0" wx:if="{{currentNavtab_top==0}}">
     <view class="top-tab" style="top: 360rpx;left:20rpx;width: 500rpx;">
@@ -30,107 +29,128 @@
     <view style='margin-top:140rpx' wx:if="{{currentNavtab_next==0}}">
       <view class='basic form'>
         <view class='title'>
-          <text>历史交战\t1\t胜\t1\t平\t1\t负</text>
+          <text>{{fight_result[0]}}</text>
         </view>
         <view class='item'>
           <text>时间</text>
           <text style='width:140rpx'>联赛</text>
           <text style='width:370rpx'>比分</text>
         </view>
-        <view class='item'>
-          <text>17-10-07</text>
-          <text style='width:140rpx;color:#76c109'>荷乙</text>
-          <text style='width:150rpx;text-align:right;color:#000000'>埃因青年</text>
-          <text style='width:30rpx'>1</text>
-          <text style='width:10rpx'>:</text>
-          <text style='width:30rpx'>2</text>
-          <text style='width:150rpx;text-align:left;color:#d55152'>阿克马青年</text>
-        </view>
-        <view class='item'>
-          <text>17-10-06</text>
-          <text style='width:140rpx;color:#76c109'>友谊赛</text>
-          <text style='width:150rpx;text-align:right;color:#d55152'>阿克马青年</text>
-          <text style='width:30rpx'>3</text>
-          <text style='width:10rpx'>:</text>
-          <text style='width:30rpx'>2</text>
-          <text style='width:150rpx;text-align:left;color:#000000'>埃因青年</text>
-        </view>
-        <view class='item'>
-          <text>17-10-05</text>
-          <text style='width:140rpx;color:#76c109'>荷乙</text>
-          <text style='width:150rpx;text-align:right;color:#20ab27'>阿克马青年</text>
-          <text style='width:30rpx'>1</text>
-          <text style='width:10rpx'>:</text>
-          <text style='width:30rpx'>1</text>
-          <text style='width:150rpx;text-align:left;color:#20ab27'>埃因青年</text>
-        </view>
+        <block wx:for="{{fight_history[0]}}" wx:for-index="idx" wx:for-item="each_item">
+          <view class='item'>
+            <text>{{each_item[0]}}</text>
+            <text style='width:140rpx;color:#76c109'>{{each_item[1]}}</text>
+            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:right;color:#20ab27'>{{each_item[2]}}</text>
+            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:right;color:#d55152'>{{each_item[2]}}</text>
+            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:right;color:#000000'>{{each_item[2]}}</text>
+            <text style='width:30rpx'>{{each_item[3]}}</text>
+            <text style='width:10rpx'>:</text>
+            <text style='width:30rpx'>{{each_item[4]}}</text>
+            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:left;color:#20ab27'>{{each_item[5]}}</text>
+            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:left;color:#d55152'>{{each_item[5]}}</text>
+            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:left;color:#000000'>{{each_item[5]}}</text>
+          </view>
+        </block>
       </view>
       <view class='basic form'>
         <view class='title'>
-          <text>主队最近战绩\t1\t胜\t1\t平\t1\t负</text>
+          <text>{{fight_result[1]}}</text>
         </view>
         <view class='item'>
           <text>时间</text>
           <text style='width:140rpx'>联赛</text>
           <text style='width:370rpx'>比分</text>
         </view>
-        <view class='item'>
-          <text>17-10-07</text>
-          <text style='width:140rpx;color:#76c109'>荷乙</text>
-          <text style='width:150rpx;text-align:right;color:#000000'>埃因青年</text>
-          <text style='width:30rpx'>1</text>
-          <text style='width:10rpx'>:</text>
-          <text style='width:30rpx'>2</text>
-          <text style='width:150rpx;text-align:left;color:#d55152'>阿克马青年</text>
-        </view>
-        <view class='item'>
-          <text>17-10-06</text>
-          <text style='width:140rpx;color:#76c109'>友谊赛</text>
-          <text style='width:150rpx;text-align:right;color:#d55152'>阿克马青年</text>
-          <text style='width:30rpx'>3</text>
-          <text style='width:10rpx'>:</text>
-          <text style='width:30rpx'>2</text>
-          <text style='width:150rpx;text-align:left;color:#000000'>埃因青年</text>
-        </view>
-        <view class='item'>
-          <text>17-10-05</text>
-          <text style='width:140rpx;color:#76c109'>荷乙</text>
-          <text style='width:150rpx;text-align:right;color:#20ab27'>阿克马青年</text>
-          <text style='width:30rpx'>1</text>
-          <text style='width:10rpx'>:</text>
-          <text style='width:30rpx'>1</text>
-          <text style='width:150rpx;text-align:left;color:#20ab27'>埃因青年</text>
-        </view>
+        <block wx:for="{{fight_history[1]}}" wx:for-index="idx" wx:for-item="each_item">
+          <view class='item'>
+            <text>{{each_item[0]}}</text>
+            <text style='width:140rpx;color:#76c109'>{{each_item[1]}}</text>
+            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:right;color:#20ab27'>{{each_item[2]}}</text>
+            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:right;color:#d55152'>{{each_item[2]}}</text>
+            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:right;color:#000000'>{{each_item[2]}}</text>
+            <text style='width:30rpx'>{{each_item[3]}}</text>
+            <text style='width:10rpx'>:</text>
+            <text style='width:30rpx'>{{each_item[4]}}</text>
+            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:left;color:#20ab27'>{{each_item[5]}}</text>
+            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:left;color:#d55152'>{{each_item[5]}}</text>
+            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:left;color:#000000'>{{each_item[5]}}</text>
+          </view>
+        </block>
       </view>
       <view class='basic form'>
         <view class='title'>
-          <text>主队最近主场战绩\t1\t胜\t1\t平\t1\t负</text>
+          <text>{{fight_result[2]}}</text>
         </view>
         <view class='item'>
           <text>时间</text>
           <text style='width:140rpx'>联赛</text>
           <text style='width:370rpx'>比分</text>
         </view>
+        <block wx:for="{{fight_history[2]}}" wx:for-index="idx" wx:for-item="each_item">
+          <view class='item'>
+            <text>{{each_item[0]}}</text>
+            <text style='width:140rpx;color:#76c109'>{{each_item[1]}}</text>
+            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:right;color:#20ab27'>{{each_item[2]}}</text>
+            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:right;color:#d55152'>{{each_item[2]}}</text>
+            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:right;color:#000000'>{{each_item[2]}}</text>
+            <text style='width:30rpx'>{{each_item[3]}}</text>
+            <text style='width:10rpx'>:</text>
+            <text style='width:30rpx'>{{each_item[4]}}</text>
+            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:left;color:#20ab27'>{{each_item[5]}}</text>
+            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:left;color:#d55152'>{{each_item[5]}}</text>
+            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:left;color:#000000'>{{each_item[5]}}</text>
+          </view>
+        </block>
       </view>
       <view class='basic form'>
         <view class='title'>
-          <text>客队最近战绩\t1\t胜\t1\t平\t1\t负</text>
+          <text>{{fight_result[3]}}</text>
         </view>
         <view class='item'>
           <text>时间</text>
           <text style='width:140rpx'>联赛</text>
           <text style='width:370rpx'>比分</text>
         </view>
+        <block wx:for="{{fight_history[3]}}" wx:for-index="idx" wx:for-item="each_item">
+          <view class='item'>
+            <text>{{each_item[0]}}</text>
+            <text style='width:140rpx;color:#76c109'>{{each_item[1]}}</text>
+            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:right;color:#20ab27'>{{each_item[2]}}</text>
+            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:right;color:#d55152'>{{each_item[2]}}</text>
+            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:right;color:#000000'>{{each_item[2]}}</text>
+            <text style='width:30rpx'>{{each_item[3]}}</text>
+            <text style='width:10rpx'>:</text>
+            <text style='width:30rpx'>{{each_item[4]}}</text>
+            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:left;color:#20ab27'>{{each_item[5]}}</text>
+            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:left;color:#d55152'>{{each_item[5]}}</text>
+            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:left;color:#000000'>{{each_item[5]}}</text>
+          </view>
+        </block>
       </view>
       <view class='basic form'>
         <view class='title'>
-          <text>客队最近客场战绩\t1\t胜\t1\t平\t1\t负</text>
+          <text>{{fight_result[4]}}</text>
         </view>
         <view class='item'>
           <text>时间</text>
           <text style='width:140rpx'>联赛</text>
           <text style='width:370rpx'>比分</text>
         </view>
+        <block wx:for="{{fight_history[4]}}" wx:for-index="idx" wx:for-item="each_item">
+          <view class='item'>
+            <text>{{each_item[0]}}</text>
+            <text style='width:140rpx;color:#76c109'>{{each_item[1]}}</text>
+            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:right;color:#20ab27'>{{each_item[2]}}</text>
+            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:right;color:#d55152'>{{each_item[2]}}</text>
+            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:right;color:#000000'>{{each_item[2]}}</text>
+            <text style='width:30rpx'>{{each_item[3]}}</text>
+            <text style='width:10rpx'>:</text>
+            <text style='width:30rpx'>{{each_item[4]}}</text>
+            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:left;color:#20ab27'>{{each_item[5]}}</text>
+            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:left;color:#d55152'>{{each_item[5]}}</text>
+            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:left;color:#000000'>{{each_item[5]}}</text>
+          </view>
+        </block>
       </view>
     </view>
     <view class='general_info' style='margin-top:140rpx' wx:if="{{currentNavtab_next==1}}">
@@ -247,7 +267,7 @@
       <view class='title'><text>上场比赛阵型</text></view>
       <image src="../../../../../../images/football_field.jpg"></image>
       <view class='title'><text>球员</text></view>
-      <view class='title' style='color:#9a9a9a;background:#e9e9e9'><text>阿克马青年</text></view>
+      <view class='title' style='color:#9a9a9a;background:#e9e9e9'><text>塞维利亚</text></view>
       <view class='form'>
         <text style='color:#a0a0a0;border-bottom-style:none'>号码</text>
         <text style='width:240rpx;color:#a0a0a0;border-bottom-style:none'>姓名</text>
@@ -257,30 +277,94 @@
         <text style='width:120rpx;color:#a0a0a0;border-bottom-style:none'>红/黄</text>
       </view>
       <view class='form'>
-        <text style='color:#a0a0a0'>25</text>
-        <text style='width:240rpx;text-align：left'>N-莱奥</text>
+        <text style='color:#a0a0a0'>9</text>
+        <text style='width:240rpx;text-align：left'>布南</text>
         <text>24</text>
         <text>0</text>
         <text style='width:120rpx'>在场</text>
         <text style='width:120rpx'>0/0</text>
       </view>
       <view class='form'>
-        <text style='color:#a0a0a0'>25</text>
-        <text style='width:240rpx;text-align：left'>N-莱奥</text>
+        <text style='color:#a0a0a0'>6</text>
+        <text style='width:240rpx;text-align：left'>菲尔米诺</text>
         <text>24</text>
         <text>0</text>
         <text style='width:120rpx'>在场</text>
         <text style='width:120rpx'>0/0</text>
       </view>
       <view class='form'>
-        <text style='color:#a0a0a0'>25</text>
-        <text style='width:240rpx;text-align：left'>N-莱奥</text>
+        <text style='color:#a0a0a0'>11</text>
+        <text style='width:240rpx;text-align：left'>洛夫伦</text>
         <text>24</text>
         <text>0</text>
         <text style='width:120rpx'>在场</text>
         <text style='width:120rpx'>0/0</text>
       </view>
-      <view class='title' style='color:#9a9a9a;background:#e9e9e9'><text>埃因青年</text></view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>18</text>
+        <text style='width:240rpx;text-align：left'>萨拉赫</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>5</text>
+        <text style='width:240rpx;text-align：left'>莫雷诺</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>1</text>
+        <text style='width:240rpx;text-align：left'>G-维纳尔顿</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>19</text>
+        <text style='width:240rpx;text-align：left'>卡里乌斯</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>14</text>
+        <text style='width:240rpx;text-align：left'>马蒂普</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>32</text>
+        <text style='width:240rpx;text-align：left'>S-马内</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>66</text>
+        <text style='width:240rpx;text-align：left'>米尔纳</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>7</text>
+        <text style='width:240rpx;text-align：left'>艾利克斯</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='title' style='color:#9a9a9a;background:#e9e9e9'><text>拜仁慕尼黑</text></view>
       <view class='form'>
         <text style='color:#a0a0a0;border-bottom-style:none'>号码</text>
         <text style='width:240rpx;color:#a0a0a0;border-bottom-style:none'>姓名</text>
@@ -290,8 +374,8 @@
         <text style='width:120rpx;color:#a0a0a0;border-bottom-style:none'>红/黄</text>
       </view>
       <view class='form'>
-        <text style='color:#a0a0a0'>25</text>
-        <text style='width:240rpx;text-align：left'>N-莱奥</text>
+        <text style='color:#a0a0a0'>31</text>
+        <text style='width:240rpx;text-align：left'>M-兰达</text>
         <text>24</text>
         <text>0</text>
         <text style='width:120rpx'>在场</text>
@@ -299,7 +383,71 @@
       </view>
       <view class='form'>
         <text style='color:#a0a0a0'>25</text>
-        <text style='width:240rpx;text-align：left'>N-莱奥</text>
+        <text style='width:240rpx;text-align：left'>康塔多</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>17</text>
+        <text style='width:240rpx;text-align：left'>弗鲁姆</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>30</text>
+        <text style='width:240rpx;text-align：left'>萨干</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>2</text>
+        <text style='width:240rpx;text-align：left'>基尔伯特</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>8</text>
+        <text style='width:240rpx;text-align：left'>基特尔</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>8</text>
+        <text style='width:240rpx;text-align：left'>马修斯</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>19</text>
+        <text style='width:240rpx;text-align：left'>坎切拉拉</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>20</text>
+        <text style='width:240rpx;text-align：left'>巴尔韦德</text>
+        <text>24</text>
+        <text>0</text>
+        <text style='width:120rpx'>在场</text>
+        <text style='width:120rpx'>0/0</text>
+      </view>
+      <view class='form'>
+        <text style='color:#a0a0a0'>33</text>
+        <text style='width:240rpx;text-align：left'>金塔纳</text>
         <text>24</text>
         <text>0</text>
         <text style='width:120rpx'>在场</text>
@@ -307,7 +455,7 @@
       </view>
       <view class='form'>
         <text style='color:#a0a0a0'>25</text>
-        <text style='width:240rpx;text-align：left'>N-莱奥</text>
+        <text style='width:240rpx;text-align：left'>布南</text>
         <text>24</text>
         <text>0</text>
         <text style='width:120rpx'>在场</text>
@@ -324,31 +472,68 @@
         <text style='color:#a0a0a0'>积分</text>
       </view>
       <view>
-        <text style='width:80rpx'><text class='circle_text' style='background:#7cc888'>1</text></text>
-        <view class='image_box'><image src="../../../../../../images/icon1.jpeg"></image></view>
-        <text style='text-align:left'>阿贾青年</text>
+        <text style='width:110rpx'><text class='circle_text' style='background:#7cc888'>1</text></text>
+        <text style='text-align:left'>巴塞罗那</text>
         <text style='width:100rpx'>25</text>
         <text>16/4/5</text>
         <text>62/35</text>
         <text>52</text>
       </view>
       <view>
-        <text style='width:80rpx'><text class='circle_text'>2</text></text>
-        <view class='image_box'><image src="../../../../../../images/icon2.jpeg"></image></view>
-        <text style='text-align:left'>奈梅亨</text>
+        <text style='width:110'><text class='circle_text'>2</text></text>
+        <text style='text-align:left'>曼联</text>
         <text style='width:100rpx'>26</text>
         <text>15/5/6</text>
         <text>59/35</text>
         <text>50</text>
       </view>
       <view>
-        <text style='width:80rpx'><text class='circle_text'>3</text></text>
-        <view class='image_box'><image src="../../../../../../images/icon3.jpeg"></image></view>
-        <text style='text-align:left'>福图纳</text>
+        <text style='width:110rpx'><text class='circle_text'>3</text></text>
+        <text style='text-align:left'>国际米兰</text>
         <text style='width:100rpx'>26</text>
         <text>14/4/8</text>
         <text>56/34</text>
         <text>46</text>
+      </view>
+      <view>
+        <text style='width:110rpx'><text class='circle_text'>3</text></text>
+        <text style='text-align:left'>维罗纳</text>
+        <text style='width:100rpx'>26</text>
+        <text>14/5/9</text>
+        <text>49/34</text>
+        <text>43</text>
+      </view>
+      <view>
+        <text style='width:110rpx'><text class='circle_text'>3</text></text>
+        <text style='text-align:left'>伯恩利</text>
+        <text style='width:100rpx'>26</text>
+        <text>14/4/8</text>
+        <text>56/34</text>
+        <text>39</text>
+      </view>
+      <view>
+        <text style='width:110rpx'><text class='circle_text'>3</text></text>
+        <text style='text-align:left'>克罗托内</text>
+        <text style='width:100rpx'>26</text>
+        <text>14/4/8</text>
+        <text>56/34</text>
+        <text>38</text>
+      </view>
+      <view>
+        <text style='width:110rpx'><text class='circle_text'>3</text></text>
+        <text style='text-align:left'>乌迪内斯</text>
+        <text style='width:100rpx'>26</text>
+        <text>14/4/8</text>
+        <text>56/34</text>
+        <text>34</text>
+      </view>
+      <view>
+        <text style='width:110rpx'><text class='circle_text'>3</text></text>
+        <text style='text-align:left'>拉齐奥</text>
+        <text style='width:100rpx'>26</text>
+        <text>14/4/8</text>
+        <text>56/34</text>
+        <text>31</text>
       </view>
     </view>
     <view class='race form' style='margin-top:140rpx' wx:if="{{currentNavtab_next==4}}">

@@ -59,3 +59,29 @@ class Match(db.Model):
     deuce = db.Column(db.String(60), nullable=True)
     lose = db.Column(db.String(60), nullable=True)
     program_num = db.Column(db.Integer, nullable=True)
+
+class Details(db.Model):
+    __tablename__ = 'details'
+
+    id = db.Column(db.Integer, primary_key=True)
+    a = db.Column(db.String(60), nullable=False)
+    b = db.Column(db.String(60), nullable=False)
+    c = db.Column(db.String(60), nullable=False)
+    d = db.Column(db.String(60), nullable=False)
+    e = db.Column(db.String(60), nullable=False)
+    f = db.Column(db.String(60), nullable=False)
+    g = db.Column(db.String(60), nullable=False)
+
+class HistoryMatch(db.Model):
+    __tablename__ = 'history_match'
+
+    id = db.Column(db.Integer, primary_key=True)
+    team1 = db.Column(db.String(60), nullable=False)
+    team2 = db.Column(db.String(60), nullable=False)
+    icon1 = db.Column(db.String(60), nullable=False)
+    icon2 = db.Column(db.String(60), nullable=False)
+    score1 = db.Column(db.Integer, nullable=False)
+    score2 = db.Column(db.Integer, nullable=False)
+    alience = db.Column(db.String(60), nullable=False)
+    time = db.Column(db.String(60), nullable=False)
+    is_main_team1 = db.Column(db.Integer, nullable=False)

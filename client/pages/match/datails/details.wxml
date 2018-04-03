@@ -1,15 +1,15 @@
 <view class="up">
   <view class='left'>
-    <image src="../../../images/icon1.jpeg"></image>
-    <view><text class="text1">阿尔青年</text></view>
-    <view><text class="text2">3.00</text></view>
+    <image src="{{icon_a}}"></image>
+    <view><text class="text1">{{team_a}}</text></view>
+    <view><text class="text2">{{win}}</text></view>
     <view class='middle'>
       <text class="text1">VS</text>
-      <view><text class="text2">3.65</text></view>
+      <view><text class="text2">{{deuce}}</text></view>
       <view class='right'>
-        <image src="../../../images/icon2.jpeg"></image>
-        <view><text class="text1">埃因青年</text></view>
-        <view><text class="text2">3.92</text></view>
+        <image src="{{icon_b}}"></image>
+        <view><text class="text1">{{team_b}}</text></view>
+        <view><text class="text2">{{lose}}</text></view>
       </view>
     </view>
   </view>
@@ -19,9 +19,9 @@
         <text>预测</text>
       </div>
       <div class="item_right">
-        <text style="margin: 0 30rpx 0 30rpx">17%主胜</text>
-        <text style="margin: 0 30rpx 0 30rpx">23%平</text>
-        <text style="margin: 0 30rpx 0 30rpx">60%客胜</text>
+        <text style="margin: 0 30rpx 0 30rpx">{{feed.a[0]}}</text>
+        <text style="margin: 0 30rpx 0 30rpx">{{feed.a[1]}}</text>
+        <text style="margin: 0 30rpx 0 30rpx">{{feed.a[2]}}</text>
       </div>
     </view>
     <view class="form_item">
@@ -31,37 +31,61 @@
       <div class="item_right">
         <view class="inside_form">
           <div class="option"><text>0</text></div>
-          <div class="items"><text>22%</text></div>
-          <div class="items"><text>22%</text></div>
-          <div class="items"><text>22%</text></div>
+          <div class="items"><text>{{feed.b[0]}}</text><text>%</text></div>
+          <div class="items"><text>{{feed.b[1]}}</text><text>%</text></div>
+          <div class="items"><text>{{feed.b[2]}}</text><text>%</text></div>
         </view>
         <view class="inside_form">
           <div class="option" style="background-color: #c6322c;color: #ffffff"><text>+1</text></div>
-          <div class="items"><text>22%</text></div>
-          <div class="items"><text>22%</text></div>
-          <div class="items"><text>22%</text></div>
+          <div class="items"><text>{{feed.b[3]}}</text><text>%</text></div>
+          <div class="items"><text>{{feed.b[4]}}</text><text>%</text></div>
+          <div class="items"><text>{{feed.b[5]}}</text><text>%</text></div>
         </view>
       </div>
     </view>
     <view class="form_item">
       <div class="item_left"><text>近期状态</text></div>
       <div class="item_right">
-        <text>主队3胜1平6负,客队7胜1平2负</text>
+        <text>主队</text>
+        <text>{{feed.c[0]}}</text>
+        <text>胜</text>
+        <text>{{feed.c[1]}}</text>
+        <text>平</text>
+        <text>{{feed.c[2]}}</text>
+        <text>负,客队</text>
+        <text>{{feed.c[3]}}</text>
+        <text>胜</text>
+        <text>{{feed.c[4]}}</text>
+        <text>平</text>
+        <text>{{feed.c[5]}}</text>
+        <text>负</text>
       </div>
     </view>
     <view class="form_item">
       <div class="item_left"><text>主客状态</text></div>
       <div class="item_right">
-        <text>主队主场4胜1平1负,客队客场4胜2平4负</text>
+        <text>主队主场</text>
+        <text>{{feed.d[0]}}</text>
+        <text>胜</text>
+        <text>{{feed.d[1]}}</text>
+        <text>平</text>
+        <text>{{feed.d[2]}}</text>
+        <text>负,客队客场</text>
+        <text>{{feed.d[3]}}</text>
+        <text>胜</text>
+        <text>{{feed.d[4]}}</text>
+        <text>平</text>
+        <text>{{feed.d[5]}}</text>
+        <text>负</text>
       </div>
     </view>
     <view class="form_item">
       <div class="item_left"><text>两队交锋</text></div>
       <div class="item_right">
-        <text>共6次交锋，主队</text>
-        <text style="color:#d24c46">3胜</text>
-        <text style="color:#5baf72">0平</text>
-        <text style="color:#5c79c5">3负</text>
+        <text>共</text><text>{{feed.e[0]}}</text><text>次交锋，主队</text>
+        <text style="color:#d24c46">{{feed.e[1]}}</text><text style="color:#d24c46">胜</text>
+        <text style="color:#5baf72">{{feed.e[2]}}</text><text style="color:#5baf72">平</text>
+        <text style="color:#5c79c5">{{feed.e[3]}}</text><text style="color:#5c79c5">负</text>
       </div>
     </view>
     <view class="last_item">
@@ -69,12 +93,19 @@
       <view class="item_right">
         <canvas class="circle" canvas-id="canvasArc"> </canvas> 
         <view>
-          <text>主胜增强</text>
-          <text>平局减弱</text>
-          <text>客胜减弱</text>
+          <text>{{feed.f[0]}}</text>
+          <text>{{feed.f[1]}}</text>
+          <text>{{feed.f[2]}}</text>
         </view>
         <view>
-          <text style="margin: 0 0 0 0;color: #000000;">25家赔率公司中，有11家对主胜信心增强，12家对平局信心减弱，12家对客胜信心减弱</text>
+          <text style="margin:0 0 0 0;color:#000000">{{feed.g[0]}}</text>
+          <text style="margin:0 0 0 0;color:#000000">家赔率公司中，有</text>
+          <text style="margin:0 0 0 0;color:#000000">{{feed.g[1]}}</text>
+          <text style="margin:0 0 0 0;color:#000000">家对主胜信心增强，</text>
+          <text style="margin:0 0 0 0;color:#000000">{{feed.g[2]}}</text>
+          <text style="margin:0 0 0 0;color:#000000">家对平局信心减弱，</text>
+          <text style="margin:0 0 0 0;color:#000000">{{feed.g[3]}}</text>
+          <text style="margin:0 0 0 0;color:#000000">家对客胜信心减弱</text>
         </view>
       </view>
     </view>
