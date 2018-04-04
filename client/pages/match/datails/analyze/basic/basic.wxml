@@ -808,7 +808,7 @@
   </view>
   <view class="comment" style='padding-top:65rpx' wx:if="{{currentNavtab_top==4}}">
     <view class='item'>
-      <view class='left'><image src="../../../../../../images/icon3.jpeg"></image></view>
+      <view class='left'><image src="https://img.dongqiudi.com/data/pic/675.png"></image></view>
       <view class='right' style='border-top:none'>
         <view>
           <text style='width:380rpx'>也许吧</text>
@@ -820,7 +820,7 @@
       </view>
     </view>
     <view class='item'>
-      <view class='left'><image src="../../../../../../images/icon6.jpeg"></image></view>
+      <view class='left'><image src="https://img.dongqiudi.com/data/pic/684.png"></image></view>
       <view class='right'>
         <view>
           <text style='width:380rpx'>七海萨达</text>
@@ -833,7 +833,7 @@
       </view>
     </view>
     <view class='item'>
-      <view class='left'><image src="../../../../../../images/icon5.jpeg"></image></view>
+      <view class='left'><image src="https://img.dongqiudi.com/soccer/data/logo/team/559.png"></image></view>
       <view class='right'>
         <view>
           <text style='width:380rpx'>七海萨达</text>
