@@ -15,7 +15,7 @@
       <text class='text2' style='text-align:right'>莫尔德</text>
       <text class='text2' style='width:100rpx'>VS</text>
       <text class='text2' style='text-align:left'>特罗萨姆</text>
-      <text class='text2'>04-03\t00:00</text>
+      <text class='text2'>4/3\t00:00</text>
     </view>
     <view>
       <text class='text3'>￥\t25</text>
@@ -41,7 +41,7 @@
       <text class='text2' style='text-align:right'>克里斯蒂</text>
       <text class='text2' style='width:100rpx'>VS</text>
       <text class='text2' style='text-align:left'>利勒斯特</text>
-      <text class='text2'>04-03\t00:00</text>
+      <text class='text2'>4/3\t00:00</text>
     </view>
     <view>
       <text class='text3'>￥\t30</text>
