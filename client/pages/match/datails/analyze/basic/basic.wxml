@@ -264,9 +264,6 @@
       </view>
     </view>
     <view class="battle_formation" style='margin-top:140rpx' wx:if="{{currentNavtab_next==2}}">
-      <view class='title'><text>上场比赛阵型</text></view>
-      <image src="../../../../../../images/football_field.jpg"></image>
-      <view class='title'><text>球员</text></view>
       <view class='title' style='color:#9a9a9a;background:#e9e9e9'><text>塞维利亚</text></view>
       <view class='form'>
         <text style='color:#a0a0a0;border-bottom-style:none'>号码</text>
@@ -806,7 +803,7 @@
       </view>
     </view>
   </view>
-  <view class="comment" style='padding-top:65rpx' wx:if="{{currentNavtab_top==4}}">
+  <!-- <view class="comment" style='padding-top:65rpx' wx:if="{{currentNavtab_top==4}}">
     <view class='item'>
       <view class='left'><image src="https://img.dongqiudi.com/data/pic/675.png"></image></view>
       <view class='right' style='border-top:none'>
@@ -847,6 +844,6 @@
     <view class="bottom">
       <image src="../../../../../../images/edit.png"></image>
       <text>\t发表评论</text>
-  </view>
-  </view>
+    </view>
+  </view> -->
 </view>
