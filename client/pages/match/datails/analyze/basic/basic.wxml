@@ -760,7 +760,7 @@
         <text style='border-right-style:none'>2.15</text>
       </view>
       <view class='item'>
-        <text style='color:#98c850;border-color:#fbf9fb'>12bet.com</text>
+        <text style='color:#98c850;border-color:#fbf9fb'>bet356.com</text>
         <text>02-26 14:24</text>
         <text>2.89</text>
         <text>3.45</text>
@@ -772,6 +772,48 @@
         <text style='color:#98c850'>↓1.3%</text>
         <text>0%</text>
         <text style='color:#e82716;border-right-style:none'>↑0.5%</text>
+      </view>
+      <view class='item'>
+        <text style='border-left-color:#fbf9fb;color:#fbf9fb'>0</text>
+        <text>初盘</text>
+        <text>3.12</text>
+        <text>3.26</text>
+        <text style='border-right-style:none'>2.97</text>
+      </view>
+      <view class='item'>
+        <text style='color:#98c850;border-color:#fbf9fb'>威廉希尔</text>
+        <text>02-26 14:24</text>
+        <text>3.22</text>
+        <text>3.45</text>
+        <text style='border-right-style:none'>2.16</text>
+      </view>
+      <view class='item'>
+        <text style='border-left-color:#fbf9fb;border-right-color:#fbf9fb;border-top-color:#fbf9fb;color:#fbf9fb'>0</text>
+        <text>变化  </text>
+        <text style='color:#e82716'>↑3.2%</text>
+        <text>0%</text>
+        <text style='color:#e82716;border-right-style:none'>↑6.4%</text>
+      </view>
+      <view class='item'>
+        <text style='border-left-color:#fbf9fb;color:#fbf9fb'>0</text>
+        <text>初盘</text>
+        <text>2.17</text>
+        <text>1.92</text>
+        <text style='border-right-style:none'>2.81</text>
+      </view>
+      <view class='item'>
+        <text style='color:#98c850;border-color:#fbf9fb'>韦博</text>
+        <text>02-26 14:24</text>
+        <text>2.19</text>
+        <text>1.94</text>
+        <text style='border-right-style:none'>2.75</text>
+      </view>
+      <view class='item'>
+        <text style='border-left-color:#fbf9fb;border-right-color:#fbf9fb;border-top-color:#fbf9fb;color:#fbf9fb'>0</text>
+        <text>变化  </text>
+        <text style='color:#e82716'>↑0.1%</text>
+        <text style='color:#e82716'>↑0.1%</text>
+        <text style='color:#98c850;border-right-style:none'>↓1.4%</text>
       </view>
     </view>
   </view>
