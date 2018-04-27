@@ -1,6 +1,7 @@
 Page({
   data: {
-    navTab: ["即时", "赛果", "赛程", "胜负彩"],
+    // navTab: ["即时", "赛果", "赛程", "胜负彩"],
+    navTab: ["即时", "赛果"],
     currentNavtab: "0",
     feed: [],
     feed_length: 0,

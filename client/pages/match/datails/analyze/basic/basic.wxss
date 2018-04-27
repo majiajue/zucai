@@ -117,7 +117,7 @@
   color: #a0a0a0;
   line-height: 60rpx;
   width: 190rpx;
-  font-size: 24rpx;
+  font-size: 28rpx;
 }
 /*盘面*/
 .container .general_info{
@@ -144,13 +144,13 @@
   display: inline-block;
   line-height: 70rpx;
   width: 50%;
-  font-size: 27rpx;
+  font-size: 28rpx;
 }
 .container .general_info .form{
   display: inline-block;
   width: 720rpx;
   height: 300rpx;
-  font-size: 27rpx;
+  font-size: 28rpx;
   color: #9d9d9d
 }
 .container .general_info .form .left{
@@ -184,16 +184,12 @@
   width: 720rpx;
   font-size: 28rpx;
 }
-.container .battle_formation image{
-  width: 700rpx;
-  height: 370rpx;
-}
 .container .battle_formation .form text{
   text-align: center;
   display: inline-block;
   line-height: 70rpx;
   width: 80rpx;
-  font-size: 30rpx;
+  font-size: 28rpx;
   border-bottom-style: solid;
   border-width: 3rpx;
   border-color: #d3d3d3;
@@ -233,7 +229,7 @@
   display: inline-block;
   line-height: 70rpx;
   width: 120rpx;
-  font-size: 30rpx;
+  font-size: 28rpx;
   border-top-style: solid;
   border-top-width: 3rpx;
   border-color: #E4E4E4;
@@ -249,7 +245,7 @@
   display: inline-block;
   line-height: 70rpx;
   width: 90%;
-  font-size: 28rpx;
+  font-size: 30rpx;
   border-style: solid none solid none;
   border-width: 3rpx;
   border-color: #E4E4E4;
@@ -264,7 +260,7 @@
 .container .race.form .content{
   display: inline-block; 
   line-height: 50rpx;
-  font-size: 25rpx;
+  font-size: 28rpx;
   text-align: left;
   width: 600rpx;
 }
@@ -288,14 +284,14 @@
   color: #b35c69;
   width: 30rpx;
   text-align: right;
-  font-size: 24rpx;
+  font-size: 28rpx;
 }
 .container .race.form .line_form .form_item .item_right{
   display: inline-block;
   margin: 0 0 0 10rpx;
   width: 250rpx;
   text-align: left;
-  font-size: 24rpx;
+  font-size: 28rpx;
   color: #000000;
 }
 .container .race.form .line_form .line_area{
@@ -337,7 +333,7 @@
 }
 .container .forecast.top .left canvas{
   width: 300rpx;
-  height: 350rpx;
+  height: 360rpx;
 }
 .container .forecast.top .right{
   display: flex; 
@@ -349,26 +345,26 @@
 .container .forecast.top .right text{
   padding-top:15rpx;
   color: #b9b9b9;
-  font-size: 30rpx;
+  font-size: 28rpx;
   text-align: center;
 }
 .container .forecast.title{
   color: #f5c668;
   background: #ffffff;
-  font-size: 35rpx;
+  font-size: 32rpx;
   font-weight: 500;
   text-align: center;
-  line-height: 40px;
+  line-height: 70rpx;
 }
 .container .forecast.content{
   background: #f8f8f8;
-  font-size: 30rpx;
+  font-size: 28rpx;
   text-align: left;
 }
 .container .forecast.content text{
   margin-left: 20rpx;
   color: #8b8a8b;
-  line-height: 35px;
+  line-height: 56rpx;
 }
 /*赔率*/
 .container .rate.form{
@@ -380,11 +376,11 @@
 .container .rate.form text{
   width: 149rpx;
   text-align: center; 
-  line-height: 30px;
+  line-height: 32px;
   background-color: #fbf9fb; 
   border: 1rpx solid #dbdbdb; 
   color: #7a797a;
-  font-size: 24rpx;
+  font-size: 27rpx;
   margin: 0 0 -2rpx -1rpx;
   display: inline-block;
  }
@@ -408,7 +404,7 @@
   display: inline-block;
   width: 105rpx;
   height: 40rpx;
-  font-size: 24rpx;
+  font-size: 28rpx;
  }
  /*评论*/
 .container .comment{
@@ -454,7 +450,7 @@
   display: inline-block; 
   width: 580rpx;
   line-height: 60rpx;
-  font-size: 26rpx;
+  font-size: 28rpx;
   text-align: left;
   color: #646464;
 }

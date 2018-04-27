@@ -24,7 +24,7 @@
         <text style="margin: 0 30rpx 0 30rpx">{{feed.a[2]}}</text>
       </div>
     </view>
-    <view class="form_item">
+    <!-- <view class="form_item">
       <div class="item_left">
         <text >投注比例</text>
       </div>
@@ -42,7 +42,7 @@
           <div class="items"><text>{{feed.b[5]}}</text><text>%</text></div>
         </view>
       </div>
-    </view>
+    </view> -->
     <view class="form_item">
       <div class="item_left"><text>近期状态</text></div>
       <div class="item_right">
@@ -98,14 +98,7 @@
           <text>{{feed.f[2]}}</text>
         </view>
         <view>
-          <text style="margin:0 0 0 0;color:#000000">{{feed.g[0]}}</text>
-          <text style="margin:0 0 0 0;color:#000000">家赔率公司中，有</text>
-          <text style="margin:0 0 0 0;color:#000000">{{feed.g[1]}}</text>
-          <text style="margin:0 0 0 0;color:#000000">家对主胜信心增强，</text>
-          <text style="margin:0 0 0 0;color:#000000">{{feed.g[2]}}</text>
-          <text style="margin:0 0 0 0;color:#000000">家对平局信心减弱，</text>
-          <text style="margin:0 0 0 0;color:#000000">{{feed.g[3]}}</text>
-          <text style="margin:0 0 0 0;color:#000000">家对客胜信心减弱</text>
+          <text style="margin:0 0 0 0;color:#000000">{{feed.g[0]}}家赔率公司中，有{{feed.g[1]}}家对主胜信心增强，{{feed.g[2]}}家对平局信心减弱，{{feed.g[3]}}家对客胜信心减弱</text>
         </view>
       </view>
     </view>

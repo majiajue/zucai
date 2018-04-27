@@ -4,7 +4,8 @@ var app = getApp();
 var ringChart = null;
 Page({
   data: {
-    navTab_top: ["分析", "预测", "赔率", "赛况", "评论"],
+    // navTab_top: ["分析", "预测", "赔率", "赛况", "评论"],
+    navTab_top: ["分析", "预测", "赔率", "赛况"],
     navTab_next: ["基本面", "盘面", "阵容", "积分", "交战信息"],
     currentNavtab_top: "0",
     currentNavtab_next: "0",
@@ -53,8 +54,7 @@ Page({
       var windowWidth = 160;
       try {
         var res = wx.getSystemInfoSync();
-        windowWidth = res.windowWidth;
-        windowWidth = parseInt(windowWidth * 0.388)
+        windowWidth = parseInt(res.windowWidth * 0.42)
       } catch (e) {
         console.error('getSystemInfoSync failed!');
       }
@@ -112,13 +112,13 @@ Page({
       //交战信息的圆圈
       var that = this;
       var width = wx.getSystemInfoSync().windowWidth
-      var r = parseInt(width * 0.061)
+      var r = parseInt(width * 0.058)
       //画两个圆(x1, x2，胜率1，胜率2，颜色1，颜色2，半径，canvans_id)(胜率用小数表示，如0.5)
-      that.draw_two_circle(100, 260, 0.55, 0.45, r, 'two_circle1')
-      that.draw_two_circle(100, 260, 0.41, 0.59, r, 'two_circle2')
-      that.draw_two_circle(100, 260, 0.55, 0.45, r, 'two_circle3')
-      that.draw_two_circle(100, 260, 0.63, 0.37, r, 'two_circle4')
-      that.draw_three_circle(60, 180, 300, 0.5, 0, 0.5, '#528259', r, 'three_circle')
+      that.draw_two_circle(parseInt(width * 0.243), parseInt(width * 0.631), 0.55, 0.45, r, 'two_circle1')
+      that.draw_two_circle(parseInt(width * 0.243), parseInt(width * 0.631), 0.55, 0.45, r, 'two_circle2')
+      that.draw_two_circle(parseInt(width * 0.243), parseInt(width * 0.631), 0.55, 0.45, r, 'two_circle3')
+      that.draw_two_circle(parseInt(width * 0.243), parseInt(width * 0.631), 0.55, 0.45, r, 'two_circle4')
+      that.draw_three_circle(parseInt(width * 0.146), parseInt(width * 0.437), parseInt(width * 0.728), 0.5, 0, 0.5, '#528259', r, 'three_circle')
       //交战信息的进度条
       that.draw_line('canvasLine1', '#b35c69')
       that.draw_line('canvasLine2', '#668fa3')
