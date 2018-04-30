@@ -6,7 +6,8 @@ Page({
     feed: [],
     feed_length: 0,
     page: 1,
-    isAllDisplayed: false
+    isAllDisplayed: false,
+    old_date_utc: ''
   },
   onLoad: function () {
     this.getData();
@@ -31,11 +32,12 @@ Page({
   },
   //跳转
   openDetail: function (event) {
+    console.log(event.currentTarget.dataset)
     var match_id = event.currentTarget.dataset.match_id;
-    var team_a = event.currentTarget.dataset.team_a;
-    var team_b = event.currentTarget.dataset.team_b;
-    var icon_a = event.currentTarget.dataset.icon_a;
-    var icon_b = event.currentTarget.dataset.icon_b;
+    var team_a = event.currentTarget.dataset.hostteam_name;
+    var team_b = event.currentTarget.dataset.guestteam_name;
+    var icon_a = event.currentTarget.dataset.hostteam_logo;
+    var icon_b = event.currentTarget.dataset.guestteam_logo;
     var win = event.currentTarget.dataset.win;
     var deuce = event.currentTarget.dataset.deuce;
     var lose = event.currentTarget.dataset.lose;
@@ -48,20 +50,30 @@ Page({
     var that = this
     var feed_data = []
     wx.request({
-      url: 'http://120.77.37.9:5000/api/zucai/zucai',
+      url: 'http://47.94.47.83:13001/api/v1/match/list',
       header: {
         'content-type': 'application/json' // 默认值
       },
       data:{
         'page': that.data.page,
-        'flag': 'get_table_data'
+        'len':12
       },
       method: 'POST',
       success: function (res) {
-        feed_data = res.data.answer_data
+        feed_data = res.data.data.match_list
         if (feed_data.length == 0) {
           that.data.isAllDisplayed = true
         } else {
+          for (var i=0; i<feed_data.length; i++) {
+            if (that.data.old_date_utc == feed_data[i]['date_utc']) {
+              delete feed_data[i]['date_utc']
+            } else {
+              that.data.old_date_utc = feed_data[i]['date_utc']
+              feed_data[i]['date_utc'] = feed_data[i]['date_utc'].substring(5)
+              feed_data[i]['odds'] = feed_data[i]['odds'].split(':')
+            }
+            feed_data[i]['time_utc'] = feed_data[i]['start_play'].substring(11,16)
+          }
           that.setData({
             feed: feed_data,
             feed_length: feed_data.length
@@ -75,38 +87,33 @@ Page({
   nextLoad: function(){
     var that = this
     var next_data = []
-    var last_data = ''
-    for (var i = that.data.feed_length - 1 ; i >= 0; i--) {
-      if (that.data.feed[i]['display_date']) {
-        last_data = that.data.feed[i]['display_date']
-        break
-      }
-    }
     that.setData({
       page: that.data.page + 1
     })
     wx.request({
-      url: 'http://120.77.37.9:5000/api/zucai/zucai',
+      url: 'http://47.94.47.83:13001/api/v1/match/list',
       header: {
         'content-type': 'application/json'
       },
       data: {
         'page': that.data.page,
-        'flag': 'get_table_data'
+        'len': 12
       },
       method: 'POST',
       success: function (res) {
-        next_data = res.data.answer_data
+        next_data = res.data.data.match_list
         if (next_data.length == 0) {
           that.data.isAllDisplayed = true
         } else {
           for (var i = 0; i < next_data.length; i++) {
-            if (next_data[i]['display_date']) {
-              if (next_data[i]['display_date'] == last_data){
-                delete next_data[i]['display_date']
-              }
-              break
+            if (that.data.old_date_utc == next_data[i]['date_utc']) {
+              delete next_data[i]['date_utc']
+            } else {
+              that.data.old_date_utc = next_data[i]['date_utc']
+              next_data[i]['date_utc'] = next_data[i]['date_utc'].substring(5)
+              next_data[i]['odds'] = next_data[i]['odds'].split(':')
             }
+            next_data[i]['time_utc'] = next_data[i]['start_play'].substring(11, 16)
           }
           that.setData({
             feed: that.data.feed.concat(next_data),

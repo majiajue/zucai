@@ -8,30 +8,30 @@
 <scroll-view scroll-y="true" class="container withtab" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
   <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
     <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item">
-      <view class='grow_date' wx:if="{{item.display_date}}"><text>{{item.display_date}}</text></view>
-      <view class="feed-item" data-match_id="{{item.id}}" data-team_a="{{item.team1}}" data-team_b="{{item.team2}}" data-icon_a="{{item.team_icon1}}" data-icon_b="{{item.team_icon2}}" data-win="{{item.win}}" data-deuce="{{item.deuce}}" data-lose="{{item.lose}}" bindtap="openDetail">
+      <view class='grow_date' wx:if="{{item.date_utc}}"><text>{{item.date_utc}}</text></view>
+      <view class="feed-item" data-match_id="{{item.match_id}}" data-team_a="{{item.hostteam_name}}" data-team_b="{{item.guestteam_name}}" data-icon_a="{{item.hostteam_logo}}" data-icon_b="{{item.guestteam_logo}}" data-win="{{item.odds[0]}}" data-deuce="{{item.idds[1]}}" data-lose="{{item.odds[2]}}" bindtap="openDetail">
         <view class="feed-up">
-          <div class='grow_back'><text>{{item.display_time}}</text></div>
-          <text wx:if="{{item.start_status==2}}" style='color:#EAEAEA'>已结束</text>
-          <text wx:if="{{item.start_status==1}}" style='color:#EE4400'>进行中</text>
-          <text wx:if="{{item.start_status==0}}" style='color:#ffd966'>未开始</text>
-          <text>{{item.group_name}}</text>
+          <div class='grow_back'><text>{{item.time_utc}}</text></div>
+          <text wx:if="{{item.status==2}}" style='color:#EAEAEA'>已结束</text>
+          <text wx:if="{{item.status==1}}" style='color:#EE4400'>进行中</text>
+          <text wx:if="{{item.status==0}}" style='color:#ffd966'>未开始</text>
+          <text>{{item.competition_name}}</text>
           <image src="../../images/ring_off.png"></image>
         </view>
         <view class="feed-middle">
-          <text class="text1">{{item.team1}}</text>
-          <image class="image1" src="{{item.team_icon1}}"></image>
+          <text class="text1">{{item.hostteam_name}}</text>
+          <image class="image1" src="{{item.hostteam_logo}}"></image>
           <text class="text2">VS</text>
-          <text class="text3">{{item.team2}}</text>
-          <image class="image2" src="{{item.team_icon2}}"></image>
+          <text class="text3">{{item.guestteam_name}}</text>
+          <image class="image2" src="{{item.guestteam_logo}}"></image>
         </view>
         <view class="feed-down">
           <view class="left">
-            <a>胜{{item.win}} </a>
-            <a>平{{item.deuce}} </a>
-            <a>负{{item.lose}}</a>
+            <a>胜{{item.odds[0]}} </a>
+            <a>平{{item.odds[1]}} </a>
+            <a>负{{item.odds[2]}}</a>
             <view class="right">
-              <a>{{item.program_num}}个方案></a>
+              <a>{{item.plan_nums}}个方案></a>
             </view>
           </view>
         </view>
