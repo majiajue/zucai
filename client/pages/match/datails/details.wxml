@@ -19,9 +19,9 @@
         <text>预测</text>
       </div>
       <div class="item_right">
-        <text style="margin: 0 30rpx 0 30rpx">{{feed.a[0]}}</text>
-        <text style="margin: 0 30rpx 0 30rpx">{{feed.a[1]}}</text>
-        <text style="margin: 0 30rpx 0 30rpx">{{feed.a[2]}}</text>
+        <text style="margin: 0 30rpx 0 30rpx">{{feed.predict_probability.homeWin}}</text>
+        <text style="margin: 0 30rpx 0 30rpx">{{feed.predict_probability.draw}}</text>
+        <text style="margin: 0 30rpx 0 30rpx">{{feed.predict_probability.awayWin}}</text>
       </div>
     </view>
     <!-- <view class="form_item">
@@ -47,17 +47,17 @@
       <div class="item_left"><text>近期状态</text></div>
       <div class="item_right">
         <text>主队</text>
-        <text>{{feed.c[0]}}</text>
+        <text>{{feed.recent_10_matches_of_home_team.statistics.win}}</text>
         <text>胜</text>
-        <text>{{feed.c[1]}}</text>
+        <text>{{feed.recent_10_matches_of_home_team.statistics.draw}}</text>
         <text>平</text>
-        <text>{{feed.c[2]}}</text>
+        <text>{{feed.recent_10_matches_of_home_team.statistics.lost}}</text>
         <text>负,客队</text>
-        <text>{{feed.c[3]}}</text>
+        <text>{{feed.recent_10_matches_of_away_team.statistics.win}}</text>
         <text>胜</text>
-        <text>{{feed.c[4]}}</text>
+        <text>{{feed.recent_10_matches_of_away_team.statistics.draw}}</text>
         <text>平</text>
-        <text>{{feed.c[5]}}</text>
+        <text>{{feed.recent_10_matches_of_away_team.statistics.lost}}</text>
         <text>负</text>
       </div>
     </view>
@@ -65,27 +65,27 @@
       <div class="item_left"><text>主客状态</text></div>
       <div class="item_right">
         <text>主队主场</text>
-        <text>{{feed.d[0]}}</text>
+        <text>{{feed.recent_10_home_matches_of_home_team.statistics.win}}</text>
         <text>胜</text>
-        <text>{{feed.d[1]}}</text>
+        <text>{{feed.recent_10_home_matches_of_home_team.statistics.draw}}</text>
         <text>平</text>
-        <text>{{feed.d[2]}}</text>
+        <text>{{feed.recent_10_home_matches_of_home_team.statistics.lost}}</text>
         <text>负,客队客场</text>
-        <text>{{feed.d[3]}}</text>
+        <text>{{feed.recent_10_away_matches_of_away_team.statistics.win}}</text>
         <text>胜</text>
-        <text>{{feed.d[4]}}</text>
+        <text>{{feed.recent_10_away_matches_of_away_team.statistics.draw}}</text>
         <text>平</text>
-        <text>{{feed.d[5]}}</text>
+        <text>{{feed.recent_10_away_matches_of_away_team.statistics.lost}}</text>
         <text>负</text>
       </div>
     </view>
     <view class="form_item">
       <div class="item_left"><text>两队交锋</text></div>
       <div class="item_right">
-        <text>共</text><text>{{feed.e[0]}}</text><text>次交锋，主队</text>
-        <text style="color:#d24c46">{{feed.e[1]}}</text><text style="color:#d24c46">胜</text>
-        <text style="color:#5baf72">{{feed.e[2]}}</text><text style="color:#5baf72">平</text>
-        <text style="color:#5c79c5">{{feed.e[3]}}</text><text style="color:#5c79c5">负</text>
+        <text>共</text><text>{{feed.recent_10_matches_with_each_other.statistics.win + feed.recent_10_matches_with_each_other.statistics.draw + feed.recent_10_matches_with_each_other.statistics.lost}}</text><text>次交锋，主队</text>
+        <text style="color:#d24c46">{{feed.recent_10_matches_with_each_other.statistics.win}}</text><text style="color:#d24c46">胜</text>
+        <text style="color:#5baf72">{{feed.recent_10_matches_with_each_other.statistics.draw}}</text><text style="color:#5baf72">平</text>
+        <text style="color:#5c79c5">{{feed.recent_10_matches_with_each_other.statistics.lost}}</text><text style="color:#5c79c5">负</text>
       </div>
     </view>
     <view class="last_item">
@@ -93,12 +93,12 @@
       <view class="item_right">
         <canvas class="circle" canvas-id="canvasArc"> </canvas> 
         <view>
-          <text>{{feed.f[0]}}</text>
-          <text>{{feed.f[1]}}</text>
-          <text>{{feed.f[2]}}</text>
+          <text>{{feed.total_company_stat.comp_stat[0]}}</text>
+          <text>{{feed.total_company_stat.comp_stat[1]}}</text>
+          <text>{{feed.total_company_stat.comp_stat[2]}}</text>
         </view>
         <view>
-          <text style="margin:0 0 0 0;color:#000000">{{feed.g[0]}}家赔率公司中，有{{feed.g[1]}}家对主胜信心增强，{{feed.g[2]}}家对平局信心减弱，{{feed.g[3]}}家对客胜信心减弱</text>
+          <text style="margin:0 0 0 0;color:#000000">{{feed.total_company_stat.comp_count}}家赔率公司中，有{{feed.total_company_stat.comp_num_list[0]}}对次场{{feed.total_company_stat.comp_content[0]}}，{{feed.total_company_stat.comp_num_list[1]}}家对次场{{feed.total_company_stat.comp_content[1]}}，{{feed.total_company_stat.comp_num_list[2]}}家对次场{{feed.total_company_stat.comp_content[2]}}</text>
         </view>
       </view>
     </view>

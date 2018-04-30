@@ -32,12 +32,11 @@ Page({
   },
   //跳转
   openDetail: function (event) {
-    console.log(event.currentTarget.dataset)
     var match_id = event.currentTarget.dataset.match_id;
-    var team_a = event.currentTarget.dataset.hostteam_name;
-    var team_b = event.currentTarget.dataset.guestteam_name;
-    var icon_a = event.currentTarget.dataset.hostteam_logo;
-    var icon_b = event.currentTarget.dataset.guestteam_logo;
+    var team_a = event.currentTarget.dataset.team_a;
+    var team_b = event.currentTarget.dataset.team_b;
+    var icon_a = event.currentTarget.dataset.icon_a;
+    var icon_b = event.currentTarget.dataset.icon_b;
     var win = event.currentTarget.dataset.win;
     var deuce = event.currentTarget.dataset.deuce;
     var lose = event.currentTarget.dataset.lose;
@@ -50,13 +49,12 @@ Page({
     var that = this
     var feed_data = []
     wx.request({
-      url: 'http://47.94.47.83:13001/api/v1/match/list',
+      url: 'https://dat.soukoudai.com/api/v1/match/list',
       header: {
         'content-type': 'application/json' // 默认值
       },
       data:{
-        'page': that.data.page,
-        'len':12
+        'page': that.data.page
       },
       method: 'POST',
       success: function (res) {
@@ -76,7 +74,8 @@ Page({
           }
           that.setData({
             feed: feed_data,
-            feed_length: feed_data.length
+            feed_length: feed_data.length,
+            page: 1
           })
         }
       }
@@ -91,13 +90,12 @@ Page({
       page: that.data.page + 1
     })
     wx.request({
-      url: 'http://47.94.47.83:13001/api/v1/match/list',
+      url: 'https://dat.soukoudai.com/api/v1/match/list',
       header: {
         'content-type': 'application/json'
       },
       data: {
-        'page': that.data.page,
-        'len': 12
+        'page': that.data.page
       },
       method: 'POST',
       success: function (res) {
@@ -117,7 +115,7 @@ Page({
           }
           that.setData({
             feed: that.data.feed.concat(next_data),
-            feed_length: that.data.feed_length + next_data.length
+            feed_length: that.data.feed_length + next_data.length,
           });
         }
       }

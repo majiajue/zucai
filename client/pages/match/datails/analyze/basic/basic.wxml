@@ -21,7 +21,7 @@
 </view>
 <view class="container">
   <view class="ctnt0" wx:if="{{currentNavtab_top==0}}">
-    <view class="top-tab" style="top: 360rpx;left:20rpx;width: 500rpx;">
+    <view class="top-tab" style="top: 360rpx;left:20rpx;width: 200rpx;">
       <view class="toptab flex-item {{currentNavtab_next==idx ? 'active' : ''}}" wx:for="{{navTab_next}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab_next">
         {{itemName}}
       </view>
@@ -29,131 +29,131 @@
     <view style='margin-top:140rpx' wx:if="{{currentNavtab_next==0}}">
       <view class='basic form'>
         <view class='title'>
-          <text>{{fight_result[0]}}</text>
+          <text>历史交战 {{fight_history['recent_10_matches_with_each_other']['statistics']['win']}}胜 {{fight_history['recent_10_matches_with_each_other']['statistics']['draw']}}平 {{fight_history['recent_10_matches_with_each_other']['statistics']['lost']}}负</text>
         </view>
         <view class='item'>
-          <text>时间</text>
+          <text style='width:160rpx'>时间</text>
           <text style='width:140rpx'>联赛</text>
           <text style='width:370rpx'>比分</text>
         </view>
-        <block wx:for="{{fight_history[0]}}" wx:for-index="idx" wx:for-item="each_item">
+        <block wx:for="{{fight_history['recent_10_matches_with_each_other']['data']}}" wx:for-index="idx" wx:for-item="each_item">
           <view class='item'>
-            <text>{{each_item[0]}}</text>
-            <text style='width:140rpx;color:#76c109'>{{each_item[1]}}</text>
-            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:right;color:#20ab27'>{{each_item[2]}}</text>
-            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:right;color:#d55152'>{{each_item[2]}}</text>
-            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:right;color:#000000'>{{each_item[2]}}</text>
-            <text style='width:30rpx'>{{each_item[3]}}</text>
+            <text style='width:160rpx'>{{each_item['start_play']}}</text>
+            <text style='width:140rpx;color:#76c109'>{{each_item['known_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#20ab27'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#d55152'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#000000'>{{each_item['home_team_name']}}</text>
+            <text style='width:20rpx'>{{each_item['fs_A']}}</text>
             <text style='width:10rpx'>:</text>
-            <text style='width:30rpx'>{{each_item[4]}}</text>
-            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:left;color:#20ab27'>{{each_item[5]}}</text>
-            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:left;color:#d55152'>{{each_item[5]}}</text>
-            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:left;color:#000000'>{{each_item[5]}}</text>
+            <text style='width:20rpx'>{{each_item['fs_B']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#20ab27'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#d55152'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#000000'>{{each_item['away_team_name']}}</text>
           </view>
         </block>
       </view>
       <view class='basic form'>
         <view class='title'>
-          <text>{{fight_result[1]}}</text>
+          <text>主队最近战绩 {{fight_history['recent_10_matches_of_home_team']['statistics']['win']}}胜 {{fight_history['recent_10_matches_of_home_team']['statistics']['draw']}}平 {{fight_history['recent_10_matches_of_home_team']['statistics']['lost']}}负</text>
         </view>
         <view class='item'>
-          <text>时间</text>
+          <text style='width:160rpx'>时间</text>
           <text style='width:140rpx'>联赛</text>
           <text style='width:370rpx'>比分</text>
         </view>
-        <block wx:for="{{fight_history[1]}}" wx:for-index="idx" wx:for-item="each_item">
+        <block wx:for="{{fight_history['recent_10_matches_of_home_team']['data']}}" wx:for-index="idx" wx:for-item="each_item">
           <view class='item'>
-            <text>{{each_item[0]}}</text>
-            <text style='width:140rpx;color:#76c109'>{{each_item[1]}}</text>
-            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:right;color:#20ab27'>{{each_item[2]}}</text>
-            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:right;color:#d55152'>{{each_item[2]}}</text>
-            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:right;color:#000000'>{{each_item[2]}}</text>
-            <text style='width:30rpx'>{{each_item[3]}}</text>
+            <text style='width:160rpx'>{{each_item['start_play']}}</text>
+            <text style='width:140rpx;color:#76c109'>{{each_item['known_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#20ab27'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#d55152'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#000000'>{{each_item['home_team_name']}}</text>
+            <text style='width:20rpx'>{{each_item['fs_A']}}</text>
             <text style='width:10rpx'>:</text>
-            <text style='width:30rpx'>{{each_item[4]}}</text>
-            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:left;color:#20ab27'>{{each_item[5]}}</text>
-            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:left;color:#d55152'>{{each_item[5]}}</text>
-            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:left;color:#000000'>{{each_item[5]}}</text>
+            <text style='width:20rpx'>{{each_item['fs_B']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#20ab27'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#d55152'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#000000'>{{each_item['away_team_name']}}</text>
           </view>
         </block>
       </view>
       <view class='basic form'>
         <view class='title'>
-          <text>{{fight_result[2]}}</text>
+          <text>主队最近主场战绩 {{fight_history['recent_10_home_matches_of_home_team']['statistics']['win']}}胜 {{fight_history['recent_10_home_matches_of_home_team']['statistics']['draw']}}平 {{fight_history['recent_10_home_matches_of_home_team']['statistics']['lost']}}负</text>
         </view>
         <view class='item'>
-          <text>时间</text>
+          <text style='width:160rpx'>时间</text>
           <text style='width:140rpx'>联赛</text>
           <text style='width:370rpx'>比分</text>
         </view>
-        <block wx:for="{{fight_history[2]}}" wx:for-index="idx" wx:for-item="each_item">
+        <block wx:for="{{fight_history['recent_10_home_matches_of_home_team']['data']}}" wx:for-index="idx" wx:for-item="each_item">
           <view class='item'>
-            <text>{{each_item[0]}}</text>
-            <text style='width:140rpx;color:#76c109'>{{each_item[1]}}</text>
-            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:right;color:#20ab27'>{{each_item[2]}}</text>
-            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:right;color:#d55152'>{{each_item[2]}}</text>
-            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:right;color:#000000'>{{each_item[2]}}</text>
-            <text style='width:30rpx'>{{each_item[3]}}</text>
+            <text style='width:160rpx'>{{each_item['start_play']}}</text>
+            <text style='width:140rpx;color:#76c109'>{{each_item['known_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#20ab27'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#d55152'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#000000'>{{each_item['home_team_name']}}</text>
+            <text style='width:20rpx'>{{each_item['fs_A']}}</text>
             <text style='width:10rpx'>:</text>
-            <text style='width:30rpx'>{{each_item[4]}}</text>
-            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:left;color:#20ab27'>{{each_item[5]}}</text>
-            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:left;color:#d55152'>{{each_item[5]}}</text>
-            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:left;color:#000000'>{{each_item[5]}}</text>
+            <text style='width:20rpx'>{{each_item['fs_B']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#20ab27'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#d55152'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#000000'>{{each_item['away_team_name']}}</text>
           </view>
         </block>
       </view>
       <view class='basic form'>
         <view class='title'>
-          <text>{{fight_result[3]}}</text>
+          <text>客队最近战绩 {{fight_history['recent_10_matches_of_away_team']['statistics']['win']}}胜 {{fight_history['recent_10_matches_of_away_team']['statistics']['draw']}}平 {{fight_history['recent_10_matches_of_away_team']['statistics']['lost']}}负</text>
         </view>
         <view class='item'>
-          <text>时间</text>
+          <text style='width:160rpx'>时间</text>
           <text style='width:140rpx'>联赛</text>
           <text style='width:370rpx'>比分</text>
         </view>
-        <block wx:for="{{fight_history[3]}}" wx:for-index="idx" wx:for-item="each_item">
+        <block wx:for="{{fight_history['recent_10_matches_of_away_team']['data']}}" wx:for-index="idx" wx:for-item="each_item">
           <view class='item'>
-            <text>{{each_item[0]}}</text>
-            <text style='width:140rpx;color:#76c109'>{{each_item[1]}}</text>
-            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:right;color:#20ab27'>{{each_item[2]}}</text>
-            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:right;color:#d55152'>{{each_item[2]}}</text>
-            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:right;color:#000000'>{{each_item[2]}}</text>
-            <text style='width:30rpx'>{{each_item[3]}}</text>
+            <text style='width:160rpx'>{{each_item['start_play']}}</text>
+            <text style='width:140rpx;color:#76c109'>{{each_item['known_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#20ab27'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#d55152'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#000000'>{{each_item['home_team_name']}}</text>
+            <text style='width:20rpx'>{{each_item['fs_A']}}</text>
             <text style='width:10rpx'>:</text>
-            <text style='width:30rpx'>{{each_item[4]}}</text>
-            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:left;color:#20ab27'>{{each_item[5]}}</text>
-            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:left;color:#d55152'>{{each_item[5]}}</text>
-            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:left;color:#000000'>{{each_item[5]}}</text>
+            <text style='width:20rpx'>{{each_item['fs_B']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#20ab27'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#d55152'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#000000'>{{each_item['away_team_name']}}</text>
           </view>
         </block>
       </view>
       <view class='basic form'>
         <view class='title'>
-          <text>{{fight_result[4]}}</text>
+          <text>客队最近客场战绩 {{fight_history['recent_10_away_matches_of_away_team']['statistics']['win']}}胜 {{fight_history['recent_10_away_matches_of_away_team']['statistics']['draw']}}平 {{fight_history['recent_10_away_matches_of_away_team']['statistics']['lost']}}负</text>
         </view>
         <view class='item'>
-          <text>时间</text>
+          <text style='width:160rpx'>时间</text>
           <text style='width:140rpx'>联赛</text>
           <text style='width:370rpx'>比分</text>
         </view>
-        <block wx:for="{{fight_history[4]}}" wx:for-index="idx" wx:for-item="each_item">
+        <block wx:for="{{fight_history['recent_10_away_matches_of_away_team']['data']}}" wx:for-index="idx" wx:for-item="each_item">
           <view class='item'>
-            <text>{{each_item[0]}}</text>
-            <text style='width:140rpx;color:#76c109'>{{each_item[1]}}</text>
-            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:right;color:#20ab27'>{{each_item[2]}}</text>
-            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:right;color:#d55152'>{{each_item[2]}}</text>
-            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:right;color:#000000'>{{each_item[2]}}</text>
-            <text style='width:30rpx'>{{each_item[3]}}</text>
+            <text style='width:160rpx'>{{each_item['start_play']}}</text>
+            <text style='width:140rpx;color:#76c109'>{{each_item['known_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#20ab27'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#d55152'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#000000'>{{each_item['home_team_name']}}</text>
+            <text style='width:20rpx'>{{each_item['fs_A']}}</text>
             <text style='width:10rpx'>:</text>
-            <text style='width:30rpx'>{{each_item[4]}}</text>
-            <text wx:if="{{each_item[3] == each_item[4]}}" style='width:150rpx;text-align:left;color:#20ab27'>{{each_item[5]}}</text>
-            <text wx:if="{{each_item[3] < each_item[4]}}" style='width:150rpx;text-align:left;color:#d55152'>{{each_item[5]}}</text>
-            <text wx:if="{{each_item[3] > each_item[4]}}" style='width:150rpx;text-align:left;color:#000000'>{{each_item[5]}}</text>
+            <text style='width:20rpx'>{{each_item['fs_B']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#20ab27'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#d55152'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#000000'>{{each_item['away_team_name']}}</text>
           </view>
         </block>
       </view>
     </view>
-    <view class='general_info' style='margin-top:140rpx' wx:if="{{currentNavtab_next==1}}">
+    <!-- <view class='general_info' style='margin-top:140rpx' wx:if="{{currentNavtab_next==1}}">
       <view class='title'>
         <div class='left'><text style='margin-left:10rpx'>欧赔盘路</text></div>
         <div class='right'><text style='margin-right:10rpx;color:#696969'>3.06 3.65 1.89</text></div>
@@ -458,82 +458,29 @@
         <text style='width:120rpx'>在场</text>
         <text style='width:120rpx'>0/0</text>
       </view>
-    </view>
-    <view class='score form' style='margin-top:140rpx' wx:if="{{currentNavtab_next==3}}">
+    </view> -->
+    <view class='score form' style='margin-top:140rpx' wx:if="{{currentNavtab_next==1}}">
       <view>
-        <text style='color:#ffffff'>0</text>
-        <text style='color:#ffffff'>0</text>
-        <text style='width:100rpx;color:#a0a0a0'>赛</text>
+        <text style='color:#ffffff;width:80rpx'>0</text>
+        <text style='color:#ffffff;width:200rpx'>0</text>
+        <text style='width:50rpx;color:#a0a0a0'>赛</text>
         <text style='color:#a0a0a0'>胜/平/负</text>
         <text style='color:#a0a0a0'>进/失</text>
         <text style='color:#a0a0a0'>积分</text>
       </view>
-      <view>
-        <text style='width:110rpx'><text class='circle_text' style='background:#7cc888'>1</text></text>
-        <text style='text-align:left'>巴塞罗那</text>
-        <text style='width:100rpx'>25</text>
-        <text>16/4/5</text>
-        <text>62/35</text>
-        <text>52</text>
-      </view>
-      <view>
-        <text style='width:110'><text class='circle_text'>2</text></text>
-        <text style='text-align:left'>曼联</text>
-        <text style='width:100rpx'>26</text>
-        <text>15/5/6</text>
-        <text>59/35</text>
-        <text>50</text>
-      </view>
-      <view>
-        <text style='width:110rpx'><text class='circle_text'>3</text></text>
-        <text style='text-align:left'>国际米兰</text>
-        <text style='width:100rpx'>26</text>
-        <text>14/4/8</text>
-        <text>56/34</text>
-        <text>46</text>
-      </view>
-      <view>
-        <text style='width:110rpx'><text class='circle_text'>3</text></text>
-        <text style='text-align:left'>维罗纳</text>
-        <text style='width:100rpx'>26</text>
-        <text>14/5/9</text>
-        <text>49/34</text>
-        <text>43</text>
-      </view>
-      <view>
-        <text style='width:110rpx'><text class='circle_text'>3</text></text>
-        <text style='text-align:left'>伯恩利</text>
-        <text style='width:100rpx'>26</text>
-        <text>14/4/8</text>
-        <text>56/34</text>
-        <text>39</text>
-      </view>
-      <view>
-        <text style='width:110rpx'><text class='circle_text'>3</text></text>
-        <text style='text-align:left'>克罗托内</text>
-        <text style='width:100rpx'>26</text>
-        <text>14/4/8</text>
-        <text>56/34</text>
-        <text>38</text>
-      </view>
-      <view>
-        <text style='width:110rpx'><text class='circle_text'>3</text></text>
-        <text style='text-align:left'>乌迪内斯</text>
-        <text style='width:100rpx'>26</text>
-        <text>14/4/8</text>
-        <text>56/34</text>
-        <text>34</text>
-      </view>
-      <view>
-        <text style='width:110rpx'><text class='circle_text'>3</text></text>
-        <text style='text-align:left'>拉齐奥</text>
-        <text style='width:100rpx'>26</text>
-        <text>14/4/8</text>
-        <text>56/34</text>
-        <text>31</text>
-      </view>
+      <block wx:for="{{ranking_data}}" wx:for-index="idx" wx:for-item="item">
+        <view>
+          <text style='width:80rpx'><text class='circle_text' style='background:#7cc888'>{{item['rank']}}</text></text>
+          <text style='text-align:left;width:200rpx'>{{item['name_cn']}}</text>
+          <text style='width:50rpx'>{{item['matches_total']}}</text>
+          <text>{{item['matches_won']}}/{{item['matches_draw']}}/{{item['matches_lost']}}</text>
+          <text>{{item['goals_pro']}}/{{item['goals_against']}}</text>
+          <text>{{item['points']}}</text>
+        </view>
+      </block>
     </view>
-    <view class='race form' style='margin-top:140rpx' wx:if="{{currentNavtab_next==4}}">
+    <!--
+    <view class='race form' style='margin-top:140rpx' wx:if="{{currentNavtab_next==2}}">
       <view class='title'><text style='margin-left:10rpx'>交战分析</text></view>
       <view><canvas class='circle' canvas-id="two_circle1"></canvas></view>
       <view class='content'>
@@ -682,7 +629,7 @@
           </view>
         </div>
       </view>
-    </view>
+    </view> -->
   </view>
   <view wx:if="{{currentNavtab_top==1}}">
     <view class="forecast top" style='padding-top:65rpx'>
@@ -720,97 +667,117 @@
     <view class='forecast content'><text>2.客队近6场荷乙客场打平了1场</text></view>
   </view>
   <view wx:if="{{currentNavtab_top==2}}">
-    <view class="rate form" style='padding: 60rpx 0 10rpx 0;'>
-      <view>
-        <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>博彩公司</text>
-        <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>项目</text>
-        <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>主胜</text>
-        <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>平</text>
-        <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>客胜</text>
+    <view class="top-tab" style="top: 360rpx;left:370rpx;width: 200rpx;">
+      <view class="toptab flex-item {{currentNavtab_rate==idx ? 'active' : ''}}" wx:for="{{navTab_rate}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab_rate">
+        {{itemName}}
       </view>
-      <view class='item'>
-        <text style='border-top-style:none;border-color:#fbf9fb;color:#fbf9fb'>0</text>
-        <text style='border-top-style:none'>下降家数</text>
-        <text style='border-top-style:none'>5</text>
-        <text style='border-top-style:none'>1</text>
-        <text style='border-right-style:none;border-top-style:none'>5</text>
+    </view>
+    <view style='margin-top:70rpx' wx-if="{{currentNavtab_rate==0}}">
+      <view class="rate form" style='padding: 60rpx 0 10rpx 0;'>
+        <view>
+          <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>博彩公司</text>
+          <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>项目</text>
+          <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>主胜</text>
+          <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>平</text>
+          <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>客胜</text>
+        </view>
+        <view class='item'>
+          <text style='border-top-style:none;border-color:#fbf9fb;color:#fbf9fb'>0</text>
+          <text style='border-top-style:none'>平均初盘</text>
+          <text style='border-top-style:none'>{{rate_avg_data['begin']['homeWin']}}</text>
+          <text style='border-top-style:none'>{{rate_avg_data['begin']['draw']}}</text>
+          <text style='border-right-style:none;border-top-style:none'>{{rate_avg_data['begin']['awayWin']}}</text>
+        </view>
+        <view class='item'>
+          <text style='border-top-style:none;border-color:#fbf9fb;color:#fbf9fb'>0</text>
+          <text>{{rate_avg_data['now']['ts']}}</text>
+          <text>{{rate_avg_data['now']['homeWin']}}</text>
+          <text>{{rate_avg_data['now']['draw']}}</text>
+          <text style='border-right-style:none'>{{rate_avg_data['now']['awayWin']}}</text>
+        </view>
+        <view class='item'>
+          <text style='color:#98c850;border-color:#fbf9fb'>总体统计</text>
+          <text>上升家数</text>
+          <text>{{rate_avg_data['up_num']['homeWinChange']}}</text>
+          <text>{{rate_avg_data['up_num']['drawChange']}}</text>
+          <text style='border-right-style:none'>{{rate_avg_data['up_num']['awayWinChange']}}</text>
+        </view>
+        <view class='item'>
+          <text style='border-top-style:none;border-color:#fbf9fb;color:#fbf9fb'>0</text>
+          <text>下降家数</text>
+          <text>{{rate_avg_data['down_num']['homeWinChange']}}</text>
+          <text>{{rate_avg_data['down_num']['drawChange']}}</text>
+          <text style='border-right-style:none'>{{rate_avg_data['down_num']['awayWinChange']}}</text>
+        </view>
+        <view class='item'>
+          <text style='border-left-color:#fbf9fb;border-right-color:#fbf9fb;border-top-color:#fbf9fb;color:#fbf9fb'>0</text>
+          <text>平均变化</text>
+          <text wx-if="{{rate_avg_data['change']['homeWinChange']==0}}">{{rate_avg_data['change']['homeWin']}}</text>
+          <text style='color:#98c850' wx-if="{{rate_avg_data['change']['homeWinChange']==1}}">{{rate_avg_data['change']['homeWin']}}</text>
+          <text style='color:#e82716' wx-if="{{rate_avg_data['change']['homeWinChange']==2}}">{{rate_avg_data['change']['homeWin']}}</text>
+          <text wx-if="{{rate_avg_data['change']['drawChange']==0}}">{{rate_avg_data['change']['draw']}}</text>
+          <text style='color:#98c850' wx-if="{{rate_avg_data['change']['drawChange']==1}}">{{rate_avg_data['change']['draw']}}</text>
+          <text style='color:#e82716' wx-if="{{rate_avg_data['change']['drawChange']==2}}">{{rate_avg_data['change']['draw']}}</text>
+          <text style='border-right-style:none' wx-if="{{rate_avg_data['change']['awayWinChange']==0}}">{{rate_avg_data['change']['awayWin']}}</text>
+          <text style='color:#98c850;border-right-style:none' wx-if="{{rate_avg_data['change']['awayWinChange']==1}}">{{rate_avg_data['change']['awayWin']}}</text>
+          <text style='color:#e82716;border-right-style:none' wx-if="{{rate_avg_data['change']['awayWinChange']==2}}">{{rate_avg_data['change']['awayWin']}}</text>
+        </view>
+        <block wx:for="{{rate_data}}" wx:for-index="idx" wx:for-item="item">
+          <view class='item'>
+            <text style='border-left-color:#fbf9fb;color:#fbf9fb'>0</text>
+            <text>初盘</text>
+            <text>{{item['begin']['homeWin']}}</text>
+            <text>{{item['begin']['draw']}}</text>
+            <text style='border-right-style:none'>{{item['begin']['awayWin']}}</text>
+          </view>
+          <view class='item'>
+            <text style='color:#98c850;border-color:#fbf9fb'>{{item['name']}}</text>
+            <text>{{item['now']['ts']}}</text>
+            <text>{{item['now']['homeWin']}}</text>
+            <text>{{item['now']['draw']}}</text>
+            <text style='border-right-style:none'>{{item['now']['awayWin']}}</text>
+          </view>
+          <view class='item'>
+            <text style='border-left-color:#fbf9fb;border-right-color:#fbf9fb;border-top-color:#fbf9fb;color:#fbf9fb'>0</text>
+            <text>变化</text>
+            <text wx-if="{{item['change']['homeWinChange']==0}}">{{item['change']['homeWin']}}</text>
+          <text style='color:#98c850' wx-if="{{item['change']['homeWinChange']==1}}">{{item['change']['homeWin']}}</text>
+          <text style='color:#e82716' wx-if="{{item['change']['homeWinChange']==2}}">{{item['change']['homeWin']}}</text>
+          <text wx-if="{{item['change']['drawChange']==0}}">{{item['change']['draw']}}</text>
+          <text style='color:#98c850' wx-if="{{item['change']['drawChange']==1}}">{{item['change']['draw']}}</text>
+          <text style='color:#e82716' wx-if="{{item['change']['drawChange']==2}}">{{item['change']['draw']}}</text>
+          <text style='border-right-style:none' wx-if="{{item['change']['awayWinChange']==0}}">{{item['change']['awayWin']}}</text>
+          <text style='color:#98c850;border-right-style:none' wx-if="{{item['change']['awayWinChange']==1}}">{{item['change']['awayWin']}}</text>
+          <text style='color:#e82716;border-right-style:none' wx-if="{{item['change']['awayWinChange']==2}}">{{item['change']['awayWin']}}</text>
+          </view>
+        </block>
       </view>
-      <view class='item'>
-        <text style='color:#98c850;border-color:#fbf9fb'>总体统计</text>
-        <text>平均变化</text>
-        <text>4</text>
-        <text>5</text>
-        <text style='border-right-style:none'>4</text>
-      </view>
-      <view class='item'>
-        <text style='border-left-color:#fbf9fb;border-right-color:#fbf9fb;border-top-color:#fbf9fb;color:#fbf9fb'>0</text>
-        <text>上升家数</text>
-        <text style='color:#98c850'>↓0.0%</text>
-        <text style='color:#e82716'>↑1.5%</text>
-        <text style='color:#98c850;border-right-style:none'>↓0.4%</text>
-      </view>
-      <view class='item'>
-        <text style='border-left-color:#fbf9fb;color:#fbf9fb'>0</text>
-        <text>初盘</text>
-        <text>2.93</text>
-        <text>3.45</text>
-        <text style='border-right-style:none'>2.15</text>
-      </view>
-      <view class='item'>
-        <text style='color:#98c850;border-color:#fbf9fb'>bet356.com</text>
-        <text>02-26 14:24</text>
-        <text>2.89</text>
-        <text>3.45</text>
-        <text style='border-right-style:none'>2.16</text>
-      </view>
-      <view class='item'>
-        <text style='border-left-color:#fbf9fb;border-right-color:#fbf9fb;border-top-color:#fbf9fb;color:#fbf9fb'>0</text>
-        <text>变化  </text>
-        <text style='color:#98c850'>↓1.3%</text>
-        <text>0%</text>
-        <text style='color:#e82716;border-right-style:none'>↑0.5%</text>
-      </view>
-      <view class='item'>
-        <text style='border-left-color:#fbf9fb;color:#fbf9fb'>0</text>
-        <text>初盘</text>
-        <text>3.12</text>
-        <text>3.26</text>
-        <text style='border-right-style:none'>2.97</text>
-      </view>
-      <view class='item'>
-        <text style='color:#98c850;border-color:#fbf9fb'>威廉希尔</text>
-        <text>02-26 14:24</text>
-        <text>3.22</text>
-        <text>3.45</text>
-        <text style='border-right-style:none'>2.16</text>
-      </view>
-      <view class='item'>
-        <text style='border-left-color:#fbf9fb;border-right-color:#fbf9fb;border-top-color:#fbf9fb;color:#fbf9fb'>0</text>
-        <text>变化  </text>
-        <text style='color:#e82716'>↑3.2%</text>
-        <text>0%</text>
-        <text style='color:#e82716;border-right-style:none'>↑6.4%</text>
-      </view>
-      <view class='item'>
-        <text style='border-left-color:#fbf9fb;color:#fbf9fb'>0</text>
-        <text>初盘</text>
-        <text>2.17</text>
-        <text>1.92</text>
-        <text style='border-right-style:none'>2.81</text>
-      </view>
-      <view class='item'>
-        <text style='color:#98c850;border-color:#fbf9fb'>韦博</text>
-        <text>02-26 14:24</text>
-        <text>2.19</text>
-        <text>1.94</text>
-        <text style='border-right-style:none'>2.75</text>
-      </view>
-      <view class='item'>
-        <text style='border-left-color:#fbf9fb;border-right-color:#fbf9fb;border-top-color:#fbf9fb;color:#fbf9fb'>0</text>
-        <text>变化  </text>
-        <text style='color:#e82716'>↑0.1%</text>
-        <text style='color:#e82716'>↑0.1%</text>
-        <text style='color:#98c850;border-right-style:none'>↓1.4%</text>
+    </view>
+    <view style='margin-top:70rpx' wx-if="{{currentNavtab_rate==1}}">
+      <view class="rate form" style='padding: 60rpx 0 10rpx 0;'>
+        <view>
+          <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>博彩公司</text>
+          <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>项目</text>
+          <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>主胜</text>
+          <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>平</text>
+          <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>客胜</text>
+        </view>
+        <block wx:for="{{rate_asia_data}}" wx:for-index="idx" wx:for-item="item">
+          <view class='item'>
+            <text style='color:#98c850;border-left-style:none;border-bottom-color:#fbf9fb'>{{item['name']}}</text>
+            <text>初盘</text>
+            <text>{{item['begin']['homeWin']}}</text>
+            <text>{{item['begin']['draw']}}</text>
+            <text style='border-right-style:none'>{{item['begin']['awayWin']}}</text>
+          </view>
+          <view class='item'>
+              <text style='color:#fbf9fb;border-left-style:none;border-top-color:#fbf9fb'>0</text>
+              <text>{{item['now']['ts']}}</text>
+              <text>{{item['now']['homeWin']}}</text>
+              <text>{{item['now']['draw']}}</text>
+              <text style='border-right-style:none'>{{item['now']['awayWin']}}</text>
+          </view>
+        </block>  
       </view>
     </view>
   </view>
@@ -823,12 +790,12 @@
           <text style='font-size: 30rpx;color:#71b227'>项目</text>
           <text style='font-size: 30rpx;color:#71b227'>客队</text>
         </view>
-        <view><text>0</text><text>进攻</text><text>0</text></view>
-        <view><text>0</text><text>射门</text><text>0</text></view>
-        <view><text>0</text><text>角球</text><text>0</text></view>
-        <view><text>0</text><text>黄牌</text><text>0</text></view>
-        <view><text>0</text><text>犯规</text><text>0</text></view>
-        <view><text>0</text><text>补救</text><text>0</text></view>
+        <view><text wx-if="{{match_data_now.attacks}}">{{match_data_now.attacks[0]}}</text><text wx-if="{{!match_data_now.attacks}}">0</text><text>进攻</text><text wx-if="{{match_data_now.attacks}}">{{match_data_now.attacks[1]}}</text><text wx-if="{{!match_data_now.attacks}}">0</text></view>
+        <view><text wx-if="{{match_data_now.shots}}">{{match_data_now.shots[0]}}</text><text wx-if="{{!match_data_now.shots}}">0</text><text>射门</text><text wx-if="{{match_data_now.shots}}">{{match_data_now.shots[1]}}</text><text wx-if="{{!match_data_now.shots}}">0</text></view>
+        <view><text wx-if="{{match_data_now.corners}}">{{match_data_now.corners[0]}}</text><text wx-if="{{!match_data_now.corners}}">0</text><text>角球</text><text wx-if="{{match_data_now.corners}}">{{match_data_now.corners[1]}}</text><text wx-if="{{!match_data_now.corners}}">0</text></view>
+        <view><text wx-if="{{match_data_now.yello_cards}}">{{match_data_now.yello_cards[0]}}</text><text wx-if="{{!match_data_now.yello_cards}}">0</text><text>黄牌</text><text wx-if="{{match_data_now.yello_cards}}">{{match_data_now.yello_cards[1]}}</text><text wx-if="{{!match_data_now.yello_cards}}">0</text></view>
+        <view><text wx-if="{{match_data_now.fouls}}">{{match_data_now.fouls[0]}}</text><text wx-if="{{!match_data_now.fouls}}">0</text><text>犯规</text><text wx-if="{{match_data_now.fouls}}">{{match_data_now.fouls[1]}}</text><text wx-if="{{!match_data_now.fouls}}">0</text></view>
+        <view><text wx-if="{{match_data_now.shots_woodwork}}">{{match_data_now.shots_woodwork[0]}}</text><text wx-if="{{!match_data_now.shots_woodwork}}">0</text><text>补救</text><text wx-if="{{match_data_now.shots_woodwork}}">{{match_data_now.shots_woodwork[1]}}</text><text wx-if="{{!match_data_now.shots_woodwork}}">0</text></view>
       </view>
       <view class="actually form">
         <view>
@@ -836,12 +803,12 @@
           <text style='font-size: 30rpx;color:#71b227'>项目</text>
           <text style='font-size: 30rpx;color:#71b227'>客队</text>
         </view>
-        <view><text>0</text><text>威胁进攻</text><text>0</text></view>
-        <view><text>0</text><text>射正</text><text>0</text></view>
-        <view><text>0</text><text>任意球</text><text>0</text></view>
-        <view><text>0</text><text>红牌</text><text>0</text></view>
-        <view><text>0</text><text>越位</text><text>0</text></view>
-        <view><text>0%</text><text>控球率</text><text>0%</text></view>
+        <view><text wx-if="{{match_data_now.dangerous_attacks}}">{{match_data_now.dangerous_attacks[0]}}</text><text wx-if="{{!match_data_now.dangerous_attacks}}">0</text><text>威胁进攻</text><text wx-if="{{match_data_now.dangerous_attacks}}">{{match_data_now.dangerous_attacks[1]}}</text><text wx-if="{{!match_data_now.dangerous_attacks}}">0</text></view>
+        <view><text wx-if="{{match_data_now.shots_on_target}}">{{match_data_now.shots_on_target[0]}}</text><text wx-if="{{!match_data_now.shots_on_target}}">0</text><text>射正</text><text wx-if="{{match_data_now.shots_on_target}}">{{match_data_now.shots_on_target[1]}}</text><text wx-if="{{!match_data_now.shots_on_target}}">0</text></view>
+        <view><text wx-if="{{match_data_now.goal_kicks}}">{{match_data_now.goal_kicks[0]}}</text><text wx-if="{{!match_data_now.goal_kicks}}">0</text><text>任意球</text><text wx-if="{{match_data_now.goal_kicks}}">{{match_data_now.goal_kicks[1]}}</text><text wx-if="{{!match_data_now.goal_kicks}}">0</text></view>
+        <view><text wx-if="{{match_data_now.red_cards}}">{{match_data_now.red_cards[0]}}</text><text wx-if="{{!match_data_now.red_cards}}">0</text><text>红牌</text><text wx-if="{{match_data_now.red_cards}}">{{match_data_now.red_cards[1]}}</text><text wx-if="{{!match_data_now.red_cards}}">0</text></view>
+        <view><text wx-if="{{match_data_now.offsides}}">{{match_data_now.offsides[0]}}</text><text wx-if="{{!match_data_now.offsides}}">0</text><text>越位</text><text wx-if="{{match_data_now.offsides}}">{{match_data_now.offsides[1]}}</text><text wx-if="{{!match_data_now.offsides}}">0</text></view>
+        <view><text wx-if="{{match_data_now.possession}}">{{match_data_now.possession[0]}}</text><text wx-if="{{!match_data_now.possession}}">0</text><text>控球率</text><text wx-if="{{match_data_now.possession}}">{{match_data_now.possession[1]}}</text><text wx-if="{{!match_data_now.possession}}">0</text></view>
       </view>
     </view>
   </view>

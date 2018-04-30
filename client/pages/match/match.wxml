@@ -9,7 +9,7 @@
   <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
     <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item">
       <view class='grow_date' wx:if="{{item.date_utc}}"><text>{{item.date_utc}}</text></view>
-      <view class="feed-item" data-match_id="{{item.match_id}}" data-team_a="{{item.hostteam_name}}" data-team_b="{{item.guestteam_name}}" data-icon_a="{{item.hostteam_logo}}" data-icon_b="{{item.guestteam_logo}}" data-win="{{item.odds[0]}}" data-deuce="{{item.idds[1]}}" data-lose="{{item.odds[2]}}" bindtap="openDetail">
+      <view class="feed-item" data-match_id="{{item.match_id}}" data-team_a="{{item.hostteam_name}}" data-team_b="{{item.guestteam_name}}" data-icon_a="{{item.hostteam_logo}}" data-icon_b="{{item.guestteam_logo}}" data-win="{{item.odds[0]}}" data-deuce="{{item.odds[1]}}" data-lose="{{item.odds[2]}}" bindtap="openDetail">
         <view class="feed-up">
           <div class='grow_back'><text>{{item.time_utc}}</text></div>
           <text wx:if="{{item.status==2}}" style='color:#EAEAEA'>已结束</text>

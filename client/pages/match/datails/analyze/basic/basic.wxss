@@ -404,7 +404,7 @@
   display: inline-block;
   width: 105rpx;
   height: 40rpx;
-  font-size: 28rpx;
+  font-size: 27rpx;
  }
  /*评论*/
 .container .comment{

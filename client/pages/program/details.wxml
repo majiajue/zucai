@@ -1,0 +1,37 @@
+<view class="item">
+  <view class='middle'>
+    <view><text class='text1'>{{feed.summary}}</text></view>
+    <view>
+      <text class='text4'>{{feed.get_time}}</text>
+      <text class='text5'>解读中</text>
+    </view>
+  </view>
+  <view class='top'>
+    <div class="left">
+      <image src='https://img1.dongqiudi.com/fastdfs/M00/AE/4A/ooYBAFia1_aATVKcAAAuzVz-1sU903.png'></image>
+    </div>
+    <div class='right'>
+      <view style='padding-top:20rpx'><text>{{feed.name}}</text></view>
+      <view><text style='font-size:28rpx;border-width:2rpx;color:#ee0000;border-style:solid solid solid solid;boder-color:#ee0000'>历史{{feed.red_rate}}红 最大{{feed.max_red}}连红</text></view>      
+    </div>
+  </view>
+</view>
+
+<view class="item" style='padding-top:0rpx;height:100%'>
+  <view class='middle' style='height:50rpx'>
+    <view>
+      <text class='text4' style='width:730rpx;text-align:left'>{{feed.start_play}}\t{{feed.known_name}}</text>
+    </view>
+  </view>
+  <view class='bottom'>
+    <view>
+      <text class='text2'>{{feed.home_team_name}}\t\tVS\t\t{{feed.away_team_name}}</text>
+    </view>
+    <view>
+      <text class='title'>推荐理由</text>
+    </view>
+    <view>
+      <text class='content'>{{feed.content}}</text>
+    </view>
+  </view>
+</view>

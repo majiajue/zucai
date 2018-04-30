@@ -56,28 +56,26 @@ Page({
     var that = this
     var feed_data = []
     wx.request({
-      url: 'http://120.77.37.9:5000/api/zucai/details',
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
+      url: 'https://dat.soukoudai.com/api/v1/match/summary',
       data: {
-        'match_id': match_id,
-        'flag': 'get_table_data'
+        'match_id': match_id
       },
-      method: 'POST',
+      method: 'GET',
       success: function (res) {
-        feed_data = res.data.answer_data
+        feed_data = res.data.data
         that.setData({
           feed: feed_data
         })
+        console.log(that.data)
+        console.log(that.data.feed.total_company_stat)
         var cxt_arc = wx.createCanvasContext('canvasArc');
         var width = wx.getSystemInfoSync().windowWidth
         cxt_arc.setLineWidth(4);
         cxt_arc.setLineCap('round')
         var r = parseInt(width * 0.061)
-        cxt_arc = that.draw_circle(parseInt(width * 0.088), that.data.feed.g[1], r, that.data.feed.g[1] / that.data.feed.g[0], '#b35c69', cxt_arc)
-        cxt_arc = that.draw_circle(parseInt(width * 0.319), that.data.feed.g[2], r, that.data.feed.g[2] / that.data.feed.g[0], '#5e8b65', cxt_arc)
-        cxt_arc = that.draw_circle(parseInt(width * 0.55), that.data.feed.g[3], r, that.data.feed.g[3] / that.data.feed.g[0], '#668fa2', cxt_arc)
+        cxt_arc = that.draw_circle(parseInt(width * 0.088), that.data.feed.total_company_stat.comp_num_list[0], r, that.data.feed.total_company_stat.comp_num_list[0] / that.data.feed.total_company_stat.comp_count, '#b35c69', cxt_arc)
+        cxt_arc = that.draw_circle(parseInt(width * 0.319), that.data.feed.total_company_stat.comp_num_list[1], r, that.data.feed.total_company_stat.comp_num_list[1] / that.data.feed.total_company_stat.comp_count, '#5e8b65', cxt_arc)
+        cxt_arc = that.draw_circle(parseInt(width * 0.57), that.data.feed.total_company_stat.comp_num_list[2], r, that.data.feed.total_company_stat.comp_num_list[2] / that.data.feed.total_company_stat.comp_count, '#668fa2', cxt_arc)
         cxt_arc.draw(); 
       }
     })

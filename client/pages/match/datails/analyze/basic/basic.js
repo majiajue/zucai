@@ -6,9 +6,12 @@ Page({
   data: {
     // navTab_top: ["分析", "预测", "赔率", "赛况", "评论"],
     navTab_top: ["分析", "预测", "赔率", "赛况"],
-    navTab_next: ["基本面", "盘面", "阵容", "积分", "交战信息"],
+    // navTab_next: ["基本面", "盘面", "阵容", "积分", "交战信息"],
+    navTab_next: ["基本面", "积分"],
+    navTab_rate: ["欧赔", "亚盘"],
     currentNavtab_top: "0",
     currentNavtab_next: "0",
+    currentNavtab_rate: "0",
     match_id: 0,
     team_a: '',
     team_a: '',
@@ -17,37 +20,76 @@ Page({
     win: '',
     deuce: '',
     lose: '',
-    fight_history: '',
-    fight_result: ''
+    fight_history: [],
+    ranking_data: [],
+    rate_data: [],
+    rate_avg_data: [],
+    rate_asia_data: [],
+    match_data_now: []
   },
   switchTab_top: function (e) {
     if (e.currentTarget.dataset.idx == 0) {
       var that = this
       var fight_history = []
-      var fight_result = []
       wx.request({
-        url: 'http://120.77.37.9:5000/api/zucai/analyze',
-        header: {
-          'content-type': 'application/json' // 默认值
-        },
+        url: 'https://dat.soukoudai.com/api/v1/match/detail',
         data: {
-          'team1': that.data.team_a,
-          'team2': that.data.team_b,
-          'flag': 'get_jibenmian'
+          'match_id': that.data.match_id,
         },
-        method: 'POST',
+        method: 'GET',
         success: function (res) {
           fight_history = res.data.fight_history
-          fight_result = res.data.fight_result
           that.setData({
-            fight_history: fight_history,
-            fight_result: fight_result
+            fight_history: fight_history
           })
         }
       })
       this.setData({
         currentNavtab_next: 0
       });
+    }
+    if (e.currentTarget.dataset.idx == 2) {
+      var that = this
+      var rate_data = []
+      var rate_avg_data = []
+      var rate_asia_data = []
+      wx.request({
+        url: 'https://dat.soukoudai.com/api/v1/match/odds',
+        data: {
+          'match_id': that.data.match_id,
+        },
+        method: 'GET',
+        success: function (res) {
+          rate_data = res.data.data.euro
+          rate_avg_data = res.data.data.avg
+          rate_asia_data = res.data.data.asia
+          that.setData({
+            rate_data: rate_data,
+            rate_avg_data: rate_avg_data,
+            rate_asia_data: rate_asia_data
+          })
+        }
+      })
+      this.setData({
+        currentNavtab_rate: 0
+      });
+    }
+    if (e.currentTarget.dataset.idx == 3) {
+      var that = this
+      var match_data_now = []
+      wx.request({
+        url: 'https://dat.soukoudai.com/api/v1/match/statistics',
+        data: {
+          'match_id': that.data.match_id,
+        },
+        method: 'GET',
+        success: function (res) {
+          match_data_now = res.data.data
+          that.setData({
+            match_data_now: match_data_now
+          })
+        }
+      })
     }
     if (e.currentTarget.dataset.idx == 1) {
       //预测的饼图
@@ -108,7 +150,42 @@ Page({
     });
   },
   switchTab_next: function (e) {
-    if (e.currentTarget.dataset.idx == 4) {
+    if (e.currentTarget.dataset.idx == 1) {
+      var that = this
+      var ranking_data = []
+      wx.request({
+        url: 'https://dat.soukoudai.com/api/v1/match/ranking',
+        data: {
+          'match_id': that.data.match_id,
+        },
+        method: 'GET',
+        success: function (res) {
+          ranking_data = res.data.data.total_ranking_lst
+          that.setData({
+            ranking_data: ranking_data
+          })
+        }
+      })
+    }
+    if (e.currentTarget.dataset.idx == 2) {
+      var that = this
+      var forecast_data = []
+      wx.request({
+        url: 'https://dat.soukoudai.com/api/v1/match/analysis',
+        data: {
+          'match_id': that.data.match_id,
+        },
+        method: 'GET',
+        success: function (res) {
+          console.log(res.data)
+          forecast_data = res.data.data
+          that.setData({
+            forecast_data: forecast_data
+          })
+        }
+      })
+    }
+    if (e.currentTarget.dataset.idx == 2) {
       //交战信息的圆圈
       var that = this;
       var width = wx.getSystemInfoSync().windowWidth
@@ -127,6 +204,11 @@ Page({
     }
     this.setData({
       currentNavtab_next: e.currentTarget.dataset.idx
+    });
+  },
+  switchTab_rate: function (e) {
+    this.setData({
+      currentNavtab_rate: e.currentTarget.dataset.idx
     });
   },
 
@@ -219,24 +301,16 @@ Page({
     // 页面渲染完成 
     var that = this
     var fight_history = []
-    var fight_result = []
     wx.request({
-      url: 'http://120.77.37.9:5000/api/zucai/analyze',
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
+      url: 'https://dat.soukoudai.com/api/v1/match/detail',
       data: {
-        'team1': that.data.team_a,
-        'team2': that.data.team_b,
-        'flag': 'get_jibenmian'
+        'match_id': that.data.match_id,
       },
-      method: 'POST',
+      method: 'GET',
       success: function (res) {
-        fight_history = res.data.fight_history
-        fight_result = res.data.fight_result
+        fight_history = res.data.data
         that.setData({
-          fight_history: fight_history,
-          fight_result: fight_result
+          fight_history: fight_history
         })
       }
     })

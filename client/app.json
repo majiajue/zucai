@@ -4,7 +4,8 @@
     "pages/program/program",
     "pages/mine/mine",
     "pages/match/datails/details",
-    "pages/match/datails/analyze/basic/basic"
+    "pages/match/datails/analyze/basic/basic",
+    "pages/program/details"
   ],
   "window": {
     "backgroundTextStyle": "light",

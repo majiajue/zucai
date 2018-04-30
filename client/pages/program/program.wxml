@@ -1,54 +1,32 @@
-<view class="item">
-  <view class='top'>
-    <div class="left">
-      <image src='https://img1.dongqiudi.com/fastdfs/M00/AE/4A/ooYBAFia1_aATVKcAAAuzVz-1sU903.png'></image>
-    </div>
-    <div class='right'>
-      <view style='padding-top:20rpx'><text>方案专家</text></view>
-      <view><text style='font-size:28rpx;border-width:2rpx;color:#ee0000;border-style:solid solid solid solid;boder-color:#ee0000'>历史7连红</text></view>      
-    </div>
-  </view>
-  <view class='middle'>
-    <view><text class='text1'>莫尔德VS特罗姆瑟，达人精准推荐</text></view>
-    <view>
-      <text class='text2' style='width:180rpx'>周一040\t挪超</text>
-      <text class='text2' style='text-align:right'>莫尔德</text>
-      <text class='text2' style='width:100rpx'>VS</text>
-      <text class='text2' style='text-align:left'>特罗萨姆</text>
-      <text class='text2'>4/3\t00:00</text>
+<scroll-view scroll-y="true" class="container withtab" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item">
+    <view class="item">
+      <view class='top'>
+        <div class="left">
+          <image src='https://img1.dongqiudi.com/fastdfs/M00/AE/4A/ooYBAFia1_aATVKcAAAuzVz-1sU903.png'></image>
+        </div>
+        <div class='right'>
+          <view style='padding-top:20rpx'><text>{{item.name}}</text></view>
+          <view><text style='font-size:28rpx;border-width:2rpx;color:#ee0000;border-style:solid solid solid solid;boder-color:#ee0000'>历史{{item.red_rate}}红 最大{{item.max_red}}连红</text></view>      
+        </div>
+      </view>
+      <view class='middle'>
+        <view><text class='text1'>{{item.summary}}</text></view>
+        <view>
+          <text class='text2' style='width:150rpx'>周一\t{{item.known_name}}</text>
+          <text class='text2' style='width:200rpx,text-align:right'>{{item.home_team_name}}</text>
+          <text class='text2' style='width:50rpx'>VS</text>
+          <text class='text2' style='width:200rpx,text-align:left'>{{item.away_team_name}}</text>
+          <text class='text2'>{{item.start_play}}</text>
+        </view>
+        <view>
+          <text class='text3'>￥\t{{item.price}}</text>
+          <text class='text4'>4分钟前发布</text>
+          <text class='text5' data-plan_id="{{item.id}}" bindtap="openDetail">专家解读中不退款</text>
+        </view>
+      </view>
     </view>
-    <view>
-      <text class='text3'>￥\t25</text>
-      <text class='text4'>4分钟前发布</text>
-      <text class='text5'>专家解读中不退款</text>
-    </view>
-  </view>
-</view>
-<view class="item">
-  <view class='top'>
-    <div class="left">
-      <image src='https://img.dongqiudi.com/data/pic/446.png'></image>
-    </div>
-    <div class='right'>
-      <view style='padding-top:20rpx'><text>方案大师</text></view>
-      <view><text style='font-size:28rpx;border-width:2rpx;color:#ee0000;border-style:solid solid solid solid;boder-color:#ee0000'>历史8连红</text></view>      
-    </div>
-  </view>
-  <view class='middle'>
-    <view><text class='text1'>克里斯蒂稳胜？？查看专家分析红单</text></view>
-    <view>
-      <text class='text2' style='width:180rpx'>周一039\t挪超</text>
-      <text class='text2' style='text-align:right'>克里斯蒂</text>
-      <text class='text2' style='width:100rpx'>VS</text>
-      <text class='text2' style='text-align:left'>利勒斯特</text>
-      <text class='text2'>4/3\t00:00</text>
-    </view>
-    <view>
-      <text class='text3'>￥\t30</text>
-      <text class='text4'>8分钟前发布</text>
-      <text class='text5'>专家解读中不退款</text>
-    </view>
-  </view>
-</view>
+  </block>
+</scroll-view>
 
 
