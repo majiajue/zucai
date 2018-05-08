@@ -5,10 +5,11 @@ var ringChart = null;
 Page({
   data: {
     // navTab_top: ["分析", "预测", "赔率", "赛况", "评论"],
-    navTab_top: ["分析", "预测", "赔率", "赛况"],
+    navTab_top: ["分析", "方案", "赔率", "赛况"],
     // navTab_next: ["基本面", "盘面", "阵容", "积分", "交战信息"],
     navTab_next: ["基本面", "积分"],
     navTab_rate: ["欧赔", "亚盘"],
+    weekday: ['周一', '周二', '周三', '周四', '周五', '周六', '周天'],
     currentNavtab_top: "0",
     currentNavtab_next: "0",
     currentNavtab_rate: "0",
@@ -25,7 +26,127 @@ Page({
     rate_data: [],
     rate_avg_data: [],
     rate_asia_data: [],
-    match_data_now: []
+    match_data_now: [],
+    plan_data: [],
+    plan_length: 0,
+    page: 0,
+    isAllDisplayed: false
+  },
+  upper: function (e) {
+    wx.showNavigationBarLoading()
+    var that = this
+    this.setData({
+      page: 1
+    })
+    that.getData();
+    setTimeout(function () { wx.hideNavigationBarLoading(); wx.stopPullDownRefresh(); }, 2000);
+  },
+  lower: function (e) {
+    var that = this
+    that.nextLoad()
+  },
+  //跳转
+  openDetail: function (event) {
+    var plan_id = event.currentTarget.dataset.plan_id;
+    wx.navigateTo({
+      url: '../../../../program/details?plan_id=' + plan_id
+    })
+  },
+  //首次获取数据及刷新
+  getData: function () {
+    var that = this
+    var feed_data = []
+    wx.request({
+      url: 'https://dat.soukoudai.com/api/v1/plan/list',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      data: {
+        'page': that.data.page,
+        'match_id': that.data.match_id
+      },
+      method: 'POST',
+      success: function (res) {
+        feed_data = res.data.data.plan_list
+        if (feed_data.length == 0) {
+          that.data.isAllDisplayed = true
+        } else {
+          for (var i = 0; i < feed_data.length; i++) {
+            var time_distance = new Date().getTime() - new Date(feed_data[i].get_time).getTime()
+            var day_distance = (time_distance / (24 * 3600 * 1000))
+            var leave1 = time_distance % (24 * 3600 * 1000)
+            var hours_distance = Math.floor(leave1 / (3600 * 1000))
+            var leave2 = leave1 % (3600 * 1000)
+            var minutes_distance = Math.floor(leave2 / (60 * 1000))
+            if (parseInt(day_distance) > 1) {
+              feed_data[i].time_distance = day_distance.toString() + '天前'
+            } else if (parseInt(hours_distance) > 1) {
+              feed_data[i].time_distance = hours_distance.toString() + '小时前'
+            } else if (parseInt(minutes_distance) > 1) {
+              feed_data[i].time_distance = minutes_distance.toString() + '分钟前'
+            } else {
+              feed_data[i].time_distance = '0分钟前'
+            }
+            feed_data[i].start_play = feed_data[i].start_play.substring(5, 16)
+            feed_data[i].weekday = that.data.weekday[feed_data[i].weekday]
+          }
+          that.setData({
+            plan_data: feed_data,
+            plan_length: feed_data.length,
+            page: 1
+          })
+        }
+      }
+    })
+  },
+  //继续加载
+  nextLoad: function () {
+    var that = this
+    var next_data = []
+    that.setData({
+      page: that.data.page + 1
+    })
+    wx.request({
+      url: 'https://dat.soukoudai.com/api/v1/plan/list',
+      header: {
+        'content-type': 'application/json'
+      },
+      data: {
+        'page': that.data.page,
+        'match_id': that.data.match_id
+      },
+      method: 'POST',
+      success: function (res) {
+        next_data = res.data.data.plan_list
+        if (next_data.length == 0) {
+          that.data.isAllDisplayed = true
+        } else {
+          for (var i = 0; i < next_data.length; i++) {
+            var time_distance = new Date().getTime() - new Date(next_data[i].get_time).getTime()
+            var day_distance = (time_distance / (24 * 3600 * 1000))
+            var leave1 = time_distance % (24 * 3600 * 1000)
+            var hours_distance = Math.floor(leave1 / (3600 * 1000))
+            var leave2 = leave1 % (3600 * 1000)
+            var minutes_distance = Math.floor(leave2 / (60 * 1000))
+            if (parseInt(day_distance) > 1) {
+              next_data[i].time_distance = day_distance.toString() + '天前'
+            } else if (parseInt(hours_distance) > 1) {
+              next_data[i].time_distance = hours_distance.toString() + '小时前'
+            } else if (parseInt(minutes_distance) > 1) {
+              next_data[i].time_distance = minutes_distance.toString() + '分钟前'
+            } else {
+              next_data[i].time_distance = '0分钟前'
+            }
+            next_data[i].start_play = next_data[i].start_play.substring(5, 16)
+            next_data[i].weekday = that.data.weekday[next_data[i].weekday]
+          }
+          that.setData({
+            plan_data: that.data.plan_data.concat(next_data),
+            plan_length: that.data.plan_length + next_data.length,
+          });
+        }
+      }
+    })
   },
   switchTab_top: function (e) {
     if (e.currentTarget.dataset.idx == 0) {
@@ -47,6 +168,9 @@ Page({
       this.setData({
         currentNavtab_next: 0
       });
+    }
+    if (e.currentTarget.dataset.idx == 1) {
+      this.getData()
     }
     if (e.currentTarget.dataset.idx == 2) {
       var that = this

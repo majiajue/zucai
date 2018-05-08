@@ -2,31 +2,32 @@
   padding-top: 10rpx;
   margin-bottom: 10rpx;
   width: 750rpx;
-  height:370rpx;
+  height:330rpx;
   border-bottom: solid;
   border-width: 5rpx;
   border-color: #ececec;
+  background: #ffffff
 }
 .item .top{
-  height: 180rpx;
+  height: 150rpx;
   display: inline-block;
 }
 .item .top .left{
-  height: 180rpx;
-  width: 180rpx;
+  height: 150rpx;
+  width: 150rpx;
   display: inline-block;
   justify-content: center;
   align-items: center;
 }
 .item .top .left image{
-  height: 150rpx;
-  width: 150rpx;
+  height: 120rpx;
+  width: 120rpx;
   border-radius: 50%;
 }
 .item .top .right{
-  height: 180rpx;
+  height: 150rpx;
   width:570rpx;
-  line-height: 80rpx;
+  line-height: 70rpx;
   font-size: 34rpx;
   text-align: left;
   display: inline-block;
@@ -39,8 +40,8 @@
 }
 .item .middle .text1{
   width: 700rpx;
-  line-height: 70rpx;
-  font-size: 34rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
   text-align: left;
   display: inline-block;
 }

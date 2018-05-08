@@ -632,6 +632,37 @@
     </view> -->
   </view>
   <view wx:if="{{currentNavtab_top==1}}">
+  <scroll-view scroll-y="true" class="container withtab" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" style='padding-top:65rpx'>
+  <block wx:for="{{plan_data}}" wx:for-index="idx" wx:for-item="item">
+    <view class="forecast item"  data-plan_id="{{item.id}}" bindtap="openDetail">
+      <view class='top'>
+        <div class="left">
+          <image src='{{item.avatar}}'></image>
+        </div>
+        <div class='right'>
+          <view style='padding-top:20rpx'><text>{{item.name}}</text></view>
+          <view><text style='font-size:28rpx;border-width:2rpx;color:#ee0000;border-style:solid solid solid solid;boder-color:#ee0000'>历史{{item.red_rate}}红 最大{{item.max_red}}连红</text></view>      
+        </div>
+      </view>
+      <view class='middle'>
+        <view><text class='text1'>{{item.summary}}</text></view>
+        <view style='text-align:center'>
+          <text class='text2' style='width:150rpx'>{{item.weekday}}\t{{item.known_name}}</text>
+          <text class='text2' style='width:200rpx,text-align:right'>{{item.home_team_name}}</text>
+          <text class='text2' style='width:50rpx'>VS</text>
+          <text class='text2' style='width:200rpx,text-align:left'>{{item.away_team_name}}</text>
+          <text class='text2'>{{item.start_play}}</text>
+        </view>
+        <view>
+          <text class='text3'>￥\t{{item.price}}</text>
+          <text class='text4'>{{item.time_distance}}前发布</text>
+          <text class='text5'>专家解读 不中退款</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</scroll-view>
+  <!--
     <view class="forecast top" style='padding-top:65rpx'>
       <view class='left'>
         <canvas canvas-id="ringCanvas"></canvas>
@@ -665,6 +696,7 @@
     <view class='forecast title'><text>平\t可能性22%</text></view>
     <view class='forecast content'><text>1.主队近6场荷乙主场打平了1场</text></view>
     <view class='forecast content'><text>2.客队近6场荷乙客场打平了1场</text></view>
+  -->
   </view>
   <view wx:if="{{currentNavtab_top==2}}">
     <view class="top-tab" style="top: 360rpx;left:370rpx;width: 200rpx;">

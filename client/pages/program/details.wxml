@@ -2,13 +2,13 @@
   <view class='middle'>
     <view><text class='text1'>{{feed.summary}}</text></view>
     <view>
-      <text class='text4'>{{feed.get_time}}</text>
+      <text class='text4'>发布于{{feed.get_time}}</text>
       <text class='text5'>解读中</text>
     </view>
   </view>
   <view class='top'>
     <div class="left">
-      <image src='https://img1.dongqiudi.com/fastdfs/M00/AE/4A/ooYBAFia1_aATVKcAAAuzVz-1sU903.png'></image>
+      <image src='{{feed.avatar}}'></image>
     </div>
     <div class='right'>
       <view style='padding-top:20rpx'><text>{{feed.name}}</text></view>
@@ -20,7 +20,7 @@
 <view class="item" style='padding-top:0rpx;height:100%'>
   <view class='middle' style='height:50rpx'>
     <view>
-      <text class='text4' style='width:730rpx;text-align:left'>{{feed.start_play}}\t{{feed.known_name}}</text>
+      <text class='text4' style='width:730rpx;text-align:left'>{{feed.weekday}}\t{{feed.start_play}}\t{{feed.known_name}}</text>
     </view>
   </view>
   <view class='bottom'>

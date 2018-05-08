@@ -318,7 +318,90 @@
   color: #cbcbcb;
   font-size: 28rpx;
 }
-/*预测*/
+/*方案*/
+.container .forecast.item{
+  padding-top: 10rpx;
+  margin-bottom: 10rpx;
+  width: 750rpx;
+  height:330rpx;
+  border-bottom: solid;
+  border-width: 5rpx;
+  border-color: #ececec;
+}
+.container .forecast.item .top{
+  height: 150rpx;
+  display: inline-block;
+}
+.container .forecast.item .top .left{
+  height: 150rpx;
+  width: 150rpx;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+.container .forecast.item .top .left image{
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 50%;
+}
+.container .forecast.item .top .right{
+  height: 150rpx;
+  width:570rpx;
+  line-height: 70rpx;
+  font-size: 34rpx;
+  text-align: left;
+  display: inline-block;
+}
+.container .forecast.container .forecast.item .middle{
+  width: 750rpx;
+  height: 200rpx;
+  display: inline-block;
+  text-align: center;
+}
+.container .forecast.item .middle .text1{
+  width: 700rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  text-align: left;
+  display: inline-block;
+}
+.container .forecast.item .middle .text2{
+  width: 140rpx;
+  color: #898989;
+  background: #efefef;
+  line-height: 50rpx;
+  font-size: 23rpx;
+  text-align: center;
+  display: inline-block;
+}
+.container .forecast.item .middle .text3{
+  width: 120rpx;
+  color: #f28c80;
+  line-height: 30rpx;
+  font-size: 30rpx;
+  text-align: center;
+  border-right-style: solid;
+  border-width: 2rpx;
+  border-color: #000000;
+  display: inline-block;
+}
+.container .forecast.item .middle .text4{
+  width: 180rpx;
+  color: #898989;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  text-align: center;
+  display: inline-block;
+}
+.container .forecast.item .middle .text5{
+  width: 400rpx;
+  color: #23b929;
+  line-height: 40rpx;
+  font-size: 32rpx;
+  text-align: right;
+  display: inline-block;
+}
+/*预测
 .container .forecast.top{
   display: flex;
   flex-direction: row;
@@ -366,6 +449,7 @@
   color: #8b8a8b;
   line-height: 56rpx;
 }
+*/
 /*赔率*/
 .container .rate.form{
   background: #F8F8F8;

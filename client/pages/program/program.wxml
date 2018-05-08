@@ -3,7 +3,7 @@
     <view class="item"  data-plan_id="{{item.id}}" bindtap="openDetail">
       <view class='top'>
         <div class="left">
-          <image src='https://img1.dongqiudi.com/fastdfs/M00/AE/4A/ooYBAFia1_aATVKcAAAuzVz-1sU903.png'></image>
+          <image src='{{item.avatar}}'></image>
         </div>
         <div class='right'>
           <view style='padding-top:20rpx'><text>{{item.name}}</text></view>
@@ -13,7 +13,7 @@
       <view class='middle'>
         <view><text class='text1'>{{item.summary}}</text></view>
         <view>
-          <text class='text2' style='width:150rpx'>周一\t{{item.known_name}}</text>
+          <text class='text2' style='width:150rpx'>{{item.weekday}}\t{{item.known_name}}</text>
           <text class='text2' style='width:200rpx,text-align:right'>{{item.home_team_name}}</text>
           <text class='text2' style='width:50rpx'>VS</text>
           <text class='text2' style='width:200rpx,text-align:left'>{{item.away_team_name}}</text>
@@ -21,8 +21,8 @@
         </view>
         <view>
           <text class='text3'>￥\t{{item.price}}</text>
-          <text class='text4'>4分钟前发布</text>
-          <text class='text5'>专家解读中不退款</text>
+          <text class='text4'>{{item.time_distance}}前发布</text>
+          <text class='text5'>专家解读 不中退款</text>
         </view>
       </view>
     </view>

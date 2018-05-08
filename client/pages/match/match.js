@@ -12,7 +12,7 @@ Page({
     loading: false
   },
   onLoad: function () {
-    this.getData();
+    this.getData()
   },
   switchTab: function(e){
     if (e.currentTarget.dataset.idx == 0) {
@@ -62,7 +62,10 @@ Page({
   getData: function(){
     var that = this
     var feed_data = []
-    that.setData({  loading: true  })
+    that.setData({  
+      loading: true,
+      old_date_utc: ''
+    })
     wx.request({
       url: 'https://dat.soukoudai.com/api/v1/match/list',
       data:{
@@ -81,9 +84,9 @@ Page({
             } else {
               that.data.old_date_utc = feed_data[i]['date_utc']
               feed_data[i]['date_utc'] = feed_data[i]['date_utc'].substring(5)
-              feed_data[i]['odds'] = feed_data[i]['odds'].split(':')
             }
-            feed_data[i]['time_utc'] = feed_data[i]['start_play'].substring(11,16)
+            feed_data[i]['time_utc'] = feed_data[i]['start_play'].substring(11, 16)
+            feed_data[i]['odds'] = feed_data[i]['odds'].split(':')
           }
           that.setData({
             feed: feed_data,
@@ -122,9 +125,9 @@ Page({
             } else {
               that.data.old_date_utc = next_data[i]['date_utc']
               next_data[i]['date_utc'] = next_data[i]['date_utc'].substring(5)
-              next_data[i]['odds'] = next_data[i]['odds'].split(':')
             }
             next_data[i]['time_utc'] = next_data[i]['start_play'].substring(11, 16)
+            next_data[i]['odds'] = next_data[i]['odds'].split(':')
           }
           that.setData({
             feed: that.data.feed.concat(next_data),

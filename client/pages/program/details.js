@@ -1,6 +1,7 @@
 Page({
   data: {
     feed: [],
+    weekday: ['周一', '周二', '周三', '周四', '周五', '周六', '周天'],
     plan_id: 0
   },
   onLoad: function (options) {
@@ -22,6 +23,7 @@ Page({
       method: 'GET',
       success: function (res) {
         feed_data = res.data.data
+        feed_data.weekday = that.data.weekday[feed_data.weekday]
         feed_data.start_play = feed_data.start_play.substring(5,16)
         feed_data.get_time = feed_data.get_time.substring(5, 16)
         that.setData({

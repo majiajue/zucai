@@ -29,8 +29,8 @@
         </view>
         <view class="feed-down">
           <view class="left">
-            <a>胜{{item.odds[0]}} </a>
-            <a>平{{item.odds[1]}} </a>
+            <a>胜{{item.odds[0]}}</a>
+            <a>平{{item.odds[1]}}</a>
             <a>负{{item.odds[2]}}</a>
             <view class="right">
               <a>{{item.plan_nums}}个方案></a>
