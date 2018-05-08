@@ -66,8 +66,6 @@ Page({
         that.setData({
           feed: feed_data
         })
-        console.log(that.data)
-        console.log(that.data.feed.total_company_stat)
         var cxt_arc = wx.createCanvasContext('canvasArc');
         var width = wx.getSystemInfoSync().windowWidth
         cxt_arc.setLineWidth(4);

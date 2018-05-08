@@ -1,18 +1,32 @@
 Page({
   data: {
     // navTab: ["即时", "赛果", "赛程", "胜负彩"],
-    navTab: ["即时", "赛果"],
+    navTab: ["即时", "完场"],
     currentNavtab: "0",
     feed: [],
     feed_length: 0,
     page: 1,
     isAllDisplayed: false,
-    old_date_utc: ''
+    old_date_utc: '',
+    is_finished: 0,
+    loading: false
   },
   onLoad: function () {
     this.getData();
   },
   switchTab: function(e){
+    if (e.currentTarget.dataset.idx == 0) {
+      this.setData({
+        is_finished: 0,
+        old_date_utc: ''
+      })
+    } else if (e.currentTarget.dataset.idx == 1) {
+      this.setData({
+        is_finished: 1,
+        old_date_utc: ''
+      })
+    }
+    this.getData();
     this.setData({
       currentNavtab: e.currentTarget.dataset.idx
     });
@@ -48,15 +62,14 @@ Page({
   getData: function(){
     var that = this
     var feed_data = []
+    that.setData({  loading: true  })
     wx.request({
       url: 'https://dat.soukoudai.com/api/v1/match/list',
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
       data:{
-        'page': that.data.page
+        'page': that.data.page,
+        'is_finished': that.data.is_finished
       },
-      method: 'POST',
+      method: 'GET',
       success: function (res) {
         feed_data = res.data.data.match_list
         if (feed_data.length == 0) {
@@ -80,6 +93,7 @@ Page({
         }
       }
     })
+    that.setData({ loading: false })
   },
 
   //继续加载
@@ -87,17 +101,16 @@ Page({
     var that = this
     var next_data = []
     that.setData({
-      page: that.data.page + 1
+      page: that.data.page + 1,
+      loading: true
     })
     wx.request({
       url: 'https://dat.soukoudai.com/api/v1/match/list',
-      header: {
-        'content-type': 'application/json'
-      },
       data: {
-        'page': that.data.page
+        'page': that.data.page,
+        'is_finished': that.data.is_finished
       },
-      method: 'POST',
+      method: 'GET',
       success: function (res) {
         next_data = res.data.data.match_list
         if (next_data.length == 0) {
@@ -120,5 +133,6 @@ Page({
         }
       }
     })
+    that.setData({ loading: false })
   }
 });

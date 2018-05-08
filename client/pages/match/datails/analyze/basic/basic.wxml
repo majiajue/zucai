@@ -33,22 +33,22 @@
         </view>
         <view class='item'>
           <text style='width:160rpx'>时间</text>
-          <text style='width:140rpx'>联赛</text>
-          <text style='width:370rpx'>比分</text>
+          <text style='width:110rpx'>联赛</text>
+          <text style='width:440rpx'>比分</text>
         </view>
         <block wx:for="{{fight_history['recent_10_matches_with_each_other']['data']}}" wx:for-index="idx" wx:for-item="each_item">
           <view class='item'>
             <text style='width:160rpx'>{{each_item['start_play']}}</text>
-            <text style='width:140rpx;color:#76c109'>{{each_item['known_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#20ab27'>{{each_item['home_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#d55152'>{{each_item['home_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#000000'>{{each_item['home_team_name']}}</text>
-            <text style='width:20rpx'>{{each_item['fs_A']}}</text>
+            <text style='width:110rpx;color:#76c109'>{{each_item['known_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:200rpx;text-align:right;color:#20ab27'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:200rpx;text-align:right;color:#d55152'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:200rpx;text-align:right;color:#000000'>{{each_item['home_team_name']}}</text>
+            <text style='width:15rpx'>{{each_item['fs_A']}}</text>
             <text style='width:10rpx'>:</text>
-            <text style='width:20rpx'>{{each_item['fs_B']}}</text>
-            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#20ab27'>{{each_item['away_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#d55152'>{{each_item['away_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#000000'>{{each_item['away_team_name']}}</text>
+            <text style='width:15rpx'>{{each_item['fs_B']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:200rpx;text-align:left;color:#20ab27'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:200rpx;text-align:left;color:#d55152'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:200rpx;text-align:left;color:#000000'>{{each_item['away_team_name']}}</text>
           </view>
         </block>
       </view>
@@ -58,22 +58,22 @@
         </view>
         <view class='item'>
           <text style='width:160rpx'>时间</text>
-          <text style='width:140rpx'>联赛</text>
-          <text style='width:370rpx'>比分</text>
+          <text style='width:110rpx'>联赛</text>
+          <text style='width:440rpx'>比分</text>
         </view>
         <block wx:for="{{fight_history['recent_10_matches_of_home_team']['data']}}" wx:for-index="idx" wx:for-item="each_item">
           <view class='item'>
             <text style='width:160rpx'>{{each_item['start_play']}}</text>
-            <text style='width:140rpx;color:#76c109'>{{each_item['known_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#20ab27'>{{each_item['home_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#d55152'>{{each_item['home_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#000000'>{{each_item['home_team_name']}}</text>
-            <text style='width:20rpx'>{{each_item['fs_A']}}</text>
+            <text style='width:110rpx;color:#76c109'>{{each_item['known_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:200rpx;text-align:right;color:#20ab27'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:200rpx;text-align:right;color:#d55152'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:200rpx;text-align:right;color:#000000'>{{each_item['home_team_name']}}</text>
+            <text style='width:15rpx'>{{each_item['fs_A']}}</text>
             <text style='width:10rpx'>:</text>
-            <text style='width:20rpx'>{{each_item['fs_B']}}</text>
-            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#20ab27'>{{each_item['away_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#d55152'>{{each_item['away_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#000000'>{{each_item['away_team_name']}}</text>
+            <text style='width:15rpx'>{{each_item['fs_B']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:200rpx;text-align:left;color:#20ab27'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:200rpx;text-align:left;color:#d55152'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:200rpx;text-align:left;color:#000000'>{{each_item['away_team_name']}}</text>
           </view>
         </block>
       </view>
@@ -83,22 +83,22 @@
         </view>
         <view class='item'>
           <text style='width:160rpx'>时间</text>
-          <text style='width:140rpx'>联赛</text>
-          <text style='width:370rpx'>比分</text>
+          <text style='width:110rpx'>联赛</text>
+          <text style='width:440rpx'>比分</text>
         </view>
         <block wx:for="{{fight_history['recent_10_home_matches_of_home_team']['data']}}" wx:for-index="idx" wx:for-item="each_item">
           <view class='item'>
             <text style='width:160rpx'>{{each_item['start_play']}}</text>
-            <text style='width:140rpx;color:#76c109'>{{each_item['known_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#20ab27'>{{each_item['home_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#d55152'>{{each_item['home_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#000000'>{{each_item['home_team_name']}}</text>
-            <text style='width:20rpx'>{{each_item['fs_A']}}</text>
+            <text style='width:110rpx;color:#76c109'>{{each_item['known_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:200rpx;text-align:right;color:#20ab27'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:200rpx;text-align:right;color:#d55152'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:200rpx;text-align:right;color:#000000'>{{each_item['home_team_name']}}</text>
+            <text style='width:15rpx'>{{each_item['fs_A']}}</text>
             <text style='width:10rpx'>:</text>
-            <text style='width:20rpx'>{{each_item['fs_B']}}</text>
-            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#20ab27'>{{each_item['away_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#d55152'>{{each_item['away_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#000000'>{{each_item['away_team_name']}}</text>
+            <text style='width:15rpx'>{{each_item['fs_B']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:200rpx;text-align:left;color:#20ab27'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:200rpx;text-align:left;color:#d55152'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:200rpx;text-align:left;color:#000000'>{{each_item['away_team_name']}}</text>
           </view>
         </block>
       </view>
@@ -108,22 +108,22 @@
         </view>
         <view class='item'>
           <text style='width:160rpx'>时间</text>
-          <text style='width:140rpx'>联赛</text>
-          <text style='width:370rpx'>比分</text>
+          <text style='width:110rpx'>联赛</text>
+          <text style='width:440rpx'>比分</text>
         </view>
         <block wx:for="{{fight_history['recent_10_matches_of_away_team']['data']}}" wx:for-index="idx" wx:for-item="each_item">
           <view class='item'>
             <text style='width:160rpx'>{{each_item['start_play']}}</text>
-            <text style='width:140rpx;color:#76c109'>{{each_item['known_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#20ab27'>{{each_item['home_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#d55152'>{{each_item['home_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#000000'>{{each_item['home_team_name']}}</text>
-            <text style='width:20rpx'>{{each_item['fs_A']}}</text>
+            <text style='width:110rpx;color:#76c109'>{{each_item['known_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:200rpx;text-align:right;color:#20ab27'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:200rpx;text-align:right;color:#d55152'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:200rpx;text-align:right;color:#000000'>{{each_item['home_team_name']}}</text>
+            <text style='width:15rpx'>{{each_item['fs_A']}}</text>
             <text style='width:10rpx'>:</text>
-            <text style='width:20rpx'>{{each_item['fs_B']}}</text>
-            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#20ab27'>{{each_item['away_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#d55152'>{{each_item['away_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#000000'>{{each_item['away_team_name']}}</text>
+            <text style='width:15rpx'>{{each_item['fs_B']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:200rpx;text-align:left;color:#20ab27'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:200rpx;text-align:left;color:#d55152'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:200rpx;text-align:left;color:#000000'>{{each_item['away_team_name']}}</text>
           </view>
         </block>
       </view>
@@ -133,22 +133,22 @@
         </view>
         <view class='item'>
           <text style='width:160rpx'>时间</text>
-          <text style='width:140rpx'>联赛</text>
-          <text style='width:370rpx'>比分</text>
+          <text style='width:110rpx'>联赛</text>
+          <text style='width:440rpx'>比分</text>
         </view>
         <block wx:for="{{fight_history['recent_10_away_matches_of_away_team']['data']}}" wx:for-index="idx" wx:for-item="each_item">
           <view class='item'>
             <text style='width:160rpx'>{{each_item['start_play']}}</text>
-            <text style='width:140rpx;color:#76c109'>{{each_item['known_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#20ab27'>{{each_item['home_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#d55152'>{{each_item['home_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:right;color:#000000'>{{each_item['home_team_name']}}</text>
-            <text style='width:20rpx'>{{each_item['fs_A']}}</text>
+            <text style='width:110rpx;color:#76c109'>{{each_item['known_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:200rpx;text-align:right;color:#20ab27'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:200rpx;text-align:right;color:#d55152'>{{each_item['home_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:200rpx;text-align:right;color:#000000'>{{each_item['home_team_name']}}</text>
+            <text style='width:15rpx'>{{each_item['fs_A']}}</text>
             <text style='width:10rpx'>:</text>
-            <text style='width:20rpx'>{{each_item['fs_B']}}</text>
-            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#20ab27'>{{each_item['away_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#d55152'>{{each_item['away_team_name']}}</text>
-            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:175rpx;text-align:left;color:#000000'>{{each_item['away_team_name']}}</text>
+            <text style='width:15rpx'>{{each_item['fs_B']}}</text>
+            <text wx:if="{{each_item['fs_A'] == each_item['fs_B']}}" style='width:200rpx;text-align:left;color:#20ab27'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] < each_item['fs_B']}}" style='width:200rpx;text-align:left;color:#d55152'>{{each_item['away_team_name']}}</text>
+            <text wx:if="{{each_item['fs_A'] > each_item['fs_B']}}" style='width:200rpx;text-align:left;color:#000000'>{{each_item['away_team_name']}}</text>
           </view>
         </block>
       </view>
@@ -758,9 +758,9 @@
         <view>
           <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>博彩公司</text>
           <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>项目</text>
-          <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>主胜</text>
-          <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>平</text>
-          <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>客胜</text>
+          <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>水</text>
+          <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>盘口</text>
+          <text style='width: 150rpx;border-style:none;line-height: 60rpx;height:60rpx;background: #ffffff;font-size: 30rpx;color:#f4c25e'>水</text>
         </view>
         <block wx:for="{{rate_asia_data}}" wx:for-index="idx" wx:for-item="item">
           <view class='item'>

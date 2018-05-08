@@ -177,7 +177,6 @@ Page({
         },
         method: 'GET',
         success: function (res) {
-          console.log(res.data)
           forecast_data = res.data.data
           that.setData({
             forecast_data: forecast_data

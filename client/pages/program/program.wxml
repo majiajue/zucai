@@ -1,6 +1,6 @@
 <scroll-view scroll-y="true" class="container withtab" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
   <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item">
-    <view class="item">
+    <view class="item"  data-plan_id="{{item.id}}" bindtap="openDetail">
       <view class='top'>
         <div class="left">
           <image src='https://img1.dongqiudi.com/fastdfs/M00/AE/4A/ooYBAFia1_aATVKcAAAuzVz-1sU903.png'></image>
@@ -22,7 +22,7 @@
         <view>
           <text class='text3'>￥\t{{item.price}}</text>
           <text class='text4'>4分钟前发布</text>
-          <text class='text5' data-plan_id="{{item.id}}" bindtap="openDetail">专家解读中不退款</text>
+          <text class='text5'>专家解读中不退款</text>
         </view>
       </view>
     </view>
