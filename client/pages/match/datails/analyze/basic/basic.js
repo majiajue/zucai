@@ -58,14 +58,11 @@ Page({
     var feed_data = []
     wx.request({
       url: 'https://dat.soukoudai.com/api/v1/plan/list',
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
       data: {
         'page': that.data.page,
         'match_id': that.data.match_id
       },
-      method: 'POST',
+      method: 'GET',
       success: function (res) {
         feed_data = res.data.data.plan_list
         if (feed_data.length == 0) {
@@ -108,14 +105,11 @@ Page({
     })
     wx.request({
       url: 'https://dat.soukoudai.com/api/v1/plan/list',
-      header: {
-        'content-type': 'application/json'
-      },
       data: {
         'page': that.data.page,
         'match_id': that.data.match_id
       },
-      method: 'POST',
+      method: 'GET',
       success: function (res) {
         next_data = res.data.data.plan_list
         if (next_data.length == 0) {
