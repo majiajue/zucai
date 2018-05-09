@@ -30,7 +30,8 @@ Page({
     plan_data: [],
     plan_length: 0,
     page: 0,
-    isAllDisplayed: false
+    isAllDisplayed: false,
+    open_plan_list: 0
   },
   upper: function (e) {
     wx.showNavigationBarLoading()
@@ -402,6 +403,7 @@ Page({
     var win = options.win
     var deuce = options.deuce
     var lose = options.lose
+    var open_plan_list = options.open_plan_list
     this.setData({
       match_id: match_id,
       team_a: team_a,
@@ -410,13 +412,20 @@ Page({
       icon_b: icon_b,
       win: win,
       deuce: deuce,
-      lose: lose
+      lose: lose,
+      open_plan_list: open_plan_list
     })
     
   },
   onReady: function () {
     // 页面渲染完成 
     var that = this
+    if (that.data.open_plan_list == 1) {
+      that.getData()
+      this.setData({
+        currentNavtab_top: 1
+      })
+    }
     var fight_history = []
     wx.request({
       url: 'https://dat.soukoudai.com/api/v1/match/detail',

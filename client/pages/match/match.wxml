@@ -12,15 +12,15 @@
   <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
     <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item">
       <view class='grow_date' wx:if="{{item.date_utc}}"><text>{{item.date_utc}}</text></view>
-      <view class="feed-item" data-match_id="{{item.match_id}}" data-team_a="{{item.hostteam_name}}" data-team_b="{{item.guestteam_name}}" data-icon_a="{{item.hostteam_logo}}" data-icon_b="{{item.guestteam_logo}}" data-win="{{item.odds[0]}}" data-deuce="{{item.odds[1]}}" data-lose="{{item.odds[2]}}" bindtap="openDetail">
-        <view class="feed-up">
+      <view class="feed-item">
+        <view class="feed-up" data-match_id="{{item.match_id}}" data-team_a="{{item.hostteam_name}}" data-team_b="{{item.guestteam_name}}" data-icon_a="{{item.hostteam_logo}}" data-icon_b="{{item.guestteam_logo}}" data-win="{{item.odds[0]}}" data-deuce="{{item.odds[1]}}" data-lose="{{item.odds[2]}}" bindtap="openDetail">
           <div class='grow_back'><text>{{item.time_utc}}</text></div>
           <text wx:if="{{item.status==2}}" style='color:#EAEAEA'>已结束</text>
           <text wx:if="{{item.status==1}}" style='color:#EE4400'>进行中</text>
           <text wx:if="{{item.status==0}}" style='color:#ffd966'>未开始</text>
           <text>{{item.competition_name}}</text>
         </view>
-        <view class="feed-middle">
+        <view class="feed-middle" data-match_id="{{item.match_id}}" data-team_a="{{item.hostteam_name}}" data-team_b="{{item.guestteam_name}}" data-icon_a="{{item.hostteam_logo}}" data-icon_b="{{item.guestteam_logo}}" data-win="{{item.odds[0]}}" data-deuce="{{item.odds[1]}}" data-lose="{{item.odds[2]}}" bindtap="openDetail">
           <text class="text1">{{item.hostteam_name}}</text>
           <image class="image1" src="{{item.hostteam_logo}}"></image>
           <text class="text2">VS</text>
@@ -32,7 +32,7 @@
             <a>胜{{item.odds[0]}}</a>
             <a>平{{item.odds[1]}}</a>
             <a>负{{item.odds[2]}}</a>
-            <view class="right">
+            <view class="right"  data-match_id="{{item.match_id}}" data-team_a="{{item.hostteam_name}}" data-team_b="{{item.guestteam_name}}" data-icon_a="{{item.hostteam_logo}}" data-icon_b="{{item.guestteam_logo}}" data-win="{{item.odds[0]}}" data-deuce="{{item.odds[1]}}" data-lose="{{item.odds[2]}}" bindtap="openPlanList">
               <a>{{item.plan_nums}}个方案></a>
             </view>
           </view>
@@ -64,7 +64,7 @@
             <a>胜{{item.odds[0]}} </a>
             <a>平{{item.odds[1]}} </a>
             <a>负{{item.odds[2]}}</a>
-            <view class="right">
+            <view class="right"  bindtap="openPlanList">
               <a>{{item.plan_nums}}个方案></a>
             </view>
           </view>

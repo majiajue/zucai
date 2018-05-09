@@ -9,10 +9,15 @@ Page({
     isAllDisplayed: false,
     old_date_utc: '',
     is_finished: 0,
-    loading: false
+    loading: false,
+    open_plan_list: 0
   },
   onLoad: function () {
+    var that = this
     this.getData()
+    that.setData({
+      open_plan_list: 0
+    })
   },
   switchTab: function(e){
     if (e.currentTarget.dataset.idx == 0) {
@@ -46,6 +51,7 @@ Page({
   },
   //跳转
   openDetail: function (event) {
+    var that = this
     var match_id = event.currentTarget.dataset.match_id;
     var team_a = event.currentTarget.dataset.team_a;
     var team_b = event.currentTarget.dataset.team_b;
@@ -55,7 +61,25 @@ Page({
     var deuce = event.currentTarget.dataset.deuce;
     var lose = event.currentTarget.dataset.lose;
     wx.navigateTo({
-      url: '../match/datails/details?match_id=' + match_id + '&team_a=' + team_a + '&team_b=' + team_b + '&icon_a=' + icon_a + '&icon_b=' + icon_b + '&win=' + win + '&deuce=' + deuce + '&lose=' + lose
+      url: '../match/datails/details?match_id=' + match_id + '&team_a=' + team_a + '&team_b=' + team_b + '&icon_a=' + icon_a + '&icon_b=' + icon_b + '&win=' + win + '&deuce=' + deuce + '&lose=' + lose + '&open_plan_list=' + that.data.open_plan_list 
+    })
+  },
+  openPlanList: function (event) {
+    var that = this
+    that.setData({
+      open_plan_list: 1
+    })
+    var that = this
+    var match_id = event.currentTarget.dataset.match_id;
+    var team_a = event.currentTarget.dataset.team_a;
+    var team_b = event.currentTarget.dataset.team_b;
+    var icon_a = event.currentTarget.dataset.icon_a;
+    var icon_b = event.currentTarget.dataset.icon_b;
+    var win = event.currentTarget.dataset.win;
+    var deuce = event.currentTarget.dataset.deuce;
+    var lose = event.currentTarget.dataset.lose;
+    wx.navigateTo({
+      url: '../match/datails/analyze/basic/basic?match_id=' + match_id + '&team_a=' + team_a + '&team_b=' + team_b + '&icon_a=' + icon_a + '&icon_b=' + icon_b + '&win=' + win + '&deuce=' + deuce + '&lose=' + lose + '&open_plan_list=' + that.data.open_plan_list
     })
   },
   //首次获取数据及刷新
